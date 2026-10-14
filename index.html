@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Александра Нойманн — digital-маркетолог, CRM и автоматизация</title>
+<meta name="description" content="Портфолио: корпоративная CRM для производства, сайты и SEO, реклама в Яндекс Директ, Bitrix24 и телефония.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #16201b; --ink-2: #4a5852; --muted: #7b8a83;
+  --bg: #f6f8f6; --card: #ffffff; --line: #e3e9e5;
+  --accent: #2e7d4f; --accent-2: #e8f3ec; --accent-ink: #1f5a39;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; }
+a { color: var(--accent-ink); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { font-family: Manrope, Inter, sans-serif; line-height: 1.15; margin: 0; }
+nav { position: sticky; top: 0; z-index: 10; background: rgba(246,248,246,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+nav .logo { font-family: Manrope; font-weight: 800; letter-spacing: .2px; }
+nav .links { display: flex; gap: 22px; font-size: 14px; }
+nav .links a { color: var(--ink-2); text-decoration: none; }
+nav .links a:hover { color: var(--accent); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; transition: transform .15s, background .15s; }
+.btn:hover { background: var(--accent-ink); transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn.ghost:hover { background: var(--card); }
+header.hero { padding: 72px 0 40px; }
+.eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent-ink); background: var(--accent-2); padding: 6px 12px; border-radius: 999px; }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; margin: 18px 0 12px; letter-spacing: -.5px; }
+.hero h1 span { color: var(--accent); }
+.hero p.lead { font-size: clamp(17px, 2.1vw, 20px); color: var(--ink-2); max-width: 720px; margin: 0 0 28px; }
+.hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.stat b { display: block; font-family: Manrope; font-size: 26px; color: var(--accent); }
+.stat span { font-size: 14px; color: var(--ink-2); }
+section { padding: 56px 0; }
+section > .wrap > h2 { font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; margin-bottom: 8px; }
+.sub { color: var(--ink-2); margin: 0 0 28px; max-width: 720px; }
+.case { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px; margin-bottom: 22px; }
+.case .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.case h3 { font-size: 24px; font-weight: 800; }
+.tag { font-size: 12px; font-weight: 600; color: var(--accent-ink); background: var(--accent-2); padding: 4px 10px; border-radius: 999px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.case h4 { font: 700 13px Inter; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 8px; }
+.case ul { margin: 0; padding-left: 18px; }
+.case li { margin: 0 0 7px; color: var(--ink-2); }
+.case li b { color: var(--ink); }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+.shots.two { grid-template-columns: repeat(2, 1fr); }
+figure { margin: 0; }
+figure img { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 30px -18px rgba(22,32,27,.45); cursor: zoom-in; }
+figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; background: var(--card); border: 1px solid var(--line); padding: 7px 12px; border-radius: 10px; }
+.stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.stack .box { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.stack h3 { font-size: 17px; margin-bottom: 12px; }
+.timeline { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 24px; }
+.job { position: relative; margin-bottom: 26px; }
+.job::before { content: ""; position: absolute; left: -31px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-2); }
+.job .when { font-size: 13px; color: var(--muted); }
+.job h3 { font-size: 19px; margin: 2px 0 4px; }
+.job p { margin: 0; color: var(--ink-2); }
+footer { padding: 56px 0 72px; }
+.contact { background: var(--ink); color: #fff; border-radius: 24px; padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.contact h2 { font-size: clamp(26px, 3.4vw, 36px); }
+.contact p { color: #b9c6bf; margin: 8px 0 0; }
+.contact .btn { background: #fff; color: var(--ink); }
+.contact .btn:hover { background: var(--accent-2); }
+.zoom { position: fixed; inset: 0; background: rgba(10,14,12,.86); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+.zoom img { max-width: 100%; max-height: 100%; border-radius: 12px; }
+@media (max-width: 860px) {
+  nav .links { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .cols, .stack { grid-template-columns: 1fr; }
+  .shots, .shots.two { grid-template-columns: 1fr; }
+  .case { padding: 20px; }
+  .contact { padding: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo">Александра Нойманн</div>
+  <div class="links"><a href="#cases">Кейсы</a><a href="#stack">Навыки</a><a href="#exp">Опыт</a><a href="#contact">Контакты</a></div>
+  <a class="btn" href="https://t.me/pbkka" target="_blank" rel="noopener">Telegram</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Digital-маркетолог · CRM и автоматизация бизнеса</span>
+  <h1>Собираю маркетинг и&nbsp;цифровую инфраструктуру <span>под&nbsp;ключ</span></h1>
+  <p class="lead">Сайты, реклама, CRM, телефония и автоматизация процессов — от задачи до работающего решения. За полгода в производственной компании с нуля сделала сайты и корпоративную CRM, в которой работает весь коллектив.</p>
+  <div class="cta">
+    <a class="btn" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram</a>
+    <a class="btn ghost" href="#cases">Смотреть кейсы</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>~25</b><span>сотрудников работают в CRM, которую я сделала с нуля</span></div>
+    <div class="stat"><b>3</b><span>сайта компании разработаны и запущены</span></div>
+    <div class="stat"><b>4 → 1</b><span>место в Яндексе по «пакет вур» (Москва)</span></div>
+    <div class="stat"><b>~280</b><span>звонков в месяц идут через настроенную телефонию</span></div>
+  </div>
+</div></header>
+
+<section id="cases"><div class="wrap">
+  <h2>Кейсы</h2>
+  <p class="sub">Всё — для ООО «Центр полимерной упаковки», производителя полиэтиленовой упаковки (Москва).</p>
+
+  <article class="case">
+    <div class="head"><h3>Корпоративная CRM для производства</h3><span class="tag">с нуля · 2026</span></div>
+    <div class="cols">
+      <div>
+        <h4>Задача</h4>
+        <ul>
+          <li>Заявки, производство, договоры и логистика жили в Bitrix24, Excel и чатах — не было одной картины, где какой заказ.</li>
+          <li>Нужна система под процессы именно этого производства, а не «коробка».</li>
+        </ul>
+        <h4 style="margin-top:16px">Результат</h4>
+        <ul>
+          <li><b>~25 сотрудников</b> работают в одной системе: от лида до отгрузки.</li>
+          <li>Очередь производства видна всем в реальном времени, договоры согласуются по маршруту, а не в переписке.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Что сделала</h4>
+        <ul>
+          <li><b>Продажи:</b> лиды с канбаном и синхронизацией с Bitrix24, фильтры, объединение дублей, обязательные поля по стадиям, аналитика и отчёты, калькулятор КП с выгрузкой в Word/Excel.</li>
+          <li><b>Производство:</b> очередь заказов по 8 линиям в реальном времени, маршрут заказа по 23 станкам (экструзия → печать → ПСМ), интеграция с МойСклад.</li>
+          <li><b>Процессы:</b> согласование договоров, заявки на транспорт, задачи с обсуждением, уведомления и push, роли и права.</li>
+          <li><b>Коммуникации:</b> чат с видеозвонками и демонстрацией экрана, диск с совместным редактированием документов, база знаний, мобильная версия.</li>
+          <li><b>Инфраструктура:</b> собственный сервер, Docker, PostgreSQL, выкатка с автооткатом, резервные копии.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="shots">
+      <figure><img src="img/crm-machines.jpg" alt="Очередь по машинам" loading="lazy"><figcaption>Очередь по машинам: экструзия → печать → ПСМ</figcaption></figure>
+      <figure><img src="img/crm-queue.jpg" alt="Очередь производства" loading="lazy"><figcaption>Очередь производства по линиям</figcaption></figure>
+      <figure><img src="img/crm-contracts.jpg" alt="Согласование договоров" loading="lazy"><figcaption>Согласование договоров по маршруту</figcaption></figure>
+    </div>
+    <p class="note">На скриншотах — тестовые данные. Систему покажу вживую на собеседовании.</p>
+  </article>
+
+  <article class="case">
+    <div class="head"><h3>Сайты и SEO</h3><span class="tag">cpu.moscow · upakcpu.ru</span></div>
+    <div class="cols">
+      <div>
+        <h4>Что сделала</h4>
+        <ul>
+          <li><b><a href="https://cpu.moscow" target="_blank" rel="noopener">cpu.moscow</a></b> — сайт-каталог: 150+ страниц, карточки товаров, отраслевые страницы, блог, конструктор пакета с расчётом цены, YML-фид для рекламы.</li>
+          <li><b><a href="https://upakcpu.ru" target="_blank" rel="noopener">upakcpu.ru</a></b> — посадочные страницы под контекстную рекламу с формами заявок.</li>
+          <li>Next.js, React, TypeScript, PostgreSQL, Tailwind; разработка с AI-ассистентами.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>SEO и результат</h4>
+        <ul>
+          <li>Семантика, структура, мета-теги, перелинковка, Яндекс Вебмастер и Google Search Console, регулярный замер позиций.</li>
+          <li>Яндекс (Москва): <b>«пакет вур» — с 4-го на 1-е место</b>, «производство пакетов москва» — <b>топ-2</b>, брендовые запросы — <b>№1</b>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="shots two">
+      <figure><img src="img/site-cpu-moscow.jpg" alt="cpu.moscow" loading="lazy"><figcaption>cpu.moscow — главная с конструктором пакета</figcaption></figure>
+      <figure><img src="img/site-upakcpu.jpg" alt="upakcpu.ru" loading="lazy"><figcaption>upakcpu.ru — посадочная под рекламу</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="head"><h3>Реклама и аналитика</h3><span class="tag">Яндекс Директ · Метрика</span></div>
+    <div class="cols">
+      <div>
+        <ul>
+          <li>Веду Яндекс Директ: Единая перфоманс-кампания и Мастер кампаний, Поиск и РСЯ — стратегии, ставки, автотаргетинг, минус-фразы, тексты и креативы.</li>
+          <li>Маркировка рекламы (ОРД/ЕРИР).</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Навела порядок в аналитике: в отчётах считаются <b>реальные заявки</b>, а не клики по телефону; сквозная связка Метрика → CRM.</li>
+          <li>Яндекс Метрика: цели, сегменты, ретаргетинг.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="head"><h3>Bitrix24 и телефония</h3><span class="tag">Телфин · Mango Office</span></div>
+    <div class="cols">
+      <div>
+        <ul>
+          <li>Администрирование Bitrix24: права, воронки и стадии, источники лидов, фильтрация мусорных заявок.</li>
+          <li>Интеграция Телфин ↔ Bitrix24: линия 8-800, распределение звонков, лиды из звонков — <b>~280 звонков в месяц</b>.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Записи звонков в карточке лида и автоматическая расшифровка речи на собственном сервере.</li>
+          <li>Подготовка перехода на Mango Office с коллтрекингом.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <h2>Навыки</h2>
+  <p class="sub">Инструменты, с которыми работаю каждый день.</p>
+  <div class="stack">
+    <div class="box"><h3>Маркетинг</h3><div class="chips"><span class="chip">Яндекс Директ</span><span class="chip">Яндекс Метрика</span><span class="chip">Вебмастер</span><span class="chip">Search Console</span><span class="chip">SEO</span><span class="chip">Сквозная аналитика</span><span class="chip">Маркировка рекламы</span></div></div>
+    <div class="box"><h3>CRM и интеграции</h3><div class="chips"><span class="chip">Bitrix24</span><span class="chip">REST API</span><span class="chip">МойСклад</span><span class="chip">Телфин</span><span class="chip">Mango Office</span><span class="chip">Telegram-боты</span></div></div>
+    <div class="box"><h3>Разработка</h3><div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">Docker</span><span class="chip">Git</span></div></div>
+    <div class="box"><h3>Дизайн и документы</h3><div class="chips"><span class="chip">Figma</span><span class="chip">Canva</span><span class="chip">CorelDRAW</span><span class="chip">Презентации</span><span class="chip">Фирменные шаблоны</span></div></div>
+    <div class="box"><h3>Системы</h3><div class="chips"><span class="chip">SAP ERP</span><span class="chip">СИС Elita</span></div></div>
+    <div class="box"><h3>Продажи</h3><div class="chips"><span class="chip">B2B</span><span class="chip">Холодные звонки</span><span class="chip">КП и переговоры</span><span class="chip">Ведение сделок</span></div></div>
+  </div>
+</div></section>
+
+<section id="exp"><div class="wrap">
+  <h2>Опыт</h2>
+  <div class="timeline">
+    <div class="job"><div class="when">Май 2026 — сейчас</div><h3>Маркетолог (digital, CRM, автоматизация) — ЦПУ</h3><p>Сайты, SEO, Яндекс Директ, корпоративная CRM, Bitrix24 и телефония.</p></div>
+    <div class="job"><div class="when">Март — май 2026</div><h3>Менеджер по продажам (B2B) — ЦПУ</h3><p>Холодные звонки, поиск ЛПР, расчёт и КП, переговоры, сделки в Bitrix24 до отгрузки.</p></div>
+    <div class="job"><div class="when">2023 — 2026</div><h3>Комус — помощник байера, специалист по управлению ценами</h3><p>Карточки товаров, дизайн маркировки, фотосессии; цены и номенклатура в SAP ERP, контроль качества данных.</p></div>
+    <div class="job"><div class="when">2023</div><h3>Столичный бизнес-колледж</h3><p>Информационные системы и программирование, техник-программист.</p></div>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <div class="contact">
+    <div><h2>Давайте обсудим задачу</h2><p>Отвечаю в Telegram — @pbkka</p></div>
+    <a class="btn" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+</div></footer>
+
+<div class="zoom" id="zoom"><img alt=""></div>
+<script>
+  const z = document.getElementById("zoom"), zi = z.querySelector("img");
+  document.querySelectorAll("figure img").forEach((img) => img.addEventListener("click", () => { zi.src = img.src; z.style.display = "flex"; }));
+  z.addEventListener("click", () => (z.style.display = "none"));
+  document.addEventListener("keydown", (e) => e.key === "Escape" && (z.style.display = "none"));
+</script>
+</body>
+</html>
