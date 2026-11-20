@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #16201b; --ink-2: #4a5852; --muted: #7b8a83;
-  --bg: #f6f8f6; --card: #ffffff; --line: #e3e9e5;
-  --accent: #2e7d4f; --accent-2: #e8f3ec; --accent-ink: #1f5a39;
+  --ink: #1c1729; --ink-2: #4f4862; --muted: #857d96;
+  --bg: #f7f5fc; --card: #ffffff; --line: #e8e3f3;
+  --accent: #6b3fd6; --accent-2: #efe8fd; --accent-ink: #4a22ad;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -21,7 +21,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter
 a { color: var(--accent-ink); }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 h1, h2, h3 { font-family: Manrope, Inter, sans-serif; line-height: 1.15; margin: 0; }
-nav { position: sticky; top: 0; z-index: 10; background: rgba(246,248,246,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+nav { position: sticky; top: 0; z-index: 10; background: rgba(247,245,252,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
 nav .logo { font-family: Manrope; font-weight: 800; letter-spacing: .2px; }
 nav .links { display: flex; gap: 22px; font-size: 14px; }
@@ -34,7 +34,7 @@ nav .links a:hover { color: var(--accent); }
 header.hero { padding: 72px 0 40px; }
 .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent-ink); background: var(--accent-2); padding: 6px 12px; border-radius: 999px; }
 .hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; margin: 18px 0 12px; letter-spacing: -.5px; }
-.hero h1 span { color: var(--accent); }
+.hero h1 span { color: var(--accent); background: linear-gradient(90deg, #6b3fd6, #b04fd9); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .hero p.lead { font-size: clamp(17px, 2.1vw, 20px); color: var(--ink-2); max-width: 720px; margin: 0 0 28px; }
 .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
@@ -56,7 +56,7 @@ section > .wrap > h2 { font-size: clamp(28px, 3.6vw, 38px); font-weight: 800; ma
 .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
 .shots.two { grid-template-columns: repeat(2, 1fr); }
 figure { margin: 0; }
-figure img { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 30px -18px rgba(22,32,27,.45); cursor: zoom-in; }
+figure img { width: 100%; display: block; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 30px -18px rgba(40,20,90,.35); cursor: zoom-in; }
 figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .note { font-size: 13px; color: var(--muted); margin-top: 10px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -71,12 +71,25 @@ figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .job h3 { font-size: 19px; margin: 2px 0 4px; }
 .job p { margin: 0; color: var(--ink-2); }
 footer { padding: 56px 0 72px; }
-.contact { background: var(--ink); color: #fff; border-radius: 24px; padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.contact { background: linear-gradient(135deg, #1c1729, #3a1f73); color: #fff; border-radius: 24px; padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
 .contact h2 { font-size: clamp(26px, 3.4vw, 36px); }
-.contact p { color: #b9c6bf; margin: 8px 0 0; }
+.contact p { color: #c9c0de; margin: 8px 0 0; }
 .contact .btn { background: #fff; color: var(--ink); }
 .contact .btn:hover { background: var(--accent-2); }
-.zoom { position: fixed; inset: 0; background: rgba(10,14,12,.86); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+.badge { display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; padding: 7px 16px 7px 7px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; transition: border-color .15s, transform .15s; }
+.badge:hover { border-color: var(--accent); transform: translateY(-1px); }
+.badge i { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; flex: none; }
+.badge svg { width: 14px; height: 14px; }
+.badge small { font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.cert { display: grid; grid-template-columns: 170px 1fr; gap: 26px; align-items: center; margin-top: 24px; padding: 22px; border-radius: 18px; background: var(--accent-2); scroll-margin-top: 80px; }
+.cert figure img { border: 0; box-shadow: 0 16px 32px -18px rgba(28,30,120,.6); }
+.cert .tag { background: var(--card); }
+.cert-title { font: 800 21px/1.25 Manrope, Inter, sans-serif; margin: 10px 0 16px; }
+.cert-meta { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 10px 32px; margin: 0; }
+.cert-meta dt { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); }
+.cert-meta dd { margin: 2px 0 0; font-weight: 600; }
+.chip.hot { border-color: var(--accent); background: var(--accent-2); color: var(--accent-ink); font-weight: 600; }
+.zoom { position: fixed; inset: 0; background: rgba(16,10,30,.88); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
 .zoom img { max-width: 100%; max-height: 100%; border-radius: 12px; }
 @media (max-width: 860px) {
   nav .links { display: none; }
@@ -85,6 +98,9 @@ footer { padding: 56px 0 72px; }
   .shots, .shots.two { grid-template-columns: 1fr; }
   .case { padding: 20px; }
   .contact { padding: 28px; }
+  .cert { grid-template-columns: 1fr; padding: 18px; }
+  .cert figure { max-width: 200px; }
+  .cert-meta { grid-template-columns: repeat(2, auto); }
 }
 </style>
 </head>
@@ -104,6 +120,7 @@ footer { padding: 56px 0 72px; }
     <a class="btn" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram</a>
     <a class="btn ghost" href="#cases">Смотреть кейсы</a>
   </div>
+  <a class="badge" href="#cert"><i><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg></i>Сертифицированный специалист Яндекс Директа <small>· профессиональный уровень</small></a>
   <div class="stats">
     <div class="stat"><b>~25</b><span>сотрудников работают в CRM, которую я сделала с нуля</span></div>
     <div class="stat"><b>3</b><span>сайта компании разработаны и запущены</span></div>
@@ -191,6 +208,20 @@ footer { padding: 56px 0 72px; }
         </ul>
       </div>
     </div>
+    <div class="cert" id="cert">
+      <figure><img src="img/cert-direct-pro.jpg" alt="Сертификат специалиста Яндекс Директа, профессиональный уровень, № 319465" loading="lazy"></figure>
+      <div>
+        <span class="tag">Сертификат Яндекса</span>
+        <p class="cert-title">Сертифицированный специалист Яндекс Директа</p>
+        <dl class="cert-meta">
+          <div><dt>Направление</dt><dd>Директ Про</dd></div>
+          <div><dt>Уровень</dt><dd>Профессиональный</dd></div>
+          <div><dt>Номер</dt><dd>319465</dd></div>
+          <div><dt>Действует до</dt><dd>18.11.2027</dd></div>
+        </dl>
+        <p class="note">Подтверждает уровень знаний для профессионального ведения кампаний в Яндекс Директе. Подлинность проверяется по QR-коду на сертификате — нажмите, чтобы увеличить.</p>
+      </div>
+    </div>
   </article>
 
   <article class="case">
@@ -216,7 +247,7 @@ footer { padding: 56px 0 72px; }
   <h2>Навыки</h2>
   <p class="sub">Инструменты, с которыми работаю каждый день.</p>
   <div class="stack">
-    <div class="box"><h3>Маркетинг</h3><div class="chips"><span class="chip">Яндекс Директ</span><span class="chip">Яндекс Метрика</span><span class="chip">Вебмастер</span><span class="chip">Search Console</span><span class="chip">SEO</span><span class="chip">Сквозная аналитика</span><span class="chip">Маркировка рекламы</span></div></div>
+    <div class="box"><h3>Маркетинг</h3><div class="chips"><span class="chip hot">Яндекс Директ · сертификат Pro</span><span class="chip">Яндекс Метрика</span><span class="chip">Вебмастер</span><span class="chip">Search Console</span><span class="chip">SEO</span><span class="chip">Сквозная аналитика</span><span class="chip">Маркировка рекламы</span></div></div>
     <div class="box"><h3>CRM и интеграции</h3><div class="chips"><span class="chip">Bitrix24</span><span class="chip">REST API</span><span class="chip">МойСклад</span><span class="chip">Телфин</span><span class="chip">Mango Office</span><span class="chip">Telegram-боты</span></div></div>
     <div class="box"><h3>Разработка</h3><div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">Docker</span><span class="chip">Git</span></div></div>
     <div class="box"><h3>Дизайн и документы</h3><div class="chips"><span class="chip">Figma</span><span class="chip">Canva</span><span class="chip">CorelDRAW</span><span class="chip">Презентации</span><span class="chip">Фирменные шаблоны</span></div></div>
