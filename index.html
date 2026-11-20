@@ -3,18 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Александра Нойманн — маркетолог: сайты, SEO, своя CRM, телефония</title>
-<meta name="description" content="Портфолио: два сайта и SEO с нуля до топа Яндекса, своя CRM для производства на 30 сотрудников, телефония Mango Office, Яндекс Директ (сертификат Pro).">
+<title>Александра Нойманн — реклама, сайты и аналитика для малого бизнеса</title>
+<meta name="description" content="Разбор рекламы и сайта, настройка учёта заявок, лендинги под услугу. Практический опыт — в B2B и производстве. Сертифицированный специалист Яндекс Директа.">
 <meta name="theme-color" content="#0e0b16">
+<link rel="canonical" href="https://wranz404.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wranz404.github.io/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Александра Нойманн — реклама, сайты и аналитика">
+<meta property="og:description" content="Помогаю разобраться, откуда приходят заявки, настроить их учёт и улучшить путь от рекламы до обращения.">
+<meta property="og:image" content="https://wranz404.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-/* Тёмная сцена с огромным именем и живой стопкой интерфейсов -> лента работ -> светлая панель «обо мне» наезжает -> стопка проектов -> контакт */
+/* Тёмная сцена: предложение + живая стопка интерфейсов -> услуги -> лента работ -> светлая часть: кейсы, как работаю, обо мне -> контакт */
 :root{
   --night:#0e0b16; --night-2:#171225; --line-d:#2a2240;
   --hi:#f3f0fa; --dim:#a79fbd;
-  --violet:#7c4dff; --orchid:#d14bff; --grad:linear-gradient(100deg,#7c4dff 0%,#b44bff 55%,#d14bff 100%); --grad-btn:linear-gradient(100deg,#6a3cf0 0%,#a43ce0 100%); --violet-ink:#5a2fd0;
+  --violet:#7c4dff; --orchid:#d14bff; --violet-ink:#5a2fd0;
+  --grad:linear-gradient(100deg,#7c4dff 0%,#b44bff 55%,#d14bff 100%);
+  --grad-btn:linear-gradient(100deg,#6a3cf0 0%,#a43ce0 100%);
   --paper:#f2eff8; --card:#ffffff; --plum:#1d1430; --plum-2:#5a5070; --line:#e2dcee;
   --f-display:"Unbounded","Manrope",system-ui,sans-serif;
   --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -22,192 +34,224 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--night);color:var(--hi);font:17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.05;text-wrap:balance}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.08;text-wrap:balance}
 p{margin:0}
 :focus-visible{outline:2px solid var(--orchid);outline-offset:3px;border-radius:6px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font:500 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
 
 /* nav */
 nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-nav.solid{background:rgba(14,11,22,.78);backdrop-filter:blur(12px);border-color:var(--line-d)}
+nav.solid{background:rgba(14,11,22,.8);backdrop-filter:blur(12px);border-color:var(--line-d)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .logo{font:700 15px var(--f-display);letter-spacing:.02em;text-decoration:none}
-.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .links{display:flex;gap:26px;font-size:14px;font-weight:600}
 .links a{text-decoration:none;color:var(--dim);transition:color .2s}
 .links a:hover{color:var(--hi)}
-.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:var(--grad-btn);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 30px -12px rgba(180,75,255,.8);transition:transform .2s,box-shadow .2s}
-.pill:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(180,75,255,.95)}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:var(--grad-btn);color:#fff;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 30px -12px rgba(164,60,224,.8);transition:transform .2s,box-shadow .2s;border:0;cursor:pointer;font-family:inherit}
+.pill:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(164,60,224,.95)}
 .pill.sm{padding:9px 16px;font-size:14px}
 .pill svg{width:18px;height:18px}
+.ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid var(--line-d);color:var(--hi);font-weight:600;font-size:15px;text-decoration:none;transition:border-color .2s,background .2s}
+.ghost:hover{border-color:var(--orchid);background:rgba(209,75,255,.08)}
 
 /* hero */
-.hero{position:relative;min-height:100svh;padding-block:110px 40px;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
-.glow{position:absolute;width:620px;height:620px;left:50%;top:45%;margin:-310px 0 0 -310px;border-radius:50%;background:radial-gradient(circle,rgba(124,77,255,.32),rgba(209,75,255,.12) 40%,transparent 70%);filter:blur(10px);z-index:-1;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.hero .wrap{position:relative;flex:1;display:flex;flex-direction:column;width:100%}
-.eyebrow{font:500 13px var(--f-mono);color:var(--dim);letter-spacing:.04em;display:flex;gap:10px;flex-wrap:wrap}
-.eyebrow span{padding:6px 12px;border:1px solid var(--line-d);border-radius:999px}
-.name{margin-top:28px;font-weight:800;font-size:clamp(40px,8.6vw,140px);letter-spacing:-.03em;line-height:1.1;text-transform:uppercase;position:relative;z-index:0}
-.name .ln{display:block;overflow:hidden;padding:.02em 0 .08em;margin-bottom:-.12em}
-.name .ln>span{display:inline-block;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.85,.25,1) forwards}
-.name .ln:nth-child(2)>span{animation-delay:.12s}
-.name .ln.g>span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-@keyframes rise{to{transform:none}}
-
-/* living stack */
-.stage{position:absolute;right:2%;bottom:4%;width:min(380px,40vw);perspective:1100px;z-index:2}
-.stack{position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);animation:float 6s ease-in-out infinite}
-@keyframes float{50%{translate:0 -10px}}
-.ui{background:rgba(23,18,37,.82);backdrop-filter:blur(14px);border:1px solid rgba(167,159,189,.22);border-radius:18px;padding:16px 18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
-.ui+.ui{margin-top:12px}
-.ui .k{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;align-items:center}
-.ui .v{font:700 17px var(--f-body);margin-top:6px}
-.ui .s{font-size:13px;color:var(--dim);margin-top:2px}
-.ui.call{transform:translateZ(60px)}
-.ui.prod{transform:translateZ(30px) translateX(-26px)}
-.ui.seo{transform:translateZ(0) translateX(18px)}
-.ring{width:10px;height:10px;border-radius:50%;background:#3ddc97;box-shadow:0 0 0 0 rgba(61,220,151,.7);animation:ping 1.6s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
-.route{display:flex;align-items:center;gap:8px;margin-top:10px;font:500 12px var(--f-mono);color:var(--hi)}
-.route i{flex:1;height:2px;background:linear-gradient(90deg,var(--violet),var(--orchid));background-size:200% 100%;animation:flow 1.4s linear infinite;border-radius:2px}
-@keyframes flow{to{background-position:-200% 0}}
-.bars{display:grid;gap:7px;margin-top:10px}
-.bar{display:grid;grid-template-columns:86px 1fr 34px;gap:8px;align-items:center;font:500 11.5px var(--f-mono);color:var(--dim)}
-.bar b{height:6px;border-radius:3px;background:var(--line-d);overflow:hidden;position:relative}
-.bar b::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--grad);border-radius:3px;animation:fill 2.4s cubic-bezier(.3,.7,.2,1) both}
-@keyframes fill{from{width:0}}
-.rank{display:flex;align-items:baseline;gap:10px;margin-top:6px}
-.rank strong{font:800 34px var(--f-display);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
-.rank em{font-style:normal;color:#3ddc97;font:500 12px var(--f-mono)}
-
-.hero-foot{margin-top:auto;padding-top:40px;display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:560px}
-.hero-foot p{max-width:470px;color:var(--dim);font-size:17px}
-.hero-foot p b{color:var(--hi);font-weight:600}
-.cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.badge{display:inline-flex;align-items:center;gap:8px;font:500 12.5px var(--f-mono);color:var(--dim);text-decoration:none}
-.badge i{width:20px;height:20px;border-radius:50%;background:var(--grad);display:grid;place-items:center}
+.hero{position:relative;min-height:100svh;padding-block:112px 48px;display:flex;flex-direction:column;overflow:hidden;isolation:isolate}
+.glow{position:absolute;width:640px;height:640px;right:-120px;top:30%;border-radius:50%;background:radial-gradient(circle,rgba(124,77,255,.32),rgba(209,75,255,.12) 40%,transparent 70%);filter:blur(10px);z-index:-1;pointer-events:none;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hero .wrap{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
+.who{display:flex;align-items:center;gap:12px;font:600 16px var(--f-body);color:var(--dim)}
+.who i{width:9px;height:9px;border-radius:50%;background:#3ddc97;box-shadow:0 0 0 0 rgba(61,220,151,.7);animation:ping 1.6s infinite;flex:none}
+.who b{color:var(--hi);font-weight:700}
+.hero h1{margin-top:22px;font-weight:800;font-size:clamp(32px,4.5vw,72px);letter-spacing:-.025em;text-transform:uppercase;max-width:calc(100% - min(370px,34vw) - 40px)}
+.hero h1 small{display:block;margin-top:.35em;font:700 .42em/1.2 var(--f-body);letter-spacing:0;text-transform:none;color:var(--hi)}
+.lead{margin-top:24px;max-width:560px;font-size:clamp(17px,1.5vw,19px);color:var(--dim)}
+.lead b{color:var(--hi);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font:500 12.5px var(--f-mono);color:var(--dim);text-decoration:none;align-self:flex-start}
+.badge i{width:20px;height:20px;border-radius:50%;background:var(--grad-btn);display:grid;place-items:center;flex:none}
 .badge svg{width:11px;height:11px}
 .badge:hover{color:var(--hi)}
+.js .hero .in-load{opacity:0;transform:translateY(18px);animation:up .9s cubic-bezier(.2,.85,.25,1) forwards}
+.js .hero .d1{animation-delay:.08s}.js .hero .d2{animation-delay:.18s}.js .hero .d3{animation-delay:.28s}.js .hero .d4{animation-delay:.38s}
+@keyframes up{to{opacity:1;transform:none}}
 
-/* marquee */
-.tape-clip{overflow:hidden;max-width:100%}
-.tape{padding-block:30px 90px;display:grid;gap:16px;transform:rotate(-2.5deg);margin-inline:-40px}
-.row{display:flex;gap:16px;width:max-content;animation:slide 48s linear infinite}
-.row.rev{animation-direction:reverse;animation-duration:56s}
-.row img{height:clamp(130px,16vw,210px);width:auto;border-radius:16px;border:1px solid var(--line-d)}
+/* живая стопка — единственный выразительный эффект */
+.stage{position:absolute;right:0;top:50%;translate:0 -42%;width:min(370px,34vw);perspective:1100px;z-index:2}
+.stack{position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{translate:0 -10px}}
+.ui{background:rgba(23,18,37,.85);backdrop-filter:blur(14px);border:1px solid rgba(167,159,189,.22);border-radius:18px;padding:16px 18px;box-shadow:0 30px 60px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06)}
+.ui+.ui{margin-top:12px}
+.ui .k{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ui .v{font:700 17px var(--f-body);margin-top:6px}
+.ui.a{transform:translateZ(60px)}
+.ui.b{transform:translateZ(30px) translateX(-26px)}
+.ui.c{transform:translateX(18px)}
+.ring{width:10px;height:10px;border-radius:50%;background:#3ddc97;box-shadow:0 0 0 0 rgba(61,220,151,.7);animation:ping 1.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+.route{display:flex;align-items:center;gap:8px;margin-top:10px;font:500 12px var(--f-mono)}
+.route i{flex:1;height:2px;background:linear-gradient(90deg,var(--violet),var(--orchid),var(--violet));background-size:200% 100%;animation:flow 1.4s linear infinite;border-radius:2px}
+@keyframes flow{to{background-position:-200% 0}}
+.src{display:grid;gap:7px;margin-top:10px}
+.src div{display:grid;grid-template-columns:96px 1fr 30px;gap:8px;align-items:center;font:500 11.5px var(--f-mono);color:var(--dim)}
+.src b{height:6px;border-radius:3px;background:var(--line-d);overflow:hidden;position:relative}
+.src b::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--grad);border-radius:3px;animation:fill 2.4s cubic-bezier(.3,.7,.2,1) both}
+@keyframes fill{from{width:0}}
+.rank{display:flex;align-items:baseline;gap:10px;margin-top:6px}
+.rank strong{font:800 34px var(--f-display);line-height:1}
+.rank em{font-style:normal;color:#3ddc97;font:500 12px var(--f-mono)}
+
+/* услуги */
+.services{padding-block:40px 70px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head h2{font-size:clamp(28px,3.6vw,48px);font-weight:700;letter-spacing:-.02em}
+.sec-head p{max-width:400px;color:var(--dim);font-size:16px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.svc{background:var(--night-2);border:1px solid var(--line-d);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s}
+.svc:hover{border-color:rgba(209,75,255,.55);transform:translateY(-3px)}
+.svc .ico{width:46px;height:46px;border-radius:14px;background:rgba(124,77,255,.16);display:grid;place-items:center}
+.svc .ico svg{width:22px;height:22px;stroke:#c9b6ff}
+.svc h3{font:700 20px/1.25 var(--f-display)}
+.svc p{color:var(--dim);font-size:15.5px}
+.svc .get{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-d);font-size:15px}
+.svc .get span{display:block;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--orchid);margin-bottom:4px}
+.svc-note{margin-top:22px;color:var(--dim);font-size:15px;max-width:760px}
+.svc-note b{color:var(--hi);font-weight:600}
+
+/* одна лента */
+.tape-clip{overflow:hidden}
+.tape{padding-block:20px 80px;transform:rotate(-2deg)}
+.row{display:flex;gap:16px;width:max-content;animation:slide 60s linear infinite}
+.row img{height:clamp(120px,14vw,190px);width:auto;border-radius:16px;border:1px solid var(--line-d)}
 @keyframes slide{to{transform:translateX(-50%)}}
 .tape:hover .row{animation-play-state:paused}
 
-/* about panel */
-.panel{background:var(--paper);color:var(--plum);border-radius:48px 48px 0 0;transform-origin:50% 0;will-change:transform}
-.about{padding-block:110px 90px}
-.kicker{font:500 13px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--violet-ink)}
-.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;margin-top:20px;align-items:start}
-.about h2{font-size:clamp(26px,3vw,42px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
-.about h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.story{display:grid;gap:16px;color:var(--plum-2);font-size:17.5px}
-.story b{color:var(--plum)}
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:70px}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 22px 24px}
-.fact b{display:block;font:800 clamp(34px,4.2vw,52px)/1 var(--f-display);letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.fact span{display:block;margin-top:10px;font-size:15px;color:var(--plum-2);line-height:1.45}
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
-.tools span{font-size:14px;font-weight:600;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--plum)}
-.tools span.hot{border-color:transparent;background:var(--grad-btn);color:#fff}
-
-/* projects */
-.projects{padding-block:40px 120px}
-.projects-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:46px}
-.projects-head h2{font-size:clamp(52px,10vw,148px);font-weight:800;letter-spacing:-.04em;text-transform:uppercase;line-height:.9;color:transparent;-webkit-text-stroke:2px var(--plum)}
-.projects-head p{max-width:360px;color:var(--plum-2);font-size:16px}
-.proj{position:sticky;top:calc(84px + var(--i) * 18px);background:var(--night);color:var(--hi);border-radius:34px;padding:34px;margin-bottom:40px;border:1px solid var(--line-d);box-shadow:0 -20px 50px -30px rgba(29,20,48,.6);transform-origin:50% 0;will-change:transform}
-.proj-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.num{font:800 clamp(44px,5vw,64px)/1 var(--f-display);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.03em}
-.proj-top .t{flex:1;min-width:220px}
-.proj-top h3{font-size:clamp(22px,2.6vw,32px);font-weight:700}
-.proj-top .tag{font:500 12.5px var(--f-mono);color:var(--dim);margin-top:6px}
-.chip-link{font:600 13px var(--f-body);padding:9px 16px;border-radius:999px;border:1px solid var(--line-d);text-decoration:none;color:var(--hi);transition:border-color .2s,background .2s}
-.chip-link:hover{border-color:var(--orchid);background:rgba(209,75,255,.08)}
-.proj-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:34px;margin-top:28px;align-items:start}
-.proj-body>*,.was span,.cert>div,.step>div{min-width:0}
-.was{display:grid;gap:10px}
-.was div{display:grid;grid-template-columns:62px 1fr;gap:12px;font-size:15.5px;color:var(--dim)}
-.was dt,.was .lbl{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding-top:4px}
-.was .now{color:var(--hi)}
-.was .now .lbl{color:var(--orchid)}
-.proj ul{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:9px}
-.proj li{position:relative;padding-left:18px;font-size:15px;color:var(--dim)}
-.proj li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--grad)}
-.proj li b{color:var(--hi);font-weight:600}
+/* светлая часть */
+.panel{background:var(--paper);color:var(--plum);border-radius:48px 48px 0 0}
+.panel .kicker{color:var(--violet-ink)}
+.panel .sec-head p{color:var(--plum-2)}
+.cases{padding-block:100px 40px}
+.case{background:var(--night);color:var(--hi);border-radius:30px;padding:34px;margin-bottom:24px;border:1px solid var(--line-d)}
+.case-top{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.case-top h3{flex:1;min-width:220px;font-size:clamp(22px,2.4vw,30px);font-weight:700}
+.case-top .tag{font:500 12.5px var(--f-mono);color:var(--dim);display:block;margin-top:6px;font-family:var(--f-mono)}
+.case-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:34px;align-items:start}
+.case-body>*{min-width:0}
+.steps{display:grid;gap:16px;margin:0}
+.steps>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px}
+.steps dt{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:4px}
+.steps dd{margin:0;font-size:15.5px;color:var(--dim)}
+.steps dd b{color:var(--hi);font-weight:600}
+.steps ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.steps li{position:relative;padding-left:16px}
+.steps li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--grad)}
+.steps .res dt{color:var(--orchid)}
+.steps .res dd{color:var(--hi)}
+.proof{font:500 12px var(--f-mono);color:var(--dim);margin-top:6px;display:block}
 .shots{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-.shots img{width:100%;border-radius:14px;border:1px solid var(--line-d);cursor:zoom-in;transition:transform .3s}
-.shots img:hover{transform:scale(1.02)}
+.shots button,.cert button{all:unset;cursor:zoom-in;display:block;border-radius:14px}
+.shots button:focus-visible,.cert button:focus-visible{outline:2px solid var(--orchid);outline-offset:3px}
+.shots img{width:100%;border-radius:14px;border:1px solid var(--line-d)}
 .shots .wide{grid-column:1/-1}
 .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-.cert{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center;background:var(--night-2);border:1px solid var(--line-d);border-radius:20px;padding:18px}
-.cert img{border-radius:10px;cursor:zoom-in}
-.cert dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 22px;margin:12px 0 0}
+.cert{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:center;background:var(--night-2);border:1px solid var(--line-d);border-radius:20px;padding:18px}
+.cert img{border-radius:10px}
+.cert .ct{font:700 17px/1.3 var(--f-display)}
+.cert dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;margin:12px 0}
 .cert dt{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
 .cert dd{margin:0;font-weight:700}
-.cert .ct{font:700 18px/1.25 var(--f-display)}
+.cert a{font-weight:600;font-size:14px;color:#d8c9ff}
 .flow{display:grid;gap:10px}
-.step{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:center;background:var(--night-2);border:1px solid var(--line-d);border-radius:16px;padding:14px 16px}
-.step i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font:700 14px var(--f-mono);font-style:normal;background:rgba(124,77,255,.16);color:#c9b6ff}
-.step b{display:block;font-size:15.5px}
-.step span{font-size:13.5px;color:var(--dim)}
-.step.end{border-color:rgba(209,75,255,.5)}
+.flow div{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:center;background:var(--night-2);border:1px solid var(--line-d);border-radius:16px;padding:13px 16px}
+.flow i{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font:700 14px var(--f-mono);font-style:normal;background:rgba(124,77,255,.16);color:#c9b6ff}
+.flow b{display:block;font-size:15.5px}
+.flow span{font-size:13.5px;color:var(--dim)}
 
-/* experience */
-.exp{padding-block:20px 120px}
-.exp h2{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.02em;margin-bottom:30px}
-.jobs{display:grid}
-.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
+/* как работаю */
+.process{padding-block:60px 40px}
+.proc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0;counter-reset:s}
+.proc li{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;counter-increment:s}
+.proc li::before{content:"0" counter(s);display:block;font:800 30px/1 var(--f-display);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+.proc b{display:block;font-size:17px;line-height:1.3}
+.proc span{display:block;margin-top:6px;font-size:14.5px;color:var(--plum-2)}
+
+/* обо мне */
+.about{padding-block:60px 110px}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.about h2{font-size:clamp(26px,3vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.story{display:grid;gap:14px;color:var(--plum-2);font-size:17px;margin-top:20px}
+.story b{color:var(--plum)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.fact b{display:block;font:800 clamp(30px,3.4vw,44px)/1 var(--f-display);letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fact span{display:block;margin-top:8px;font-size:14.5px;color:var(--plum-2);line-height:1.45}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tools span{font-size:14px;font-weight:600;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.tools span.hot{border-color:transparent;background:var(--grad-btn);color:#fff}
+.jobs{margin-top:56px;display:grid}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:20px 0;border-top:1px solid var(--line)}
 .job:last-child{border-bottom:1px solid var(--line)}
 .job .when{font:500 13px var(--f-mono);color:var(--plum-2);padding-top:4px}
-.job h3{font:700 19px/1.3 var(--f-body)}
-.job p{color:var(--plum-2);font-size:15.5px;margin-top:4px}
+.job h3{font:700 18px/1.3 var(--f-body)}
+.job p{color:var(--plum-2);font-size:15px;margin-top:4px}
+.open{margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:15px;font-weight:600}
+.open i{width:9px;height:9px;border-radius:50%;background:#2fbf7f;flex:none}
 
-/* contact */
+/* контакт */
 .contact{padding-block:110px max(60px,env(safe-area-inset-bottom,0px));text-align:center;position:relative;overflow:hidden;isolation:isolate}
-.contact::before{content:"";position:absolute;inset:20% 10% auto;height:70%;background:radial-gradient(ellipse at center,rgba(124,77,255,.35),transparent 65%);z-index:-1}
-.contact h2{font-size:clamp(40px,7.5vw,112px);font-weight:800;letter-spacing:-.035em;text-transform:uppercase;line-height:.95}
-.contact h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.contact p{color:var(--dim);margin:22px auto 32px;max-width:520px}
-.contact small{display:block;margin-top:70px;color:var(--dim);font:500 12px var(--f-mono)}
+.contact::before{content:"";position:absolute;inset:20% 10% auto;height:70%;background:radial-gradient(ellipse at center,rgba(124,77,255,.32),transparent 65%);z-index:-1}
+.contact h2{font-size:clamp(36px,6.5vw,96px);font-weight:800;letter-spacing:-.035em;text-transform:uppercase;line-height:.98}
+.contact p{color:var(--dim);margin:20px auto 30px;max-width:520px}
+.contact .cta{justify-content:center}
+.mail{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font:500 15px var(--f-mono);color:var(--dim)}
+.mail a{color:var(--hi)}
+.mail button{font:600 13px var(--f-body);color:var(--hi);background:transparent;border:1px solid var(--line-d);border-radius:999px;padding:6px 12px;cursor:pointer}
+.mail button:hover{border-color:var(--orchid)}
+.contact small{display:block;margin-top:64px;color:var(--dim);font:500 12px var(--f-mono)}
 
-/* reveal: видно и без JS, анимируем только когда JS есть */
-.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+/* появление: без JS всё видно */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
 .js .rv.in{opacity:1;transform:none}
 
-.zoom{position:fixed;inset:0;background:rgba(10,7,18,.9);display:none;align-items:center;justify-content:center;padding:24px;z-index:60;cursor:zoom-out}
-.zoom.on{display:flex}
-.zoom img{max-width:100%;max-height:100%;border-radius:14px}
+/* увеличение скриншотов */
+dialog.zoom{border:0;padding:0;background:transparent;max-width:min(1400px,94vw);max-height:92vh;overflow:visible}
+dialog.zoom::backdrop{background:rgba(10,7,18,.9)}
+dialog.zoom img{max-width:100%;max-height:88vh;border-radius:14px;margin:0 auto}
+dialog.zoom .x{position:absolute;top:-16px;right:-16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-d);background:var(--night-2);color:var(--hi);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center}
+dialog.zoom .x:hover{border-color:var(--orchid)}
 
-@media (max-height:820px) and (min-width:981px){.stage{transform:scale(.82);transform-origin:100% 100%}}
-@media (max-width:980px){
-  .stage{position:relative;right:auto;top:auto;width:min(400px,100%);margin:34px auto 0}
-  .about-grid,.proj-body{grid-template-columns:minmax(0,1fr);gap:30px}
-  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:1100px){
+  .stage{width:min(330px,32vw)}
 }
+@media (max-width:980px){
+  .stage{position:relative;right:auto;top:auto;translate:none;width:min(400px,100%);margin:40px 0 0}
+  .hero h1{max-width:none}
+  .svc-grid,.proc{grid-template-columns:minmax(0,1fr)}
+  .case-body,.about-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+}
+@media (min-width:981px) and (max-width:1100px){.proc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){
   .links{display:none}
   .logo{font-size:13px}
-  .hero{padding-top:96px}
-  .name{font-size:8.4vw}
+  .hero{padding-top:96px;min-height:auto}
   .panel{border-radius:30px 30px 0 0}
-  .proj{padding:22px;border-radius:26px;position:relative;top:auto}
+  .case{padding:22px;border-radius:24px}
+  .steps>div{grid-template-columns:minmax(0,1fr);gap:4px}
   .cert{grid-template-columns:minmax(0,1fr)}
   .cert img{max-width:150px}
-  .job{grid-template-columns:1fr;gap:4px}
-  .ui.prod,.ui.seo{transform:none}
+  .cert dl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .cert dd{margin-bottom:8px}
+  .job{grid-template-columns:minmax(0,1fr);gap:4px}
+  .ui.b,.ui.c{transform:none}
+  dialog.zoom .x{top:8px;right:8px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .name .ln>span{transform:none}
+  .js .hero .in-load{opacity:1;transform:none}
   .row{flex-wrap:wrap;width:auto}
   .row img:nth-child(n+6){display:none}
   html{scroll-behavior:auto}
@@ -218,200 +262,210 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 <script>document.documentElement.classList.add("js")</script>
 
 <nav id="nav"><div class="wrap">
-  <a class="logo" href="#top">Александра <b>Нойманн</b></a>
-  <div class="links"><a href="#about">Обо мне</a><a href="#projects">Проекты</a><a href="#exp">Опыт</a><a href="#contact">Контакт</a></div>
+  <a class="logo" href="#top">Александра <span class="grad">Нойманн</span></a>
+  <div class="links"><a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#process">Как работаю</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></div>
   <a class="pill sm" href="https://t.me/pbkka" target="_blank" rel="noopener">Telegram</a>
 </div></nav>
 
 <header class="hero" id="top">
   <div class="glow" id="glow"></div>
   <div class="wrap">
-    <div class="eyebrow"><span>маркетолог</span><span>сайты и SEO</span><span>своя CRM</span><span>телефония</span></div>
-    <h1 class="name"><span class="ln"><span>Привет, я</span></span><span class="ln g"><span>Александра</span></span></h1>
+    <p class="who in-load"><i aria-hidden="true"></i><span><b>Александра Нойманн</b> · маркетолог</span></p>
+    <h1 class="in-load d1">Реклама, сайты <span class="grad">и аналитика</span><small>для малого бизнеса</small></h1>
+    <p class="lead in-load d2">Помогаю разобраться, <b>откуда приходят заявки</b>, настроить их учёт и улучшить путь от рекламы до обращения. Практический опыт — в B2B и производстве.</p>
+    <div class="cta in-load d3">
+      <a class="pill" href="https://t.me/pbkka" target="_blank" rel="noopener">Обсудить задачу <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="ghost" href="#cases">Посмотреть кейсы</a>
+    </div>
+    <a class="badge in-load d4" href="https://yandex.ru/adv/expert/certificates?certId=319465&amp;lastname=%D0%9D%D0%BE%D0%B9%D0%BC%D0%B0%D0%BD%D0%BD" target="_blank" rel="noopener"><i><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg></i>Сертифицированный специалист Яндекс Директа · Pro ↗</a>
 
-    <div class="stage" id="stage" aria-hidden="true">
+    <div class="stage" aria-hidden="true">
       <div class="stack" id="stack">
-        <div class="ui call">
-          <div class="k"><span>Входящий звонок · 8 800</span><span class="ring"></span></div>
-          <div class="v">Клиент найден в CRM</div>
-          <div class="route">звонок<i></i>его менеджер</div>
+        <div class="ui a">
+          <div class="k"><span>Новая заявка · сайт</span><span class="ring"></span></div>
+          <div class="v">Источник: Яндекс Директ</div>
+          <div class="route">клик<i></i>заявка<i></i>CRM</div>
         </div>
-        <div class="ui prod">
-          <div class="k"><span>Очередь производства</span><span>live</span></div>
-          <div class="bars">
-            <div class="bar"><span>Экструзия</span><b style="--w:78%"></b><span>78%</span></div>
-            <div class="bar"><span>Печать</span><b style="--w:54%"></b><span>54%</span></div>
-            <div class="bar"><span>ПСМ</span><b style="--w:31%"></b><span>31%</span></div>
+        <div class="ui b">
+          <div class="k"><span>Откуда заявки · месяц</span><span>пример</span></div>
+          <div class="src">
+            <div><span>Поиск</span><b style="--w:72%"></b><span>48%</span></div>
+            <div><span>Реклама</span><b style="--w:54%"></b><span>36%</span></div>
+            <div><span>Звонки</span><b style="--w:24%"></b><span>16%</span></div>
           </div>
         </div>
-        <div class="ui seo">
+        <div class="ui c">
           <div class="k"><span>Яндекс · Москва</span><span>пакет вур</span></div>
-          <div class="rank"><strong>№1</strong><em>▲ с нуля</em></div>
+          <div class="rank"><strong class="grad">№1</strong><em>в обычной выдаче</em></div>
         </div>
-      </div>
-    </div>
-
-    <div class="hero-foot">
-      <p>Строю для компании маркетинг и цифровую систему под ключ. За полгода в производстве упаковки сделала <b>два сайта, SEO, свою CRM и телефонию</b>.</p>
-      <div class="cta">
-        <a class="pill" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="badge" href="#ads"><i><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg></i>Сертифицированный специалист Яндекс Директа · Pro</a>
       </div>
     </div>
   </div>
 </header>
 
-<div class="tape-clip"><div class="tape" aria-hidden="true">
+<section class="services wrap" id="services">
+  <div class="sec-head">
+    <div><p class="kicker rv">Услуги</p><h2 class="rv">С чем ко мне можно обратиться</h2></div>
+    <p class="rv">Стоимость и сроки называю после короткого обсуждения задачи.</p>
+  </div>
+  <div class="svc-grid">
+    <article class="svc rv">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8 11h6M11 8v6"/></svg></div>
+      <h3>Разбор рекламы и сайта</h3>
+      <p>Смотрю Директ, Метрику и сайт глазами клиента: где теряются деньги и заявки.</p>
+      <p class="get"><span>Что получаете</span>Список проблем по приоритету и конкретные исправления.</p>
+    </article>
+    <article class="svc rv">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+      <h3>Настройка учёта заявок</h3>
+      <p>Цели Метрики, UTM-метки, проверка форм и того, как обращения доходят до вас.</p>
+      <p class="get"><span>Что получаете</span>Видно, какая реклама и какие страницы приводят клиентов.</p>
+    </article>
+    <article class="svc rv">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8M8 17h5"/></svg></div>
+      <h3>Лендинг под услугу</h3>
+      <p>Одна страница под конкретную услугу или рекламную кампанию.</p>
+      <p class="get"><span>Что получаете</span>Понятное предложение, форма заявки и настроенная аналитика.</p>
+    </article>
+  </div>
+  <p class="svc-note rv"><b>Ведение рекламы</b> — по согласованному объёму. <b>CRM и интеграции</b> — по отдельной оценке, пример ниже.</p>
+</section>
+
+<div class="tape-clip" aria-hidden="true"><div class="tape">
   <div class="row">
     <img src="img/crm-queue.jpg" alt=""><img src="img/site-cpu-moscow.jpg" alt=""><img src="img/crm-machines.jpg" alt=""><img src="img/site-upakcpu.jpg" alt=""><img src="img/crm-contracts.jpg" alt="">
     <img src="img/crm-queue.jpg" alt=""><img src="img/site-cpu-moscow.jpg" alt=""><img src="img/crm-machines.jpg" alt=""><img src="img/site-upakcpu.jpg" alt=""><img src="img/crm-contracts.jpg" alt="">
   </div>
-  <div class="row rev">
-    <img src="img/site-upakcpu.jpg" alt=""><img src="img/crm-contracts.jpg" alt=""><img src="img/site-cpu-moscow.jpg" alt=""><img src="img/crm-machines.jpg" alt=""><img src="img/crm-queue.jpg" alt="">
-    <img src="img/site-upakcpu.jpg" alt=""><img src="img/crm-contracts.jpg" alt=""><img src="img/site-cpu-moscow.jpg" alt=""><img src="img/crm-machines.jpg" alt=""><img src="img/crm-queue.jpg" alt="">
-  </div>
 </div></div>
 
-<main class="panel" id="panel">
-  <section class="about wrap" id="about">
-    <p class="kicker rv">Обо мне</p>
-    <div class="about-grid">
-      <h2 class="rv">Делаю так, чтобы у компании <em>всё работало в одной системе</em> — от первого клика до отгрузки.</h2>
-      <div class="story rv">
-        <p>Пришла в «Центр полимерной упаковки» менеджером по продажам: звонки, КП, сделки. Через два месяца взяла на себя весь маркетинг.</p>
-        <p>Тогда компании <b>не было в поиске</b>. Я сделала два сайта и настроила SEO — сейчас по ключевым запросам мы в топе Яндекса по Москве, по «пакет вур» — на 1-м месте.</p>
-        <p>Потом компания <b>переросла Битрикс24</b>, и я написала свою CRM под процессы производства. А телефонию перевела с Телфина на <b>Mango Office</b> — дешевле, и звонки сразу в CRM.</p>
-      </div>
-    </div>
-    <div class="facts">
-      <div class="fact rv"><b data-count="30">30</b><span>сотрудников работают в CRM, которую я сделала</span></div>
-      <div class="fact rv"><b data-count="2">2</b><span>сайта компании — с нуля до запуска</span></div>
-      <div class="fact rv"><b data-count="500" data-suffix="+">500+</b><span>звонков в месяц идут через телефонию</span></div>
-      <div class="fact rv"><b>№1</b><span>в Яндексе по «пакет вур» — а начинали с нуля</span></div>
-    </div>
-    <div class="tools rv">
-      <span class="hot">Яндекс Директ · сертификат Pro</span><span>Яндекс Метрика</span><span>SEO</span><span>Next.js</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span><span>Python</span><span>Mango Office API</span><span>Bitrix24 API</span><span>МойСклад</span><span>Figma</span>
-    </div>
-  </section>
-
-  <section class="projects wrap" id="projects">
-    <div class="projects-head">
-      <h2 class="rv">Проекты</h2>
-      <p class="rv">Всё — для одной компании: производителя полиэтиленовой упаковки в Москве. От сайта до звонка менеджеру.</p>
+<main class="panel">
+  <section class="cases wrap" id="cases">
+    <div class="sec-head">
+      <div><p class="kicker rv">Кейсы</p><h2 class="rv">Что уже сделано</h2></div>
+      <p class="rv">Все проекты — для одной компании: производителя полиэтиленовой упаковки в Москве, где я работаю с марта 2026. Задачи те же, что у малого бизнеса: откуда приходят заявки, как их не терять и как быстрее отвечать клиенту.</p>
     </div>
 
-    <article class="proj" style="--i:0">
-      <div class="proj-top">
-        <span class="num">01</span>
-        <div class="t"><h3>Сайты и SEO</h3><p class="tag">cpu.moscow · upakcpu.ru · Next.js, React, PostgreSQL</p></div>
-        <a class="chip-link" href="https://cpu.moscow" target="_blank" rel="noopener">Открыть сайт ↗</a>
-      </div>
-      <div class="proj-body">
-        <div>
-          <div class="was">
-            <div><span class="lbl">Было</span><span>Компании не было в поиске.</span></div>
-            <div class="now"><span class="lbl">Стало</span><span>«пакет вур» — 1-е место в Яндексе по Москве, «производство пакетов москва» — топ-2, по названию — №1.</span></div>
-          </div>
-          <ul>
-            <li><b>cpu.moscow</b> — каталог на 150+ страниц: товары, отрасли, блог, конструктор пакета с расчётом цены.</li>
-            <li><b>upakcpu.ru</b> — посадочные под рекламу с формами заявок.</li>
-            <li>Семантика, структура, Вебмастер и Search Console, регулярный замер позиций.</li>
-          </ul>
-        </div>
+    <article class="case rv">
+      <div class="case-top"><h3>Сайты и SEO<span class="tag">cpu.moscow · upakcpu.ru</span></h3><a class="ghost" href="https://cpu.moscow" target="_blank" rel="noopener">Открыть сайт ↗</a></div>
+      <div class="case-body">
+        <dl class="steps">
+          <div><dt>Задача</dt><dd>Сделать, чтобы компанию находили в Яндексе по запросам о её продукции — раньше по этим запросам компании не было в топе.</dd></div>
+          <div><dt>Моя роль</dt><dd>Спроектировала сайты, написала тексты и настроила SEO; разработку вела с ИИ-инструментами.</dd></div>
+          <div><dt>Сделано</dt><dd><ul>
+            <li><b>cpu.moscow</b> — каталог на 150+ страниц, конструктор пакета с расчётом цены, блог.</li>
+            <li><b>upakcpu.ru</b> — посадочные страницы под рекламу.</li>
+            <li>Семантика, структура, Вебмастер, Search Console, регулярные замеры позиций.</li>
+          </ul></dd></div>
+          <div class="res"><dt>Результат</dt><dd>1-е место в обычной выдаче Яндекса по «пакет вур», «производство пакетов», «производство фасовочных пакетов» и по названию компании. «Пакет вур»: 4-е место 6 октября → 1-е с 8 октября.<span class="proof">Сайт cpu.moscow · Яндекс, Москва · замер 13.11.2026 сервисом JSON SEO · над обычной выдачей — рекламные блоки</span></dd></div>
+        </dl>
         <div class="shots">
-          <img class="wide" src="img/site-cpu-moscow.jpg" alt="cpu.moscow — главная с конструктором пакета" loading="lazy">
-          <img class="wide" src="img/site-upakcpu.jpg" alt="upakcpu.ru — посадочная под рекламу" loading="lazy">
+          <button class="wide" type="button"><img src="img/site-cpu-moscow.jpg" alt="cpu.moscow — главная с конструктором пакета" loading="lazy"></button>
+          <button class="wide" type="button"><img src="img/site-upakcpu.jpg" alt="upakcpu.ru — посадочная под рекламу" loading="lazy"></button>
         </div>
       </div>
     </article>
 
-    <article class="proj" id="ads" style="--i:1">
-      <div class="proj-top">
-        <span class="num">02</span>
-        <div class="t"><h3>Реклама и аналитика</h3><p class="tag">Яндекс Директ · Метрика · маркировка</p></div>
-      </div>
-      <div class="proj-body">
-        <div>
-          <div class="was">
-            <div><span class="lbl">Было</span><span>В отчётах «заявками» считались клики по телефону.</span></div>
-            <div class="now"><span class="lbl">Стало</span><span>Считаются реальные заявки: связка Метрика → CRM.</span></div>
-          </div>
-          <ul>
+    <article class="case rv">
+      <div class="case-top"><h3>Реклама и аналитика<span class="tag">Яндекс Директ · Метрика · маркировка</span></h3></div>
+      <div class="case-body">
+        <dl class="steps">
+          <div><dt>Задача</dt><dd>Понимать, какая реклама приводит заявки: раньше «заявками» в отчётах считались клики по телефону.</dd></div>
+          <div><dt>Моя роль</dt><dd>Веду рекламу и аналитику сама.</dd></div>
+          <div><dt>Сделано</dt><dd><ul>
             <li>Единая перфоманс-кампания, Мастер кампаний, Поиск и РСЯ: стратегии, ставки, минус-фразы, тексты.</li>
-            <li>Цели, сегменты и ретаргетинг в Метрике.</li>
+            <li>Цели, сегменты и ретаргетинг в Метрике; связка Метрика → CRM.</li>
             <li>Маркировка рекламы через ОРД.</li>
-          </ul>
-        </div>
+          </ul></dd></div>
+          <div class="res"><dt>Результат</dt><dd>В отчётах считаются реальные заявки, а не клики — видно, какие кампании стоит усиливать.</dd></div>
+        </dl>
         <div class="cert">
-          <img src="img/cert-direct-pro.jpg" alt="Сертификат специалиста Яндекс Директа, профессиональный уровень, № 319465" loading="lazy">
+          <button type="button"><img src="img/cert-direct-pro.jpg" alt="Сертификат специалиста Яндекс Директа, профессиональный уровень, № 319465" loading="lazy"></button>
           <div>
             <p class="ct">Сертифицированный специалист Яндекс Директа</p>
             <dl><dt>Уровень</dt><dd>Профессиональный</dd><dt>Номер</dt><dd>319465</dd><dt>Действует до</dt><dd>18.11.2027</dd></dl>
-            <p class="note">Подлинность — по QR-коду на сертификате.</p>
+            <a href="https://yandex.ru/adv/expert/certificates?certId=319465&amp;lastname=%D0%9D%D0%BE%D0%B9%D0%BC%D0%B0%D0%BD%D0%BD" target="_blank" rel="noopener">Проверить на сайте Яндекса ↗</a>
           </div>
         </div>
       </div>
     </article>
 
-    <article class="proj" style="--i:2">
-      <div class="proj-top">
-        <span class="num">03</span>
-        <div class="t"><h3>Своя CRM для производства</h3><p class="tag">с нуля · 30 сотрудников · свой сервер</p></div>
-      </div>
-      <div class="proj-body">
-        <div>
-          <div class="was">
-            <div><span class="lbl">Было</span><span>Заявки, производство и договоры жили в Битрикс24, Excel и чатах.</span></div>
-            <div class="now"><span class="lbl">Стало</span><span>Одна система от заявки до отгрузки. В ней работают 30 человек.</span></div>
-          </div>
-          <ul>
-            <li><b>Продажи:</b> лиды на канбане, объединение дублей, КП с выгрузкой в Word и Excel.</li>
-            <li><b>Производство:</b> очередь по 8 линиям в реальном времени, маршрут заказа по 23 станкам, МойСклад.</li>
-            <li><b>Процессы:</b> договоры по маршруту согласования, заявки на транспорт, задачи и уведомления.</li>
-            <li><b>Инфраструктура:</b> Docker, PostgreSQL, выкатка с автооткатом, резервные копии.</li>
-          </ul>
-        </div>
+    <article class="case rv">
+      <div class="case-top"><h3>CRM для производства<span class="tag">30 сотрудников · от заявки до отгрузки</span></h3></div>
+      <div class="case-body">
+        <dl class="steps">
+          <div><dt>Задача</dt><dd>Заявки, производство и договоры жили в Битрикс24, Excel и чатах — не было одной картины, где какой заказ. Компания переросла коробочную CRM.</dd></div>
+          <div><dt>Моя роль</dt><dd>Спроектировала процессы и разработала CRM с помощью ИИ-инструментов: требования, интерфейсы, проверка сценариев, внедрение.</dd></div>
+          <div><dt>Сделано</dt><dd><ul>
+            <li><b>Продажи:</b> заявки на канбане, объединение дублей, КП в Word и Excel.</li>
+            <li><b>Производство:</b> очередь заказов по линиям в реальном времени, связь со складом в МоёмСкладе.</li>
+            <li><b>Процессы:</b> согласование договоров по маршруту, заявки на транспорт, задачи и уведомления.</li>
+          </ul></dd></div>
+          <div class="res"><dt>Результат</dt><dd>30 сотрудников работают в одной системе: продажи, производство и логистика видят статус заказа в одном месте.</dd></div>
+        </dl>
         <div>
           <div class="shots">
-            <img class="wide" src="img/crm-machines.jpg" alt="Очередь по машинам: экструзия → печать → ПСМ" loading="lazy">
-            <img src="img/crm-queue.jpg" alt="Очередь производства по линиям" loading="lazy">
-            <img src="img/crm-contracts.jpg" alt="Согласование договоров по маршруту" loading="lazy">
+            <button class="wide" type="button"><img src="img/crm-machines.jpg" alt="Очередь по машинам: экструзия → печать → ПСМ" loading="lazy"></button>
+            <button type="button"><img src="img/crm-queue.jpg" alt="Очередь производства по линиям" loading="lazy"></button>
+            <button type="button"><img src="img/crm-contracts.jpg" alt="Согласование договоров по маршруту" loading="lazy"></button>
           </div>
           <p class="note">На скриншотах — тестовые данные. Систему покажу вживую.</p>
         </div>
       </div>
     </article>
 
-    <article class="proj" style="--i:3">
-      <div class="proj-top">
-        <span class="num">04</span>
-        <div class="t"><h3>Телефония на Mango Office</h3><p class="tag">500+ звонков в месяц · интеграция с CRM</p></div>
-      </div>
-      <div class="proj-body">
-        <div>
-          <div class="was">
-            <div><span class="lbl">Было</span><span>Телфин отдельным договором, звонки — только в Битриксе.</span></div>
-            <div class="now"><span class="lbl">Стало</span><span>Mango Office: дешевле, и каждый звонок сразу в своей CRM.</span></div>
-          </div>
-          <ul>
+    <article class="case rv">
+      <div class="case-top"><h3>Телефония на Mango Office<span class="tag">500+ звонков в месяц · интеграция с CRM</span></h3></div>
+      <div class="case-body">
+        <dl class="steps">
+          <div><dt>Задача</dt><dd>Уйти с Телфина, где звонки были видны только в Битриксе, и связать звонки с новой CRM.</dd></div>
+          <div><dt>Моя роль</dt><dd>Организовала переход и подключение телефонии к CRM.</dd></div>
+          <div><dt>Сделано</dt><dd><ul>
             <li>Заменила номер на сайтах, в рекламе и во всех материалах компании.</li>
-            <li>Подключила Mango к CRM через API: журнал звонков и записи в карточке клиента.</li>
-          </ul>
-        </div>
+            <li>Подключила Mango к CRM через API: журнал звонков, записи и расшифровка.</li>
+          </ul></dd></div>
+          <div class="res"><dt>Результат</dt><dd>Звонок сразу попадает в CRM и уходит к менеджеру этого клиента — без пересказа и переключений.</dd></div>
+        </dl>
         <div class="flow">
-          <div class="step"><i>1</i><div><b>Клиент звонит на 8 800</b><span>с сайта, из рекламы или с визитки</span></div></div>
-          <div class="step"><i>2</i><div><b>CRM узнаёт номер</b><span>находит клиента и его менеджера</span></div></div>
-          <div class="step"><i>3</i><div><b>Звонок идёт сразу к «своему» менеджеру</b><span>без пересказа и переключений</span></div></div>
-          <div class="step end"><i>4</i><div><b>Запись и расшифровка — в CRM</b><span>распознавание речи на своём сервере</span></div></div>
+          <div><i>1</i><p><b>Клиент звонит на 8 800</b><span>с сайта, из рекламы или с визитки</span></p></div>
+          <div><i>2</i><p><b>CRM узнаёт номер</b><span>находит клиента и его менеджера</span></p></div>
+          <div><i>3</i><p><b>Звонок идёт к «своему» менеджеру</b><span>без переключений</span></p></div>
+          <div><i>4</i><p><b>Запись и расшифровка — в CRM</b><span>распознавание речи на своём сервере</span></p></div>
         </div>
       </div>
     </article>
   </section>
 
-  <section class="exp wrap" id="exp">
-    <h2 class="rv">Опыт</h2>
+  <section class="process wrap" id="process">
+    <div class="sec-head"><div><p class="kicker rv">Как работаю</p><h2 class="rv">Как проходит работа</h2></div></div>
+    <ol class="proc">
+      <li class="rv"><b>Обсуждаем задачу</b><span>Коротко в Telegram или созвоне: что болит и что уже есть.</span></li>
+      <li class="rv"><b>Фиксируем объём, стоимость и что получите на выходе</b><span>До начала работы, письменно.</span></li>
+      <li class="rv"><b>Выполняю работу</b><span>Показываю промежуточный результат.</span></li>
+      <li class="rv"><b>Передаю материалы и инструкции</b><span>Доступы, файлы и как этим пользоваться дальше.</span></li>
+    </ol>
+  </section>
+
+  <section class="about wrap" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="kicker rv">Обо мне</p>
+        <h2 class="rv">Маркетолог, который понимает продажи</h2>
+        <div class="story rv">
+          <p>Начинала в «Центре полимерной упаковки» менеджером по продажам: звонки, КП, сделки. Через два месяца взяла на себя весь маркетинг.</p>
+          <p>Поэтому смотрю не только на клики, но и на то, <b>что происходит с заявкой после них</b> — и довожу цифровые инструменты до работающего процесса.</p>
+        </div>
+        <div class="tools rv"><span class="hot">Яндекс Директ · сертификат Pro</span><span>Яндекс Метрика</span><span>SEO</span><span>Лендинги</span><span>CRM</span><span>Mango Office</span><span>Bitrix24</span><span>Figma</span><span>ИИ-инструменты</span></div>
+        <p class="open rv"><i aria-hidden="true"></i>Открыта и к предложениям о работе</p>
+      </div>
+      <div class="facts">
+        <div class="fact rv"><b>30</b><span>сотрудников работают в CRM, которую я спроектировала</span></div>
+        <div class="fact rv"><b>2</b><span>сайта компании — от идеи до запуска</span></div>
+        <div class="fact rv"><b>500+</b><span>звонков в месяц через настроенную телефонию</span></div>
+        <div class="fact rv"><b>№1</b><span>в обычной выдаче Яндекса по ключевым запросам (Москва, ноябрь 2026)</span></div>
+      </div>
+    </div>
     <div class="jobs">
-      <div class="job rv"><div class="when">май 2026 — сейчас</div><div><h3>Маркетолог — ЦПУ</h3><p>Сайты, SEO, Яндекс Директ, своя CRM, телефония.</p></div></div>
+      <div class="job rv"><div class="when">май 2026 — сейчас</div><div><h3>Маркетолог — ЦПУ</h3><p>Сайты, SEO, Яндекс Директ, CRM, телефония.</p></div></div>
       <div class="job rv"><div class="when">март — май 2026</div><div><h3>Менеджер по продажам B2B — ЦПУ</h3><p>Холодные звонки, поиск ЛПР, расчёт и КП, переговоры, сделки до отгрузки.</p></div></div>
       <div class="job rv"><div class="when">2023 — 2026</div><div><h3>Комус — помощник байера, управление ценами</h3><p>Карточки товаров, дизайн маркировки, фотосессии; цены и номенклатура в SAP ERP.</p></div></div>
       <div class="job rv"><div class="when">2023</div><div><h3>Столичный бизнес-колледж</h3><p>Информационные системы и программирование, техник-программист.</p></div></div>
@@ -421,14 +475,20 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <h2 class="rv">Давайте<br><span>обсудим задачу</span></h2>
-    <p class="rv">Отвечаю в Telegram — @pbkka.</p>
-    <a class="pill rv" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <h2 class="rv">Обсудим <span class="grad">вашу задачу</span></h2>
+    <p class="rv">Напишите, что нужно — отвечу, чем могу помочь и сколько это будет стоить.</p>
+    <div class="cta rv">
+      <a class="pill" href="https://t.me/pbkka" target="_blank" rel="noopener">Написать в Telegram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <p class="mail rv">или почта: <a href="mailto:wranz.exe@gmail.com">wranz.exe@gmail.com</a> <button type="button" id="copyMail">Скопировать</button></p>
     <small>© 2026 Александра Нойманн</small>
   </div>
 </footer>
 
-<div class="zoom" id="zoom"><img alt=""></div>
+<dialog class="zoom" id="zoom" aria-label="Увеличенное изображение">
+  <button class="x" type="button" id="zoomClose" aria-label="Закрыть">×</button>
+  <img alt="">
+</dialog>
 
 <script>
 (() => {
@@ -436,65 +496,50 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   const fine = matchMedia("(pointer: fine)").matches;
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  // nav фон после первого экрана
   const nav = $("#nav");
-  const onNav = () => nav.classList.toggle("solid", scrollY > 40);
+  addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), { passive: true });
 
-  // стопка интерфейсов наклоняется к курсору, свечение идёт за ним
+  // стопка наклоняется к курсору — единственный «живой» эффект
   const stack = $("#stack"), glow = $("#glow"), hero = $(".hero");
-  if (!reduce && fine) hero.addEventListener("pointermove", e => {
-    const r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-    stack.style.transform = `rotateY(${x * 18}deg) rotateX(${-y * 14}deg)`;
-    glow.style.transform = `translate(${x * 260}px, ${y * 200}px)`;
-  });
-  hero.addEventListener("pointerleave", () => { stack.style.transform = ""; glow.style.transform = ""; });
+  if (!reduce && fine) {
+    hero.addEventListener("pointermove", e => {
+      const r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      stack.style.transform = `rotateY(${x * 16}deg) rotateX(${-y * 12}deg)`;
+      glow.style.transform = `translate(${x * 200}px, ${y * 160}px)`;
+    });
+    hero.addEventListener("pointerleave", () => { stack.style.transform = ""; glow.style.transform = ""; });
+  }
 
-  // плавное появление и счётчики
-  const count = el => {
-    const end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
-    const tick = t => { const p = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(tick); };
-    requestAnimationFrame(tick);
-  };
+  // мягкое появление блоков
   if ("IntersectionObserver" in window && !reduce) {
     const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("in");
-      $$("[data-count]", e.target).forEach(count);
-      io.unobserve(e.target);
-    }), { threshold: .15 });
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { threshold: .12 });
     $$(".rv").forEach(el => io.observe(el));
   } else $$(".rv").forEach(el => el.classList.add("in"));
 
-  // светлая панель «наезжает», карточки проектов складываются стопкой
-  const panel = $("#panel"), cards = $$(".proj");
-  const onScroll = () => {
-    onNav();
-    if (reduce) return;
-    const pr = panel.getBoundingClientRect(), vh = innerHeight;
-    const p = Math.min(1, Math.max(0, 1 - pr.top / vh));
-    panel.style.transform = `scale(${.94 + .06 * p})`;
-    cards.forEach((c, i) => {
-      const next = cards[i + 1];
-      if (!next) return;
-      const d = next.getBoundingClientRect().top - c.getBoundingClientRect().top;
-      const k = Math.min(1, Math.max(0, 1 - d / c.offsetHeight));
-      c.style.transform = `scale(${1 - .05 * k})`;
-      c.style.filter = `brightness(${1 - .35 * k})`;
-    });
-  };
-  addEventListener("scroll", () => requestAnimationFrame(onScroll), { passive: true });
-  onScroll();
-
-  // увеличение скриншотов
+  // увеличение: кнопка закрытия, фокус внутри, возврат фокуса
   const z = $("#zoom"), zi = $("img", z);
-  $$(".shots img, .cert img").forEach(img => {
-    const open = () => { zi.src = img.src; zi.alt = img.alt; z.classList.add("on"); };
-    img.tabIndex = 0; img.setAttribute("role", "button"); img.setAttribute("aria-label", "Увеличить: " + img.alt);
-    img.addEventListener("click", open);
-    img.addEventListener("keydown", e => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), open()));
+  let opener = null;
+  $$(".shots button, .cert button").forEach(b => {
+    const img = $("img", b);
+    b.setAttribute("aria-label", "Увеличить: " + img.alt);
+    b.addEventListener("click", () => {
+      opener = b; zi.src = img.src; zi.alt = img.alt;
+      z.showModal(); $("#zoomClose").focus();
+    });
   });
-  z.addEventListener("click", () => z.classList.remove("on"));
-  addEventListener("keydown", e => e.key === "Escape" && z.classList.remove("on"));
+  $("#zoomClose").addEventListener("click", () => z.close());
+  z.addEventListener("click", e => { if (e.target === z || e.target === zi) z.close(); });
+  z.addEventListener("close", () => opener && opener.focus());
+
+  // копирование почты
+  const cm = $("#copyMail");
+  cm.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText("wranz.exe@gmail.com"); cm.textContent = "Скопировано"; }
+    catch { getSelection().selectAllChildren(cm.previousElementSibling); cm.textContent = "Выделено — Ctrl+C"; }
+    setTimeout(() => (cm.textContent = "Скопировать"), 2000);
+  });
 })();
 </script>
 </body>
