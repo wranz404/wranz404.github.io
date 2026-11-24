@@ -119,6 +119,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .svc p{color:var(--dim);font-size:15.5px}
 .svc .get{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-d);font-size:15px}
 .svc .get span{display:block;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--orchid);margin-bottom:4px}
+.svc .price{font:700 16px var(--f-display);color:var(--hi)}
+.svc .get a{color:#d8c9ff}
 .svc-note{margin-top:22px;color:var(--dim);font-size:15px;max-width:760px}
 .svc-note b{color:var(--hi);font-weight:600}
 
@@ -129,6 +131,21 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .row img{height:clamp(120px,14vw,190px);width:auto;border-radius:16px;border:1px solid var(--line-d)}
 @keyframes slide{to{transform:translateX(-50%)}}
 .tape:hover .row{animation-play-state:paused}
+
+/* площадки и пример отчёта */
+.where{padding-block:8px 64px}
+.plat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.plat a{display:flex;flex-direction:column;gap:6px;background:var(--night-2);border:1px solid var(--line-d);border-radius:18px;padding:18px;text-decoration:none;transition:border-color .2s,transform .2s}
+.plat a:hover{border-color:rgba(209,75,255,.55);transform:translateY(-3px)}
+.plat b{font:700 18px var(--f-display)}
+.plat span{font-size:14px;color:var(--dim)}
+.sample{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:34px;align-items:center}
+.sample>*{min-width:0}
+.sample .cta{margin-top:20px}
+.certs3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.certs3 button{all:unset;cursor:zoom-in;display:block}
+.certs3 img{border-radius:8px;border:1px solid var(--line-d);aspect-ratio:3/4;object-fit:cover;width:100%}
+@media (max-width:980px){.plat{grid-template-columns:repeat(2,minmax(0,1fr))}.sample{grid-template-columns:minmax(0,1fr)}}
 
 /* светлая часть */
 .panel{background:var(--paper);color:var(--plum);border-radius:48px 48px 0 0}
@@ -153,8 +170,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .steps .res dd{color:var(--hi)}
 .proof{font:500 12px var(--f-mono);color:var(--dim);margin-top:6px;display:block}
 .shots{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-.shots button,.cert button{all:unset;cursor:zoom-in;display:block;border-radius:14px}
-.shots button:focus-visible,.cert button:focus-visible{outline:2px solid var(--orchid);outline-offset:3px}
+.shots button,.cert>button{all:unset;cursor:zoom-in;display:block;border-radius:14px}
+.shots button:focus-visible,.cert>button:focus-visible{outline:2px solid var(--orchid);outline-offset:3px}
 .shots img{width:100%;border-radius:14px;border:1px solid var(--line-d)}
 .shots .wide{grid-column:1/-1}
 .note{font-size:12.5px;color:var(--dim);margin-top:10px}
@@ -267,7 +284,7 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
 
 <nav id="nav"><div class="wrap">
   <a class="logo" href="#top">Александра <span class="grad">Нойманн</span></a>
-  <div class="links"><a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#process">Как работаю</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></div>
+  <div class="links"><a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#process">Как работаю</a><a href="#where">Где заказать</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></div>
   <a class="pill sm" href="https://t.me/pbkka" target="_blank" rel="noopener">Telegram</a>
 </div></nav>
 
@@ -299,7 +316,7 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
           </div>
         </div>
         <div class="ui c">
-          <div class="k"><span>Яндекс · Москва</span><span>пакет вур</span></div>
+          <div class="k"><span>Яндекс · Москва</span><span>B2B-запросы</span></div>
           <div class="rank"><strong class="grad">№1</strong><em>в обычной выдаче</em></div>
         </div>
       </div>
@@ -310,33 +327,36 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
 <section class="services wrap" id="services">
   <div class="sec-head">
     <div><p class="kicker rv">Услуги</p><h2 class="rv">С чем ко мне можно обратиться</h2></div>
-    <p class="rv">Стоимость и сроки называю после короткого обсуждения задачи.</p>
+    <p class="rv">Стартовые цены. Работаю как самозанятая: договор и чек на каждую оплату.</p>
   </div>
   <div class="svc-grid">
     <article class="svc rv">
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8 11h6M11 8v6"/></svg></div>
       <h3>Разбор рекламы и сайта</h3>
       <p>Смотрю Директ, Метрику и сайт глазами клиента: где теряются деньги и заявки.</p>
-      <p class="get"><span>Что получаете</span>Список проблем по приоритету и конкретные исправления.</p>
+      <p class="get"><span>Что получаете</span>Отчёт: проблемы по приоритету, во что они обходятся и что исправить. <a href="#sample">Пример отчёта</a></p>
+      <p class="price">от 3 000 ₽ · 2 дня</p>
     </article>
     <article class="svc rv">
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
       <h3>Настройка учёта заявок</h3>
       <p>Цели Метрики, UTM-метки, проверка форм и того, как обращения доходят до вас.</p>
       <p class="get"><span>Что получаете</span>Видно, какая реклама и какие страницы приводят клиентов.</p>
+      <p class="price">от 3 000 ₽ · 2 дня</p>
     </article>
     <article class="svc rv">
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8M8 17h5"/></svg></div>
       <h3>Лендинг под услугу</h3>
       <p>Одна страница под конкретную услугу или рекламную кампанию.</p>
       <p class="get"><span>Что получаете</span>Понятное предложение, форма заявки и настроенная аналитика.</p>
+      <p class="price">от 15 000 ₽ · 7 дней</p>
     </article>
   </div>
-  <p class="svc-note rv"><b>Ведение рекламы</b> — по согласованному объёму. <b>CRM и интеграции</b> — по отдельной оценке, пример ниже.</p>
+  <p class="svc-note rv"><b>Настройка Яндекс Директа</b> (Поиск и РСЯ) — от 10 000 ₽. <b>Ведение рекламы</b> — от 12 000 ₽ в месяц. <b>CRM, боты и интеграции</b> — по отдельной оценке, пример ниже.</p>
 <div class="how rv" id="process">
     <p class="kicker">Как проходит работа</p>
     <ol class="proc">
-      <li ><b>Обсуждаем задачу</b><span>Коротко в Telegram или созвоне: что болит и что уже есть.</span></li>
+      <li ><b>Обсуждаем задачу</b><span>Пишете в Telegram, на почту или на любой площадке ниже: что нужно и что уже есть. Общаюсь письменно — всё остаётся в переписке.</span></li>
       <li ><b>Фиксируем объём, стоимость и что получите на выходе</b><span>До начала работы, письменно.</span></li>
       <li ><b>Выполняю работу</b><span>Показываю промежуточный результат.</span></li>
       <li ><b>Передаю материалы и инструкции</b><span>Доступы, файлы и как этим пользоваться дальше.</span></li>
@@ -345,29 +365,57 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
 </section>
 
 
+<section class="where wrap" id="where">
+  <div class="sec-head">
+    <div><p class="kicker rv">Где заказать</p><h2 class="rv">Можно через площадку</h2></div>
+    <p class="rv">Безопасная сделка и отзывы — на стороне площадки. Или напрямую в Telegram.</p>
+  </div>
+  <div class="plat rv">
+    <a href="https://kwork.ru/user/wranz" target="_blank" rel="noopener"><b>Kwork ↗</b><span>Готовые услуги с фиксированной ценой</span></a>
+    <a href="https://www.fl.ru/users/alesiakuzmikova/" target="_blank" rel="noopener"><b>FL.ru ↗</b><span>Пакеты услуг и портфолио</span></a>
+    <a href="https://profi.ru/profile/NoymannAA2/" target="_blank" rel="noopener"><b>Профи.ру ↗</b><span>Анкета, паспорт проверен</span></a>
+    <a href="https://www.avito.ru/moskva/predlozheniya_uslug/nastroyka_i_vedenie_yandeks_direkta_8392143765" target="_blank" rel="noopener"><b>Авито ↗</b><span>Настройка и ведение Директа</span></a>
+  </div>
+</section>
+
 <main class="panel">
   <section class="cases wrap" id="cases">
     <div class="sec-head">
       <div><p class="kicker rv">Кейсы</p><h2 class="rv">Что уже сделано</h2></div>
-      <p class="rv">Все проекты — для одной компании: производителя полиэтиленовой упаковки в Москве, где я работаю с марта 2026. Задачи те же, что у малого бизнеса: откуда приходят заявки, как их не терять и как быстрее отвечать клиенту.</p>
+      <p class="rv">Все проекты — для одной B2B-компании, производителя упаковки, где я работаю с марта 2026. Название не раскрываю. Задачи те же, что у малого бизнеса: откуда приходят заявки, как их не терять и как быстрее отвечать клиенту.</p>
     </div>
 
+    <article class="case rv" id="sample">
+      <div class="case-top"><h3>Пример отчёта по аудиту Директа<span class="tag">формат моей работы · компания вымышленная, цифры условные</span></h3></div>
+      <div class="sample">
+        <div class="shots"><button class="wide" type="button"><img src="img/audit-demo.jpg" alt="Пример отчёта: аудит рекламного кабинета Яндекс Директа" loading="lazy"></button></div>
+        <div>
+          <dl class="steps">
+            <div><dt>Что внутри</dt><dd>5 страниц, 10 разделов: кампании с ценой заявки, нецелевые запросы, площадки РСЯ, цели Метрики, регионы, стратегии, объявления, посадочная, план работ и прогноз.</dd></div>
+            <div class="res"><dt>Итог примера</dt><dd>39 % бюджета уходило впустую, цель формы завышала заявки в 1,6 раза. Прогноз после правок — цена заявки 2 700–3 100 ₽ вместо 4 935 ₽.</dd></div>
+          </dl>
+          <div class="cta"><a class="pill sm" href="files/primer-audita-direct.pdf" target="_blank" rel="noopener">Открыть PDF</a></div>
+        </div>
+      </div>
+    </article>
+
     <article class="case rv">
-      <div class="case-top"><h3>Сайты и SEO<span class="tag">cpu.moscow · upakcpu.ru</span></h3><a class="ghost" href="https://cpu.moscow" target="_blank" rel="noopener">Открыть сайт ↗</a></div>
+      <div class="case-top"><h3>Сайты и SEO<span class="tag">каталог · посадочные под рекламу</span></h3></div>
       <div class="case-body">
         <dl class="steps">
           <div><dt>Задача</dt><dd>Сделать, чтобы компанию находили в Яндексе по запросам о её продукции — раньше по этим запросам компании не было в топе.</dd></div>
           <div><dt>Моя роль</dt><dd>Спроектировала сайты, написала тексты и настроила SEO; разработку вела с ИИ-инструментами.</dd></div>
           <div><dt>Сделано</dt><dd><ul>
-            <li><b>cpu.moscow</b> — каталог на 150+ страниц, конструктор пакета с расчётом цены, блог.</li>
-            <li><b>upakcpu.ru</b> — посадочные страницы под рекламу.</li>
+            <li><b>Сайт-каталог</b> — 150+ страниц, конструктор продукта с расчётом цены, блог.</li>
+            <li><b>Второй сайт</b> — посадочные страницы под рекламу.</li>
             <li>Семантика, структура, Вебмастер, Search Console, регулярные замеры позиций.</li>
           </ul></dd></div>
-          <div class="res"><dt>Результат</dt><dd>1-е место в обычной выдаче Яндекса по «пакет вур», «производство пакетов», «производство фасовочных пакетов» и по названию компании. «Пакет вур»: 4-е место 6 октября → 1-е с 8 октября.<span class="proof">Сайт cpu.moscow · Яндекс, Москва · замер 13.11.2026 сервисом JSON SEO · над обычной выдачей — рекламные блоки</span></dd></div>
+          <div class="res"><dt>Результат</dt><dd>1-е место в обычной выдаче Яндекса по главным запросам о продукции и по названию компании. Главный запрос: 4-е место 6 октября → 1-е с 8 октября.<span class="proof">Яндекс, Москва · замер 13.11.2026 сервисом JSON SEO · над обычной выдачей — рекламные блоки</span></dd></div>
         </dl>
-        <div class="shots">
-          <button class="wide" type="button"><img src="img/site-cpu-moscow.jpg" alt="cpu.moscow — главная с конструктором пакета" loading="lazy"></button>
-          <button class="wide" type="button"><img src="img/site-upakcpu.jpg" alt="upakcpu.ru — посадочная под рекламу" loading="lazy"></button>
+        <div class="flow">
+          <div><i>6.10</i><p><b>4-е место</b><span>главный запрос, Яндекс · Москва</span></p></div>
+          <div><i>8.10</i><p><b>1-е место</b><span>после правок структуры и текстов</span></p></div>
+          <div><i>13.11</i><p><b>1-е место держится</b><span>плюс ещё 2 запроса и название компании</span></p></div>
         </div>
       </div>
     </article>
@@ -389,8 +437,9 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
           <button type="button"><img src="img/cert-direct-pro.jpg" alt="Сертификат специалиста Яндекс Директа, профессиональный уровень, № 319465" loading="lazy"></button>
           <div>
             <p class="ct">Сертифицированный специалист Яндекс Директа</p>
-            <dl><dt>Уровень</dt><dd>Профессиональный</dd><dt>Номер</dt><dd>319465</dd><dt>Действует до</dt><dd>18.11.2027</dd></dl>
+            <dl><dt>Уровни</dt><dd>Профессиональный № 319465 · Базовый № 319459</dd><dt>Действуют до</dt><dd>18.11.2027</dd><dt>Курс</dt><dd>eLama — полный курс по Директу</dd></dl>
             <a href="https://yandex.ru/adv/expert/certificates?certId=319465&amp;lastname=%D0%9D%D0%BE%D0%B9%D0%BC%D0%B0%D0%BD%D0%BD" target="_blank" rel="noopener">Проверить на сайте Яндекса ↗</a>
+            <div class="certs3"><button type="button"><img src="img/cert-direct-base.jpg" alt="Сертификат Яндекс Директа, базовый уровень, № 319459" loading="lazy"></button><button type="button"><img src="img/cert-elama.jpg" alt="Сертификат eLama: полный курс по Директу" loading="lazy"></button></div>
           </div>
         </div>
       </div>
@@ -449,10 +498,10 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
         <p class="kicker rv">Обо мне</p>
         <h2 class="rv">Маркетолог, который понимает продажи</h2>
         <div class="story rv">
-          <p>Начинала в «Центре полимерной упаковки» менеджером по продажам: звонки, КП, сделки. Через два месяца взяла на себя весь маркетинг.</p>
+          <p>Начинала в B2B-производстве менеджером по продажам: звонки, КП, сделки. Через два месяца взяла на себя весь маркетинг.</p>
           <p>Поэтому смотрю не только на клики, но и на то, <b>что происходит с заявкой после них</b> — и довожу цифровые инструменты до работающего процесса.</p>
         </div>
-        <div class="tools rv"><span class="hot">Яндекс Директ · сертификат Pro</span><span>Яндекс Метрика</span><span>SEO</span><span>Лендинги</span><span>CRM</span><span>Mango Office</span><span>Bitrix24</span><span>Figma</span><span>ИИ-инструменты</span></div>
+        <div class="tools rv"><span class="hot">Яндекс Директ · сертификаты Pro и Базовый</span><span>eLama</span><span>Яндекс Метрика</span><span>SEO</span><span>Лендинги</span><span>CRM</span><span>Mango Office</span><span>Bitrix24</span><span>Figma</span><span>ИИ-инструменты</span></div>
         <p class="open rv"><i aria-hidden="true"></i>Открыта и к предложениям о работе</p>
       </div>
       <div class="facts">
@@ -463,8 +512,8 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
       </div>
     </div>
     <div class="jobs">
-      <div class="job rv"><div class="when">май 2026 — сейчас</div><div><h3>Маркетолог — ЦПУ</h3><p>Сайты, SEO, Яндекс Директ, CRM, телефония.</p></div></div>
-      <div class="job rv"><div class="when">март — май 2026</div><div><h3>Менеджер по продажам B2B — ЦПУ</h3><p>Холодные звонки, поиск ЛПР, расчёт и КП, переговоры, сделки до отгрузки.</p></div></div>
+      <div class="job rv"><div class="when">май 2026 — сейчас</div><div><h3>Маркетолог — B2B-производство, Москва</h3><p>Сайты, SEO, Яндекс Директ, CRM, телефония.</p></div></div>
+      <div class="job rv"><div class="when">март — май 2026</div><div><h3>Менеджер по продажам B2B — там же</h3><p>Холодные звонки, поиск ЛПР, расчёт и КП, переговоры, сделки до отгрузки.</p></div></div>
       <div class="job rv"><div class="when">2023 — 2026</div><div><h3>Комус — помощник байера, управление ценами</h3><p>Карточки товаров, дизайн маркировки, фотосессии; цены и номенклатура в SAP ERP.</p></div></div>
       <div class="job rv"><div class="when">2023</div><div><h3>Столичный бизнес-колледж</h3><p>Информационные системы и программирование, техник-программист.</p></div></div>
     </div>
@@ -519,7 +568,7 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
   // увеличение: кнопка закрытия, фокус внутри, возврат фокуса
   const z = $("#zoom"), zi = $("img", z);
   let opener = null;
-  $$(".shots button, .cert button").forEach(b => {
+  $$(".shots button, .cert > button, .certs3 button").forEach(b => {
     const img = $("img", b);
     b.setAttribute("aria-label", "Увеличить: " + img.alt);
     b.addEventListener("click", () => {
