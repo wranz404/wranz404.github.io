@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel для бухгалтеров и экономистов - школа «Ячейка»</title>
+<meta name="description" content="Онлайн-курс Excel для бухгалтеров и экономистов: ВПР и XLOOKUP, сводные таблицы, Power Query, дашборд. 6 недель, 24 урока, старт 15 января.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Яндекс.Метрика (демо). В боевой версии раскомментировать и подставить номер счётчика.
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(00000000, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+-->
+<script>
+  /* Безопасная заглушка: пока счётчик закомментирован, цели пишутся в консоль */
+  window.ym = window.ym || function(){ console.log('ym', arguments) };
+  var YM_ID = 00000000;
+  function goal(name, params){ try { ym(YM_ID, 'reachGoal', name, params || {}); } catch(e){} }
+</script>
+
+<style>
+:root{
+  --green:#1f6f4a; --green-d:#154d34; --green-l:#e7f2ec; --coral:#ff6f59; --coral-d:#e85a44;
+  --ink:#17221c; --muted:#5b6b62; --line:#d9e3dd; --grid:#eef3f0; --bg:#fff; --paper:#f7faf8;
+  --mono:"IBM Plex Mono", ui-monospace, monospace; --sans:"IBM Plex Sans", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.mono{font-family:var(--mono)}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.01em}
+section{padding:72px 0;scroll-margin-top:64px}
+.ref{display:inline-block;font-family:var(--mono);font-size:13px;color:var(--green);background:var(--green-l);border:1px solid #c6ddd0;padding:2px 8px;border-radius:4px;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px var(--sans);padding:14px 22px;border-radius:8px;border:0;cursor:pointer;text-decoration:none;transition:.15s}
+.btn-coral{background:var(--coral);color:#fff}.btn-coral:hover{background:var(--coral-d)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d)}
+.btn-ghost{background:#fff;color:var(--green);border:1.5px solid var(--green)}.btn-ghost:hover{background:var(--green-l)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;text-decoration:none}
+.logo svg{flex:none}
+nav{display:flex;align-items:center;gap:24px}
+nav a.link{text-decoration:none;color:var(--muted);font-weight:500}nav a.link:hover{color:var(--green)}
+.hdr .btn{padding:10px 16px;font-size:15px}
+@media(max-width:640px){nav a.link{display:none}}
+
+/* hero */
+.hero{padding:48px 0 72px;background:
+  linear-gradient(var(--grid) 1px,transparent 1px) 0 0/100% 32px,
+  linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/96px 100%,var(--paper);border-bottom:1px solid var(--line)}
+.fbar{display:flex;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-family:var(--mono);font-size:14px;margin-bottom:36px;box-shadow:0 2px 0 var(--line)}
+.fbar .cell{padding:9px 14px;border-right:1px solid var(--line);color:var(--muted);min-width:64px;text-align:center}
+.fbar .fx{padding:9px 12px;border-right:1px solid var(--line);color:var(--green);font-style:italic;font-weight:600}
+.fbar .f{padding:9px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.fbar .f b{color:var(--coral-d);font-weight:500}
+.caret{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-grid{display:grid;gap:40px;grid-template-columns:1fr}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.25fr 1fr;align-items:start}}
+.hero h1{font-size:clamp(34px,5.4vw,58px);letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--green);background:linear-gradient(transparent 62%,#ffd6cf 62%)}
+.lead{font-size:19px;color:var(--muted);max-width:560px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:28px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;max-width:560px}
+.facts div{padding:12px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div:nth-child(2n){border-right:0}.facts div:nth-last-child(-n+2){border-bottom:0}
+.facts b{display:block;font-size:22px}.facts span{font-size:14px;color:var(--muted)}
+@media(min-width:600px){.facts{grid-template-columns:repeat(4,1fr)}.facts div{border-bottom:0!important;border-right:1px solid var(--line)!important}.facts div:last-child{border-right:0!important}}
+
+/* forms */
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow:0 12px 32px -18px rgba(23,34,28,.25)}
+.card h3{font-size:22px}
+.card p.small{font-size:14px;color:var(--muted);margin:.2em 0 16px}
+label{display:block;font-size:14px;font-weight:500;margin:12px 0 6px}
+input,select{width:100%;font:16px var(--sans);padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-l)}
+input.bad{border-color:var(--coral)}
+.err{color:var(--coral-d);font-size:13px;min-height:18px;margin-top:4px}
+form .btn{width:100%;margin-top:16px}
+.legal{font-size:12px;color:var(--muted);margin-top:10px}
+.thanks{display:none;text-align:center;padding:24px 8px}
+.thanks .tick{width:56px;height:56px;border-radius:50%;background:var(--green-l);display:grid;place-items:center;margin:0 auto 12px}
+form.done{display:none}form.done+.thanks{display:block}
+
+/* who */
+.roles{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:800px){.roles{grid-template-columns:repeat(3,1fr)}}
+.role{border:1px solid var(--line);border-radius:12px;padding:22px;position:relative;background:#fff}
+.role .addr{position:absolute;top:0;right:0;font:12px var(--mono);color:var(--muted);background:var(--paper);border-left:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px 10px;border-radius:0 12px 0 8px}
+.role h3{font-size:20px;margin-top:6px}.role p{color:var(--muted);margin:0 0 10px}
+.role ul{margin:0;padding-left:18px}.role li{margin:4px 0}
+
+/* program */
+.prog{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+details.wk{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+details.wk summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:72px 1fr 24px;align-items:center;gap:12px;padding:16px 18px;font-weight:600}
+details.wk summary::-webkit-details-marker{display:none}
+details.wk summary .n{font:500 13px var(--mono);color:var(--green);background:var(--green-l);padding:4px 8px;border-radius:4px;text-align:center}
+details.wk summary .pl{font:600 22px var(--mono);color:var(--muted);transition:.2s;text-align:center}
+details.wk[open] summary .pl{transform:rotate(45deg);color:var(--coral)}
+details.wk .body{padding:0 18px 18px 102px;color:var(--muted)}
+details.wk .body ul{margin:0;padding-left:18px}
+details.wk .hw{margin-top:10px;font-size:14px;color:var(--ink)}details.wk .hw b{color:var(--coral-d)}
+@media(max-width:600px){details.wk summary{grid-template-columns:56px 1fr 20px}details.wk .body{padding:0 16px 16px}}
+.prog-note{margin-top:20px;color:var(--muted);font-size:15px}
+
+/* demo */
+.demo-grid{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:900px){.demo-grid{grid-template-columns:1fr 1.15fr;align-items:center}}
+.sheet{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;font-size:15px}
+.sheet .fbar{margin:0;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none}
+.tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbl th{background:var(--paper);font:500 12px var(--mono);color:var(--muted);text-align:center}
+.tbl td.rn{background:var(--paper);font:12px var(--mono);color:var(--muted);text-align:center;width:36px}
+.tbl col.c0{width:36px}
+.tbl td.num{text-align:right;font-family:var(--mono)}
+.tbl tr.hl td:not(.rn){background:#fff1ee}
+.tbl td.res{font-weight:700;text-align:right;font-family:var(--mono);outline:2px solid var(--green);outline-offset:-2px;background:var(--green-l)}
+.tbl td.res.pop{animation:pop .5s}
+@keyframes pop{0%{background:#ffd6cf}100%{background:var(--green-l)}}
+.demo-ctl{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;align-items:center}
+.demo-ctl select{width:auto}
+.demo-msg{font-size:14px;color:var(--muted);margin-top:10px;min-height:22px}
+
+/* tariffs */
+.tar{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:900px){.tar{grid-template-columns:repeat(3,1fr)}}
+.t{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;background:#fff;position:relative}
+.t.best{border:2px solid var(--green);box-shadow:0 16px 40px -24px rgba(31,111,74,.6)}
+.t .tag{position:absolute;top:-12px;left:24px;background:var(--coral);color:#fff;font:600 12px var(--mono);padding:4px 10px;border-radius:4px}
+.t h3{font-size:22px;margin-bottom:4px}.t .sub{color:var(--muted);font-size:15px;margin:0 0 16px}
+.t .price{font-size:36px;font-weight:700;letter-spacing:-.01em}
+.t .inst{font-size:14px;color:var(--green);font-weight:500;margin:2px 0 16px}
+.t ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
+.t li{padding:7px 0 7px 26px;border-top:1px dashed var(--line);position:relative;font-size:15px}
+.t li::before{content:"";position:absolute;left:2px;top:13px;width:12px;height:7px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.t li.no{color:#9aa7a0}.t li.no::before{border-color:#c9d3cd;width:10px;height:0;border-left:0;transform:none;top:18px}
+
+/* author */
+.author{display:grid;gap:28px;grid-template-columns:1fr;background:var(--green);color:#fff;border-radius:16px;padding:32px;position:relative;overflow:hidden}
+@media(min-width:800px){.author{grid-template-columns:180px 1fr;padding:44px}}
+.author::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/100% 28px,linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px) 0 0/84px 100%;pointer-events:none}
+.ava{width:150px;height:150px;border-radius:50%;background:#2a8a5e;display:grid;place-items:center;font:600 52px var(--mono);border:3px solid rgba(255,255,255,.35)}
+.author h3{font-size:26px}.author p{opacity:.9;margin:.4em 0}
+.author .stats{display:flex;flex-wrap:wrap;gap:24px;margin-top:16px;font-family:var(--mono)}
+.author .stats b{display:block;font-size:26px;color:#ffc2b8}
+
+/* reviews */
+.revs{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:900px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff}
+.rev .who{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.rev .ini{width:42px;height:42px;border-radius:50%;background:var(--green-l);color:var(--green);display:grid;place-items:center;font:600 15px var(--mono)}
+.rev .who small{display:block;color:var(--muted)}
+.rev .was{font:13px var(--mono);color:var(--coral-d);margin-top:12px}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;font-weight:600;padding:14px 32px 14px 0;position:relative;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:10px;font:500 22px var(--mono);color:var(--green)}
+.faq details[open] summary::after{content:"−";color:var(--coral)}
+.faq p{margin:0 0 16px;color:var(--muted)}
+
+/* final */
+.final{background:var(--paper);border-top:1px solid var(--line)}
+.final-grid{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:900px){.final-grid{grid-template-columns:1fr 1fr;align-items:center}}
+footer{background:var(--ink);color:#c5d2ca;padding:32px 0;font-size:14px}
+footer .row{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer a{color:#fff;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hdr">
+    <a href="#top" class="logo" aria-label="Школа «Ячейка»">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="6" fill="#1f6f4a"/><path d="M1 11h28M1 20h28M11 1v28M20 1v28" stroke="#fff" stroke-opacity=".35"/><rect x="11" y="11" width="9" height="9" fill="#ff6f59"/></svg>
+      Ячейка
+    </a>
+    <nav>
+      <a class="link" href="#program">Программа</a>
+      <a class="link" href="#tariffs">Тарифы</a>
+      <a class="btn btn-coral" href="#hero-form">Первый урок бесплатно</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="fbar" aria-hidden="true">
+      <div class="cell">B7</div><div class="fx">fx</div>
+      <div class="f">=СВОДНАЯ(<b>"Отчёт за месяц"</b>; Power Query; 10 мин)<span class="caret"></span></div>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="ref">A1 · Онлайн-курс · старт потока 15 января</span>
+        <h1>Сводные и Power Query за 6 недель: <em>отчёт за 10 минут</em> вместо дня</h1>
+        <p class="lead">Курс Excel для бухгалтеров и экономистов. Учимся на реальных отчётах: оборотка, выписка из банка, план-факт. 3-4 часа в неделю, домашние задания с проверкой, сертификат в конце.</p>
+        <div class="facts">
+          <div><b>6</b><span>недель</span></div>
+          <div><b>24</b><span>урока</span></div>
+          <div><b>3-4 ч</b><span>в неделю</span></div>
+          <div><b>12</b><span>домашек</span></div>
+        </div>
+      </div>
+      <div class="card" id="hero-form">
+        <h3>Пройдите первый урок бесплатно</h3>
+        <p class="small">ВПР против XLOOKUP на выгрузке из 1С. 35 минут видео и файл для практики.</p>
+        <form data-type="free" novalidate>
+          <label for="h-name">Имя</label>
+          <input id="h-name" name="name" autocomplete="given-name" placeholder="Анна">
+          <div class="err" data-for="name"></div>
+          <label for="h-contact">Телефон или email</label>
+          <input id="h-contact" name="contact" autocomplete="email" placeholder="+7 900 000-00-00 или anna@mail.ru">
+          <div class="err" data-for="contact"></div>
+          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+          <button class="btn btn-coral" type="submit">Получить урок</button>
+          <p class="legal">Нажимая кнопку, вы соглашаетесь на обработку данных. Без спама: одно письмо с уроком.</p>
+        </form>
+        <div class="thanks"><div class="tick"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10" fill="none" stroke="#1f6f4a" stroke-width="2.5"/></svg></div><h3>Урок уже в пути</h3><p class="small">Ссылка придёт в течение 5 минут. Не пришла? Позвоните: +7 (900) 000-00-05.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <span class="ref">A2 · Для кого</span>
+    <h2>Курс для тех, кто живёт в таблицах</h2>
+    <div class="roles">
+      <div class="role"><span class="addr">B2</span><h3>Бухгалтер</h3><p>Сверяете акты и выписки руками.</p>
+        <ul><li>Сверка с контрагентом за 15 минут</li><li>Разнесение выписки без копипаста</li><li>Оборотка в сводной по счетам</li></ul></div>
+      <div class="role"><span class="addr">C2</span><h3>Экономист</h3><p>Собираете план-факт из пяти файлов.</p>
+        <ul><li>Power Query склеивает файлы сам</li><li>Отклонения подсвечиваются</li><li>Отчёт обновляется одной кнопкой</li></ul></div>
+      <div class="role"><span class="addr">D2</span><h3>Финменеджер малого бизнеса</h3><p>Нужен понятный отчёт для собственника.</p>
+        <ul><li>Дашборд: выручка, маржа, ДДС</li><li>Срезы по месяцам и клиентам</li><li>Один файл вместо десяти</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="prog" id="program">
+  <div class="wrap">
+    <span class="ref">A3 · Программа</span>
+    <h2>6 недель, 24 урока, 12 домашних заданий</h2>
+    <details class="wk" open><summary><span class="n">Нед. 1</span>Порядок в данных<span class="pl">+</span></summary>
+      <div class="body"><ul><li>Умная таблица и почему она важнее формул</li><li>Текст, даты и числа из 1С: чистим за минуту</li><li>Проверка данных и выпадающие списки</li><li>Горячие клавиши, которые экономят час в день</li></ul><div class="hw"><b>ДЗ:</b> привести выгрузку оборотки к рабочему виду.</div></div></details>
+    <details class="wk"><summary><span class="n">Нед. 2</span>ВПР, XLOOKUP и сверки<span class="pl">+</span></summary>
+      <div class="body"><ul><li>ВПР и его ловушки</li><li>XLOOKUP и ИНДЕКС+ПОИСКПОЗ</li><li>Сверка двух списков контрагентов</li><li>ЕСЛИОШИБКА и поиск расхождений</li></ul><div class="hw"><b>ДЗ:</b> сверка акта с контрагентом на 400 строк.</div></div></details>
+    <details class="wk"><summary><span class="n">Нед. 3</span>СУММЕСЛИМН и условные расчёты<span class="pl">+</span></summary>
+      <div class="body"><ul><li>СУММЕСЛИ, СЧЁТЕСЛИМН, СРЗНАЧЕСЛИ</li><li>Расчёт по периодам и статьям</li><li>Условное форматирование для отклонений</li><li>Шаблон план-факта</li></ul><div class="hw"><b>ДЗ:</b> план-факт по 12 статьям за квартал.</div></div></details>
+    <details class="wk"><summary><span class="n">Нед. 4</span>Сводные таблицы<span class="pl">+</span></summary>
+      <div class="body"><ul><li>Сводная за 3 минуты</li><li>Группировка по месяцам и кварталам</li><li>Вычисляемые поля и доли</li><li>Срезы и временная шкала</li></ul><div class="hw"><b>ДЗ:</b> продажи по менеджерам и клиентам.</div></div></details>
+    <details class="wk"><summary><span class="n">Нед. 5</span>Power Query<span class="pl">+</span></summary>
+      <div class="body"><ul><li>Загрузка из папки: 12 файлов в одну таблицу</li><li>Очистка и разворот столбцов</li><li>Объединение запросов вместо ВПР</li><li>Обновление отчёта одной кнопкой</li></ul><div class="hw"><b>ДЗ:</b> собрать выписки банка за год в один отчёт.</div></div></details>
+    <details class="wk"><summary><span class="n">Нед. 6</span>Дашборд и защита проекта<span class="pl">+</span></summary>
+      <div class="body"><ul><li>Графики, которые читает собственник</li><li>Дашборд: выручка, маржа, ДДС</li><li>Защита листов и передача файла</li><li>Итоговый проект на ваших данных</li></ul><div class="hw"><b>ДЗ:</b> итоговый дашборд, после проверки выдаём сертификат.</div></div></details>
+    <p class="prog-note">Уроки по 20-40 минут. Открываются по понедельникам, доступ к записям остаётся на год. Работаем в Excel 2019, 2021 и 365. Если у вас 2016, покажем обходные пути.</p>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap demo-grid">
+    <div>
+      <span class="ref">A4 · Попробуйте сами</span>
+      <h2>Одна формула вместо калькулятора</h2>
+      <p class="lead">Так выглядит задача из третьей недели. Выберите статью и нажмите кнопку: Excel сложит только нужные строки.</p>
+      <div class="demo-ctl">
+        <select id="demo-crit" aria-label="Статья расходов"><option>Аренда</option><option>Связь</option><option>Канцтовары</option></select>
+        <button class="btn btn-green" id="demo-btn" type="button">Применить СУММЕСЛИ</button>
+      </div>
+      <div class="demo-msg" id="demo-msg">Подсветим строки, которые попали в сумму.</div>
+    </div>
+    <div class="sheet">
+      <div class="fbar"><div class="cell" id="demo-cell">C9</div><div class="fx">fx</div><div class="f" id="demo-f">&nbsp;</div></div>
+      <table class="tbl" id="demo-tbl">
+        <colgroup><col class="c0"><col><col><col></colgroup>
+        <tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+        <tr><td class="rn">1</td><td><b>Дата</b></td><td><b>Статья</b></td><td class="num"><b>Сумма, ₽</b></td></tr>
+        <tr><td class="rn">2</td><td>03.10</td><td>Аренда</td><td class="num">85 000</td></tr>
+        <tr><td class="rn">3</td><td>05.10</td><td>Связь</td><td class="num">4 200</td></tr>
+        <tr><td class="rn">4</td><td>11.10</td><td>Канцтовары</td><td class="num">2 750</td></tr>
+        <tr><td class="rn">5</td><td>14.10</td><td>Аренда</td><td class="num">12 500</td></tr>
+        <tr><td class="rn">6</td><td>20.10</td><td>Связь</td><td class="num">1 900</td></tr>
+        <tr><td class="rn">7</td><td>27.10</td><td>Канцтовары</td><td class="num">6 300</td></tr>
+        <tr><td class="rn">8</td><td>30.10</td><td>Аренда</td><td class="num">3 400</td></tr>
+        <tr><td class="rn">9</td><td></td><td><b id="demo-lbl">Итого по статье</b></td><td class="res" id="demo-res">?</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="tariffs" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="ref">A5 · Тарифы</span>
+    <h2>Выберите формат</h2>
+    <p class="lead" style="margin-bottom:32px">Рассрочка без переплаты на 6 месяцев. Если за 14 дней поймёте, что курс не подходит, вернём деньги.</p>
+    <div class="tar">
+      <div class="t"><h3>Сам</h3><p class="sub">Для тех, кто привык разбираться сам</p>
+        <div class="price">14 900 ₽</div><div class="inst">или 2 484 ₽/мес в рассрочку</div>
+        <ul><li>24 урока и файлы для практики</li><li>Доступ к записям на год</li><li>Общий чат потока</li><li class="no">Проверка домашних заданий</li><li class="no">Разбор ваших файлов</li></ul>
+        <button class="btn btn-ghost" data-tariff="Сам">Выбрать «Сам»</button></div>
+      <div class="t best"><span class="tag">Выбирают чаще</span><h3>С проверкой</h3><p class="sub">Оптимально для результата</p>
+        <div class="price">24 900 ₽</div><div class="inst">или 4 150 ₽/мес в рассрочку</div>
+        <ul><li>Всё из тарифа «Сам»</li><li>Проверка 12 домашек за 48 часов</li><li>Сертификат после итогового проекта</li><li>2 живых разбора в неделю</li><li class="no">Личный наставник</li></ul>
+        <button class="btn btn-coral" data-tariff="С проверкой">Выбрать «С проверкой»</button></div>
+      <div class="t"><h3>С наставником</h3><p class="sub">Курс под ваши рабочие задачи</p>
+        <div class="price">39 900 ₽</div><div class="inst">или 6 650 ₽/мес в рассрочку</div>
+        <ul><li>Всё из тарифа «С проверкой»</li><li>Наставник в Telegram, ответ в течение дня</li><li>3 созвона по 45 минут</li><li>Итоговый дашборд на ваших данных</li><li>Доступ к записям навсегда</li></ul>
+        <button class="btn btn-ghost" data-tariff="С наставником">Выбрать «С наставником»</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="author">
+  <div class="wrap">
+    <div class="author">
+      <div class="ava" aria-hidden="true">ИК</div>
+      <div style="position:relative;z-index:1">
+        <span class="ref" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)">A6 · Автор курса</span>
+        <h3>Ирина Коваль</h3>
+        <p>12 лет в финансах: главный бухгалтер в дистрибуции, потом финансовый контролёр в производственной компании.</p>
+        <p>Автоматизировала закрытие месяца: сбор отчётности сократился с трёх дней до четырёх часов. На курсе показывает те же приёмы, без программирования.</p>
+        <div class="stats"><div><b>12 лет</b>в финансах</div><div><b>1 800+</b>выпускников</div><div><b>9 потоков</b>курса</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <span class="ref">A7 · Отзывы (пример)</span>
+    <h2>Что говорят выпускники</h2>
+    <div class="revs">
+      <div class="rev"><div class="who"><div class="ini">МС</div><div><b>Марина С.</b><small>бухгалтер, оптовая торговля</small></div></div>
+        <p>Сверка с поставщиками занимала полдня. Теперь делаю её через XLOOKUP минут за двадцать. Домашки проверяли быстро и по делу.</p><div class="was">было 4 ч → стало 20 мин</div></div>
+      <div class="rev"><div class="who"><div class="ini">ДА</div><div><b>Денис А.</b><small>экономист, производство</small></div></div>
+        <p>Power Query стал открытием. Двенадцать файлов от филиалов собираются в один отчёт сами, я только жму «Обновить».</p><div class="was">12 файлов → 1 кнопка</div></div>
+      <div class="rev"><div class="who"><div class="ini">ОЛ</div><div><b>Ольга Л.</b><small>финменеджер, сеть кофеен</small></div></div>
+        <p>Сделала дашборд для собственника на своих данных. Он теперь сам смотрит выручку по точкам и не звонит мне по вечерам.</p><div class="was">итоговый проект → в работе</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" style="padding-top:0">
+  <div class="wrap" style="max-width:860px">
+    <span class="ref">A8 · Вопросы</span>
+    <h2>Частые вопросы</h2>
+    <details><summary>Я знаю Excel на базовом уровне. Справлюсь?</summary><p>Да. Нужно уметь вводить формулы и сохранять файл. Первая неделя выравнивает уровень группы.</p></details>
+    <details><summary>Сколько времени нужно в неделю?</summary><p>3-4 часа: 4 урока по 20-40 минут и 2 домашних задания. Если неделя выпала, догоните позже, записи остаются.</p></details>
+    <details><summary>У меня Mac или Google Таблицы. Подойдёт?</summary><p>Формулы и сводные работают на Mac. Power Query на Mac ограничен, для 5 недели дадим альтернативу. Google Таблицы для курса не подходят.</p></details>
+    <details><summary>Какой документ я получу?</summary><p>Сертификат школы «Ячейка» после защиты итогового проекта. Он есть в тарифах «С проверкой» и «С наставником».</p></details>
+    <details><summary>Может ли оплатить компания?</summary><p>Да. Заключим договор, выставим счёт и закрывающие документы. Напишите реквизиты в форме или позвоните.</p></details>
+    <details><summary>Как работает возврат?</summary><p>В течение 14 дней после старта вернём полную сумму без вопросов. После этого вернём за непройденные недели.</p></details>
+  </div>
+</section>
+
+<section class="final" id="order">
+  <div class="wrap final-grid">
+    <div>
+      <span class="ref">A9 · Запись на поток</span>
+      <h2>Старт 15 января. В потоке 120 мест</h2>
+      <p class="lead">Оставьте заявку, менеджер перезвонит в течение рабочего дня, ответит на вопросы и пришлёт ссылку на оплату или договор для компании.</p>
+      <p style="font-family:var(--mono);font-size:15px">Телефон: <a href="tel:+79000000005">+7 (900) 000-00-05</a><br>Пн-Пт, 10:00-19:00 по Москве</p>
+    </div>
+    <div class="card">
+      <h3>Заявка на курс</h3>
+      <form data-type="lead" id="lead-form" novalidate>
+        <label for="l-name">Имя</label>
+        <input id="l-name" name="name" autocomplete="given-name" placeholder="Анна">
+        <div class="err" data-for="name"></div>
+        <label for="l-contact">Телефон или email</label>
+        <input id="l-contact" name="contact" autocomplete="tel" placeholder="+7 900 000-00-00">
+        <div class="err" data-for="contact"></div>
+        <label for="l-tariff-view">Тариф</label>
+        <select id="l-tariff-view"><option>С проверкой</option><option>Сам</option><option>С наставником</option><option>Пока не выбрал(а)</option></select>
+        <input type="hidden" name="tariff" value="С проверкой">
+        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+        <button class="btn btn-coral" type="submit">Записаться на поток</button>
+        <p class="legal">Нажимая кнопку, вы соглашаетесь на обработку данных.</p>
+      </form>
+      <div class="thanks"><div class="tick"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10" fill="none" stroke="#1f6f4a" stroke-width="2.5"/></svg></div><h3>Заявка принята</h3><p class="small">Перезвоним в течение рабочего дня. Место в потоке закрепим на 3 дня.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div><b style="color:#fff">Ячейка</b> · онлайн-школа Excel · <a href="tel:+79000000005">+7 (900) 000-00-05</a></div>
+    <div>Пример работы. Школа вымышленная, цены и отзывы условные.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* UTM из адресной строки во все формы */
+  var qs = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign'].forEach(function(k){
+    document.querySelectorAll('input[name="'+k+'"]').forEach(function(i){ i.value = qs.get(k) || ''; });
+  });
+
+  /* Тариф: кнопка -> скрытое поле -> скролл к форме */
+  var leadForm = document.getElementById('lead-form');
+  var tView = document.getElementById('l-tariff-view');
+  var tHidden = leadForm.querySelector('input[name="tariff"]');
+  tView.addEventListener('change', function(){ tHidden.value = tView.value; });
+  document.querySelectorAll('[data-tariff]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = b.getAttribute('data-tariff');
+      tHidden.value = t; tView.value = t;
+      goal('tariff_click', { tariff: t });
+      document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(function(){ document.getElementById('l-name').focus({ preventScroll: true }); }, 600);
+    });
+  });
+
+  /* Валидация и отправка */
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+  function digits(v){ return (v.match(/\d/g) || []).length; }
+  document.querySelectorAll('form[data-type]').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = f.elements.name, contact = f.elements.contact, ok = true;
+      function setErr(input, msg){
+        f.querySelector('.err[data-for="'+input.name+'"]').textContent = msg;
+        input.classList.toggle('bad', !!msg); if (msg) ok = false;
+      }
+      setErr(name, name.value.trim() ? '' : 'Напишите, как к вам обращаться');
+      var c = contact.value.trim();
+      setErr(contact, (isEmail(c) || (!/@/.test(c) && digits(c) >= 10)) ? '' : 'Нужен телефон (от 10 цифр) или email');
+      if (!ok) return;
+      var data = Object.fromEntries(new FormData(f).entries());
+      if (f.dataset.type === 'free') goal('free_lesson', { utm_source: data.utm_source });
+      else goal('lead_submit', { tariff: data.tariff, utm_source: data.utm_source });
+      console.log('form data (демо, не отправляется):', data);
+      f.classList.add('done');
+    });
+    f.querySelectorAll('input').forEach(function(i){ i.addEventListener('input', function(){ i.classList.remove('bad'); }); });
+  });
+
+  /* Мини-демо СУММЕСЛИ */
+  var btn = document.getElementById('demo-btn'), crit = document.getElementById('demo-crit');
+  var res = document.getElementById('demo-res'), fx = document.getElementById('demo-f');
+  var msg = document.getElementById('demo-msg'), used = false;
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#demo-tbl tr')).slice(2, 9);
+  function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  btn.addEventListener('click', function(){
+    var c = crit.value, sum = 0, n = 0;
+    rows.forEach(function(r){
+      var hit = r.cells[2].textContent === c;
+      r.classList.toggle('hl', hit);
+      if (hit){ sum += parseInt(r.cells[3].textContent.replace(/\s/g, ''), 10); n++; }
+    });
+    fx.innerHTML = '=СУММЕСЛИ(B2:B8;<b>"' + c + '"</b>;C2:C8)';
+    res.textContent = fmt(sum);
+    res.classList.remove('pop'); void res.offsetWidth; res.classList.add('pop');
+    document.getElementById('demo-lbl').textContent = 'Итого: ' + c;
+    msg.textContent = 'Сложили ' + n + ' строки из 7. Вручную это 7 проверок, формулой 1 секунда.';
+    if (!used){ used = true; goal('demo_used', { criterion: c }); }
+  });
+})();
+</script>
+</body>
+</html>

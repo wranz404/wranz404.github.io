@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гараж 24 - автосервис в Казани: ТО, диагностика, ходовая, шиномонтаж</title>
+<meta name="description" content="Автосервис «Гараж 24» в Казани. ТО, диагностика, ремонт ходовой, шиномонтаж. Нормо-час 1 800 ₽, гарантия 6 месяцев. Работаем 9:00-21:00 без выходных.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Yandex.Metrika counter (демо). На реальном проекте раскомментировать и заменить 00000000 на id счётчика.
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+  ym(00000000, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/00000000" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+/Yandex.Metrika counter -->
+<script>
+  // Заглушка: пока счётчик закомментирован, цели пишутся в консоль
+  window.ym = window.ym || function(){ console.log('ym', arguments) };
+  var YM_ID = 00000000;
+</script>
+
+<style>
+:root{
+  --bg:#141619; --bg2:#1b1e22; --panel:#22262b; --line:#33383f;
+  --text:#eceae6; --muted:#9aa0a8; --accent:#ff6a13; --accent2:#ff8a3d; --ok:#5cc46b;
+  --display:'Oswald','Arial Narrow',sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.55 var(--body);overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
+h2{font-size:clamp(30px,5vw,48px);margin-bottom:12px}
+h2 span{color:var(--accent)}
+.lead{color:var(--muted);max-width:620px;margin-bottom:32px}
+section{padding:72px 0;position:relative}
+.tex-grid{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;background-color:var(--bg2)}
+.tex-grid>*{position:relative}
+.tex-grid::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 0%,transparent 0,var(--bg2) 75%)}
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,#111 14px 28px)}
+.tag{display:inline-block;font:600 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:6px 10px;margin-bottom:16px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 17px/1 var(--display);text-transform:uppercase;letter-spacing:.06em;padding:16px 26px;background:var(--accent);color:#111;text-decoration:none;clip-path:polygon(0 0,100% 0,100% 70%,92% 100%,0 100%);transition:background .15s}
+.btn:hover{background:var(--accent2)}
+.btn.ghost{background:transparent;color:var(--text);box-shadow:inset 0 0 0 2px var(--line);clip-path:none}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--accent)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(20,22,25,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:20px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 24px/1 var(--display);text-transform:uppercase}
+.logo b{background:var(--accent);color:#111;padding:3px 7px;margin-left:2px}
+.hdr nav{display:flex;gap:22px;margin-left:24px}
+.hdr nav a{text-decoration:none;color:var(--muted);font-size:14px}
+.hdr nav a:hover{color:var(--text)}
+.hdr .right{margin-left:auto;display:flex;align-items:center;gap:18px}
+.phone{text-decoration:none;font:600 19px/1.1 var(--display);letter-spacing:.03em;text-align:right}
+.phone small{display:block;font:400 12px var(--body);color:var(--muted);letter-spacing:0}
+.hdr .btn{padding:12px 18px;font-size:15px}
+
+/* hero */
+.hero{padding:64px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,78px);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:540px;margin-bottom:28px}
+.hero ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;color:var(--muted);font-size:14px}
+.hero ul li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--accent);margin-right:8px;transform:rotate(45deg)}
+.bigwrench{position:absolute;right:-60px;top:40px;width:420px;opacity:.05;pointer-events:none}
+
+/* forms */
+.card{background:var(--panel);border:1px solid var(--line);padding:28px;position:relative}
+.card::before{content:"";position:absolute;left:0;top:0;width:64px;height:4px;background:var(--accent)}
+.card h3{font-size:26px;margin-bottom:4px}
+.card .note{color:var(--muted);font-size:14px;margin-bottom:18px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:12px}
+input,select{display:block;width:100%;margin-top:6px;background:var(--bg);border:1px solid var(--line);color:var(--text);font:16px var(--body);padding:12px 14px;border-radius:0;appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--accent) 50%),linear-gradient(135deg,var(--accent) 50%,transparent 50%);background-position:calc(100% - 18px) 52%,calc(100% - 13px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+input.err{border-color:#e5484d}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form .btn{width:100%;margin-top:6px}
+.legal{font-size:12px;color:var(--muted);margin-top:12px}
+.errmsg{color:#ff7b7f;font-size:13px;min-height:18px;margin-top:6px}
+.thanks{display:none;text-align:center;padding:24px 0}
+.thanks svg{margin:0 auto 12px}
+.thanks h3{color:var(--ok)}
+form.sent{display:none}
+form.sent+.thanks{display:block}
+
+/* price */
+.price-top{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.search{position:relative;width:min(380px,100%)}
+.search input{padding-left:42px;margin:0}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{background:transparent;border:1px solid var(--line);color:var(--muted);font:500 14px var(--body);padding:8px 14px;cursor:pointer}
+.chip.on,.chip:hover{border-color:var(--accent);color:var(--text)}
+.chip.on{background:rgba(255,106,19,.12)}
+.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{font:600 13px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--bg2)}
+td.p{font:600 18px var(--display);white-space:nowrap;color:var(--accent)}
+td.t{color:var(--muted);white-space:nowrap;font-size:14px}
+tr.cat td{background:var(--bg2);font:600 15px var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--text)}
+tr.cat td span{color:var(--accent);margin-right:8px}
+tbody tr:not(.cat):hover td{background:rgba(255,255,255,.025)}
+.empty{display:none;padding:28px;text-align:center;color:var(--muted)}
+.price-note{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:16px;color:var(--muted);font-size:14px}
+.price-note b{color:var(--text)}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.fact{padding:28px 24px;border-right:1px solid var(--line);background:var(--panel)}
+.fact:last-child{border-right:0}
+.fact .n{font:700 54px/1 var(--display);color:var(--accent);margin-bottom:10px}
+.fact .n small{font-size:24px;color:var(--text);margin-left:4px}
+.fact h3{font-size:19px;margin-bottom:6px}
+.fact p{color:var(--muted);font-size:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{border-top:3px solid var(--line);padding-top:18px;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:700 44px/1 var(--display);color:transparent;-webkit-text-stroke:1px var(--accent);display:block;margin-bottom:12px}
+.step:first-child{border-top-color:var(--accent)}
+.step h3{font-size:20px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:var(--panel);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column}
+.stars{color:var(--accent);letter-spacing:3px;margin-bottom:12px}
+.rev p{flex:1;margin-bottom:18px}
+.rev .who{font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.rev .who b{color:var(--text);display:block}
+
+/* map */
+.map{display:grid;grid-template-columns:1.3fr .7fr;border:1px solid var(--line);min-height:340px}
+.map-ph{background:#1a1d21 repeating-linear-gradient(35deg,transparent 0 60px,#23272c 60px 64px),#1a1d21;background-blend-mode:normal;position:relative;overflow:hidden}
+.map-ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent 0 90px,#262a30 90px 96px)}
+.pin{position:absolute;left:52%;top:44%;z-index:2;transform:translate(-50%,-100%)}
+.pin span{position:absolute;left:50%;top:-34px;transform:translateX(-50%);white-space:nowrap;background:var(--accent);color:#111;font:600 13px var(--display);padding:4px 8px;text-transform:uppercase}
+.map-info{background:var(--panel);padding:28px}
+.map-info dt{font:600 13px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+.map-info dt:first-child{margin-top:0}
+.map-info dd{font-size:17px}
+
+/* faq */
+.faq{max-width:840px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font:500 20px var(--display);text-transform:uppercase;letter-spacing:.02em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:30px;color:var(--accent);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 20px}
+
+/* final */
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.final-grid .bigphone{font:700 clamp(30px,4.5vw,48px)/1 var(--display);text-decoration:none;color:var(--accent);display:inline-block;margin:8px 0 6px}
+
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+.disclaimer{margin-top:20px;font-size:13px;opacity:.8}
+
+@media (max-width:1000px){
+  .hdr nav{display:none}
+  .hero-grid,.final-grid,.map{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:1fr}
+  .map-ph{min-height:260px}
+}
+@media (max-width:600px){
+  section{padding:56px 0}
+  .hdr{gap:10px;height:60px}
+  .logo{font-size:20px}
+  .phone small{display:none}
+  .phone{font-size:16px}
+  .hdr .btn{display:none}
+  .hero{padding:40px 0 56px}
+  .card{padding:22px 18px}
+  .row2{grid-template-columns:1fr;gap:0}
+  .facts,.steps{grid-template-columns:1fr}
+  .fact{border-right:0;border-bottom:1px solid var(--line)}
+  .fact:last-child{border-bottom:0}
+  th,td{padding:11px 12px}
+  .bigwrench{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG-иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 1 5.3-3.6l-2.6 2.6.6 2.6 2.6.6 2.6-2.6a4 4 0 0 1-5.3 5.3L8 21.7a2.1 2.1 0 0 1-3-3l10.3-10.3a4 4 0 0 1-.6-2.1Z"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="4"/><path d="M12 2.5v5.5M12 16v5.5M2.5 12H8M16 12h5.5M5.3 5.3l3.9 3.9M14.8 14.8l3.9 3.9M18.7 5.3l-3.9 3.9M9.2 14.8l-3.9 3.9"/></g></symbol>
+  <symbol id="i-jack" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21h18M6 21l6-7 6 7M12 14V8M8 5h8l-1 3H9Z"/><path d="M12 14l-3-3M12 14l3-3"/></g></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" d="M4 12.5l5 5L20 6.5"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap hdr">
+    <a href="#top" class="logo"><svg width="28" height="28" style="color:var(--accent)"><use href="#i-wrench"/></svg>Гараж<b>24</b></a>
+    <nav><a href="#price">Цены</a><a href="#why">Почему мы</a><a href="#how">Как работаем</a><a href="#faq">Вопросы</a><a href="#map">Контакты</a></nav>
+    <div class="right">
+      <a class="phone" href="tel:+79000000003">+7 (900) 000-00-03<small>9:00-21:00, без выходных</small></a>
+      <a class="btn" href="#book">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero tex-grid">
+  <svg class="bigwrench" viewBox="0 0 24 24" style="color:var(--text)"><use href="#i-wrench"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Казань · ул. Техническая, 24</span>
+      <h1>Диагностика ходовой <em>бесплатно</em> при ремонте</h1>
+      <p class="sub">Запишем на сегодня. ТО, ходовая, шиномонтаж. Смету согласуем до начала работ, лишнего не меняем.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn" href="#book">Записаться на сегодня</a>
+        <a class="btn ghost" href="#price">Смотреть цены</a>
+      </div>
+      <ul><li>Нормо-час 1 800 ₽</li><li>Гарантия 6 мес / 10 000 км</li><li>Запчасти наши или ваши</li></ul>
+    </div>
+    <div class="card" id="book">
+      <h3>Быстрая запись</h3>
+      <p class="note">Перезвоним за 10 минут и подтвердим время.</p>
+      <form data-form="hero_booking" novalidate>
+        <div class="row2">
+          <label>Марка авто<input name="car" placeholder="Kia Rio, 2017"></label>
+          <label>Услуга
+            <select name="service">
+              <option>Диагностика ходовой</option><option>ТО / замена масла</option><option>Ремонт подвески</option>
+              <option>Шиномонтаж</option><option>Тормоза</option><option>Другое</option>
+            </select>
+          </label>
+        </div>
+        <div class="row2">
+          <label>Когда
+            <select name="time"><option>Сегодня</option><option>Завтра</option><option>На выходных</option><option>Подберите сами</option></select>
+          </label>
+          <label>Имя *<input name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
+        </div>
+        <label>Телефон *<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>
+        <div class="errmsg" aria-live="polite"></div>
+        <button class="btn" type="submit">Записаться</button>
+        <p class="legal">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+      <div class="thanks"><svg width="48" height="48" style="color:var(--ok)"><use href="#i-check"/></svg><h3>Заявка принята</h3><p class="note">Мастер-приёмщик позвонит в течение 10 минут.</p></div>
+    </div>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<section id="price">
+  <div class="wrap">
+    <div class="price-top">
+      <div><h2>Цены <span>на работы</span></h2><p class="lead" style="margin:0">Стоимость работ без запчастей. Точную сумму назовём после осмотра и до начала ремонта.</p></div>
+      <div class="search"><svg width="18" height="18" style="color:var(--muted)"><use href="#i-search"/></svg><input id="priceFilter" type="search" placeholder="Найти работу: масло, колодки, сход..." aria-label="Поиск по прайсу"></div>
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip on" data-cat="all">Все</button><button class="chip" data-cat="to">ТО</button><button class="chip" data-cat="diag">Диагностика</button><button class="chip" data-cat="hod">Ходовая</button><button class="chip" data-cat="tire">Шиномонтаж</button>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Работа</th><th>Время</th><th>Цена</th></tr></thead>
+        <tbody id="priceBody">
+          <tr class="cat" data-cat="to"><td colspan="3"><span>01</span>Техобслуживание</td></tr>
+          <tr data-cat="to"><td>Замена масла в двигателе и масляного фильтра</td><td class="t">30 мин</td><td class="p">900 ₽</td></tr>
+          <tr data-cat="to"><td>Замена воздушного фильтра</td><td class="t">10 мин</td><td class="p">300 ₽</td></tr>
+          <tr data-cat="to"><td>Замена салонного фильтра</td><td class="t">20 мин</td><td class="p">450 ₽</td></tr>
+          <tr data-cat="to"><td>Замена свечей зажигания (4 шт.)</td><td class="t">40 мин</td><td class="p">1 200 ₽</td></tr>
+          <tr data-cat="to"><td>Замена тормозной жидкости</td><td class="t">40 мин</td><td class="p">1 200 ₽</td></tr>
+          <tr data-cat="to"><td>Замена масла в АКПП (частичная)</td><td class="t">1 ч</td><td class="p">1 800 ₽</td></tr>
+          <tr class="cat" data-cat="diag"><td colspan="3"><span>02</span>Диагностика</td></tr>
+          <tr data-cat="diag"><td>Диагностика ходовой (бесплатно при ремонте у нас)</td><td class="t">30 мин</td><td class="p">900 ₽</td></tr>
+          <tr data-cat="diag"><td>Компьютерная диагностика двигателя</td><td class="t">30 мин</td><td class="p">1 000 ₽</td></tr>
+          <tr data-cat="diag"><td>Проверка авто перед покупкой</td><td class="t">1,5 ч</td><td class="p">2 700 ₽</td></tr>
+          <tr data-cat="diag"><td>Проверка аккумулятора и генератора</td><td class="t">15 мин</td><td class="p">400 ₽</td></tr>
+          <tr class="cat" data-cat="hod"><td colspan="3"><span>03</span>Ходовая и тормоза</td></tr>
+          <tr data-cat="hod"><td>Замена передних тормозных колодок</td><td class="t">40 мин</td><td class="p">1 200 ₽</td></tr>
+          <tr data-cat="hod"><td>Замена тормозных дисков и колодок (ось)</td><td class="t">1,5 ч</td><td class="p">2 700 ₽</td></tr>
+          <tr data-cat="hod"><td>Замена переднего амортизатора (1 шт.)</td><td class="t">1 ч</td><td class="p">1 800 ₽</td></tr>
+          <tr data-cat="hod"><td>Замена стоек стабилизатора (пара)</td><td class="t">40 мин</td><td class="p">1 200 ₽</td></tr>
+          <tr data-cat="hod"><td>Замена шаровой опоры</td><td class="t">1 ч</td><td class="p">1 800 ₽</td></tr>
+          <tr data-cat="hod"><td>Замена ступичного подшипника</td><td class="t">1,5 ч</td><td class="p">2 700 ₽</td></tr>
+          <tr data-cat="hod"><td>Развал-схождение</td><td class="t">40 мин</td><td class="p">1 500 ₽</td></tr>
+          <tr class="cat" data-cat="tire"><td colspan="3"><span>04</span>Шиномонтаж</td></tr>
+          <tr data-cat="tire"><td>Сезонная переобувка R13-R16 (4 колеса)</td><td class="t">40 мин</td><td class="p">2 000 ₽</td></tr>
+          <tr data-cat="tire"><td>Сезонная переобувка R17-R19 (4 колеса)</td><td class="t">50 мин</td><td class="p">2 800 ₽</td></tr>
+          <tr data-cat="tire"><td>Балансировка колеса</td><td class="t">10 мин</td><td class="p">250 ₽</td></tr>
+          <tr data-cat="tire"><td>Ремонт прокола (жгут)</td><td class="t">20 мин</td><td class="p">500 ₽</td></tr>
+          <tr data-cat="tire"><td>Хранение шин, сезон (4 шт.)</td><td class="t">-</td><td class="p">3 000 ₽</td></tr>
+        </tbody>
+      </table>
+      <div class="empty" id="priceEmpty">Такой работы в прайсе нет. Позвоните, назовём цену по телефону: <a href="tel:+79000000003">+7 (900) 000-00-03</a></div>
+    </div>
+    <div class="price-note"><span>Нормо-час: <b>1 800 ₽</b></span><span>Запчасти: <b>наши со склада или ваши</b></span><span>Гарантия: <b>6 мес / 10 000 км</b></span></div>
+  </div>
+</section>
+
+<section id="why" class="tex-grid">
+  <div class="wrap">
+    <h2>Почему <span>Гараж 24</span></h2>
+    <p class="lead">Без красивых слов. Вот что вы получаете.</p>
+    <div class="facts">
+      <div class="fact"><div class="n">6<small>мес</small></div><h3>Гарантия</h3><p>Или 10 000 км. На работы и на запчасти, которые ставим мы.</p></div>
+      <div class="fact"><div class="n">5<small>постов</small></div><h3>Без очереди</h3><p>Два подъёмника под ходовую, отдельный пост шиномонтажа. Берём в день обращения.</p></div>
+      <div class="fact"><div class="n">12<small>лет</small></div><h3>Стаж мастеров</h3><p>Средний опыт команды. Японцы, корейцы, немцы, отечественные.</p></div>
+      <div class="fact"><div class="n">0<small>₽</small></div><h3>Сверх сметы</h3><p>Нашли что-то ещё, сначала звоним вам. Без согласия не делаем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>Как <span>это работает</span></h2>
+    <p class="lead">От звонка до выдачи машины. Обычно ремонт ходовой занимает 2-4 часа.</p>
+    <div class="steps">
+      <div class="step"><h3>Запись</h3><p>Оставляете заявку или звоните. Подбираем время, часто на сегодня.</p></div>
+      <div class="step"><h3>Осмотр</h3><p>Ставим на подъёмник при вас. Показываем износ, фото отправляем в мессенджер.</p></div>
+      <div class="step"><h3>Смета</h3><p>Называем цену работ и запчастей. Можно привезти свои, поставим.</p></div>
+      <div class="step"><h3>Ремонт и выдача</h3><p>Делаем, показываем снятые детали, выдаём заказ-наряд с гарантией.</p></div>
+    </div>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>Отзывы <span>клиентов</span></h2>
+    <p class="lead">Примеры отзывов для демонстрации макета.</p>
+    <div class="reviews">
+      <div class="rev"><div class="stars">★★★★★</div><p>Стучало спереди справа. В другом сервисе сказали менять всю подвеску. Тут нашли стойку стабилизатора, поменяли за 40 минут. Вышло 2 600 ₽ с деталью.</p><div class="who"><b>Ильдар</b>Hyundai Solaris, 2016</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>Приехала на переобувку в 20:15, думала уже не возьмут. Взяли, сделали, ещё и давление проверили. Хранение колёс тоже оставила здесь.</p><div class="who"><b>Алина</b>Kia Sportage, 2020</div></div>
+      <div class="rev"><div class="stars">★★★★☆</div><p>Привёз свои колодки и диски, поставили без вопросов и без наценки за «чужие» запчасти. Минус звезда: ждал 20 минут, перед мной задержали машину.</p><div class="who"><b>Сергей</b>Skoda Octavia, 2018</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="map" class="tex-grid">
+  <div class="wrap">
+    <h2>Как <span>доехать</span></h2>
+    <p class="lead">Заезд с ул. Технической, ворота с оранжевой полосой. Парковка для клиентов у бокса.</p>
+    <div class="map">
+      <div class="map-ph" role="img" aria-label="Схема проезда (заглушка карты)">
+        <div class="pin"><span>Гараж 24</span><svg width="40" height="40" viewBox="0 0 24 24"><path fill="#ff6a13" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></div>
+      </div>
+      <dl class="map-info">
+        <dt>Адрес</dt><dd>г. Казань, ул. Техническая, 24, бокс 3</dd>
+        <dt>Режим</dt><dd>9:00-21:00, без выходных</dd>
+        <dt>Телефон</dt><dd><a href="tel:+79000000003">+7 (900) 000-00-03</a></dd>
+        <dt>Ориентир</dt><dd>5 минут от проспекта Победы, рядом АЗС</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <h2>Частые <span>вопросы</span></h2>
+    <details><summary>Можно привезти свои запчасти?</summary><p>Да. Ставим без наценки на работу. Гарантия 6 месяцев распространяется на работу, на саму деталь отвечает продавец.</p></details>
+    <details><summary>Диагностика ходовой правда бесплатная?</summary><p>Да, если ремонт делаете у нас. Если только диагностика, она стоит 900 ₽ и занимает около 30 минут.</p></details>
+    <details><summary>Сколько стоит нормо-час?</summary><p>1 800 ₽. Время по каждой работе указано в прайсе, цена считается по нему, а не по факту, если мастер возился дольше.</p></details>
+    <details><summary>Сохранится ли гарантия дилера?</summary><p>Да. Работаем по регламенту производителя, ставим допущенные масла и фильтры, делаем отметку в сервисной книжке.</p></details>
+    <details><summary>Можно подождать машину в сервисе?</summary><p>Да. Есть клиентская зона с кофе и Wi-Fi. Через стекло видно подъёмник.</p></details>
+    <details><summary>Как оплатить?</summary><p>Наличными, картой или по QR. Для юрлиц работаем по договору, выставляем счёт с НДС.</p></details>
+  </div>
+</section>
+<div class="hazard"></div>
+
+<section id="final" class="tex-grid">
+  <div class="wrap final-grid">
+    <div>
+      <span class="tag">Свободные окна сегодня</span>
+      <h2>Запишитесь <span>на удобное время</span></h2>
+      <p class="lead" style="margin-bottom:8px">Или позвоните, ответит мастер-приёмщик, а не колл-центр.</p>
+      <a class="bigphone" href="tel:+79000000003">+7 (900) 000-00-03</a>
+      <p style="color:var(--muted);display:flex;gap:18px;margin-top:20px">
+        <svg width="36" height="36" style="color:var(--accent)"><use href="#i-wrench"/></svg>
+        <svg width="36" height="36" style="color:var(--accent)"><use href="#i-tire"/></svg>
+        <svg width="36" height="36" style="color:var(--accent)"><use href="#i-jack"/></svg>
+      </p>
+    </div>
+    <div class="card">
+      <h3>Заявка на ремонт</h3>
+      <p class="note">Опишите проблему в двух словах, перезвоним и назовём цену.</p>
+      <form data-form="final_form" novalidate>
+        <label>Имя *<input name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
+        <label>Телефон *<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>
+        <label>Что беспокоит<input name="comment" placeholder="Стук спереди на кочках"></label>
+        <div class="errmsg" aria-live="polite"></div>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p class="legal">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+      <div class="thanks"><svg width="48" height="48" style="color:var(--ok)"><use href="#i-check"/></svg><h3>Спасибо, заявка у нас</h3><p class="note">Перезвоним в течение 10 минут в рабочее время.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="logo" style="font-size:20px">Гараж<b>24</b></a>
+      <span>г. Казань, ул. Техническая, 24 · 9:00-21:00 без выходных</span>
+      <a href="tel:+79000000003">+7 (900) 000-00-03</a>
+    </div>
+    <p class="disclaimer">Пример работы. Компания вымышленная, цены и отзывы условные.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function goal(name, params){ try{ ym(YM_ID, 'reachGoal', name, params || {}); }catch(e){} }
+
+  // UTM из адресной строки -> скрытые поля в каждой форме
+  var qs = new URLSearchParams(location.search);
+  var utmKeys = ['utm_source','utm_medium','utm_campaign'];
+  document.querySelectorAll('form[data-form]').forEach(function(f){
+    utmKeys.forEach(function(k){
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = qs.get(k) || '';
+      f.appendChild(i);
+    });
+  });
+
+  // Цель: клик по телефону
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="tel:"]');
+    if(a) goal('phone_click', { place: a.closest('section,header,footer') ? (a.closest('section,header,footer').id || a.closest('section,header,footer').tagName.toLowerCase()) : 'page' });
+  });
+
+  // Формы: проверка, цель lead_submit, спасибо
+  document.querySelectorAll('form[data-form]').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = f.elements.name, phone = f.elements.phone, err = f.querySelector('.errmsg');
+      var msgs = [];
+      name.classList.remove('err'); phone.classList.remove('err');
+      if(!name.value.trim()){ msgs.push('Укажите имя'); name.classList.add('err'); }
+      if(phone.value.replace(/\D/g,'').length < 10){ msgs.push('Телефон: минимум 10 цифр'); phone.classList.add('err'); }
+      if(msgs.length){ err.textContent = msgs.join('. ') + '.'; return; }
+      err.textContent = '';
+      var data = Object.fromEntries(new FormData(f));
+      goal('lead_submit', { form: f.dataset.form, service: data.service || '', utm_source: data.utm_source });
+      console.log('lead', data); // здесь отправка в CRM / на почту
+      f.classList.add('sent');
+    });
+  });
+
+  // Прайс: поиск и фильтр по категориям
+  var input = document.getElementById('priceFilter'), body = document.getElementById('priceBody'),
+      empty = document.getElementById('priceEmpty'), cat = 'all', searchSent = false, t;
+  function apply(){
+    var q = input.value.trim().toLowerCase(), shown = {}, any = false;
+    body.querySelectorAll('tr:not(.cat)').forEach(function(r){
+      var ok = (cat === 'all' || r.dataset.cat === cat) && (!q || r.textContent.toLowerCase().indexOf(q) > -1);
+      r.style.display = ok ? '' : 'none';
+      if(ok){ shown[r.dataset.cat] = true; any = true; }
+    });
+    body.querySelectorAll('tr.cat').forEach(function(r){ r.style.display = shown[r.dataset.cat] ? '' : 'none'; });
+    empty.style.display = any ? 'none' : 'block';
+  }
+  input.addEventListener('input', function(){
+    apply();
+    if(!searchSent && input.value.trim()){ searchSent = true; goal('price_search'); }
+    clearTimeout(t);
+    t = setTimeout(function(){ if(input.value.trim().length > 2) console.log('price query:', input.value.trim()); }, 800);
+  });
+  document.getElementById('chips').addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if(!b) return;
+    document.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c === b); });
+    cat = b.dataset.cat; apply();
+  });
+})();
+</script>
+</body>
+</html>

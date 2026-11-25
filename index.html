@@ -144,6 +144,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .sample .cta{margin-top:20px}
 .certs3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
 .certs3 button{all:unset;cursor:zoom-in;display:block}
+.demos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:16px}
+.demos a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
+.demos img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line-d);transition:transform .2s}
+.demos a:hover img{transform:translateY(-3px)}
+.demos b{font:700 15px var(--f-display);margin-top:6px}
+.demos span{font-size:13px;color:var(--dim)}
+.demos-note{max-width:70ch;color:var(--dim)}
+@media (max-width:980px){.demos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .certs3 img{border-radius:8px;border:1px solid var(--line-d);aspect-ratio:3/4;object-fit:cover;width:100%}
 @media (max-width:980px){.plat{grid-template-columns:repeat(2,minmax(0,1fr))}.sample{grid-template-columns:minmax(0,1fr)}}
 
@@ -396,6 +404,18 @@ dialog.zoom .x:hover{border-color:var(--orchid)}
           </dl>
           <div class="cta"><a class="pill sm" href="files/primer-audita-direct.pdf" target="_blank" rel="noopener">Открыть PDF</a></div>
         </div>
+      </div>
+    </article>
+
+    <article class="case rv" id="landings">
+      <div class="case-top"><h3>Демо-лендинги под рекламу<span class="tag">формат моей работы · компании вымышленные</span></h3></div>
+      <p class="demos-note">Пять страниц для разных ниш. В каждой форма заявки с UTM-метками, цели Метрики на заявку, звонок и калькулятор, адаптив под телефон. Откройте и попробуйте.</p>
+      <div class="demos">
+          <a href="demo/kuhni/" target="_blank" rel="noopener"><img src="img/demo-kuhni.jpg" alt="Демо-лендинг: Кухни на заказ" loading="lazy"><b>Кухни на заказ ↗</b><span>квиз с расчётом цены</span></a>
+          <a href="demo/klining/" target="_blank" rel="noopener"><img src="img/demo-klining.jpg" alt="Демо-лендинг: Уборка квартир" loading="lazy"><b>Уборка квартир ↗</b><span>калькулятор по площади</span></a>
+          <a href="demo/avtoservis/" target="_blank" rel="noopener"><img src="img/demo-avtoservis.jpg" alt="Демо-лендинг: Автосервис" loading="lazy"><b>Автосервис ↗</b><span>прайс с поиском и запись</span></a>
+          <a href="demo/stomatologiya/" target="_blank" rel="noopener"><img src="img/demo-stomatologiya.jpg" alt="Демо-лендинг: Стоматология" loading="lazy"><b>Стоматология ↗</b><span>имплантация, рассрочка</span></a>
+          <a href="demo/kurs-excel/" target="_blank" rel="noopener"><img src="img/demo-kurs-excel.jpg" alt="Демо-лендинг: Онлайн-курс Excel" loading="lazy"><b>Онлайн-курс Excel ↗</b><span>тарифы и бесплатный урок</span></a>
       </div>
     </article>
 
