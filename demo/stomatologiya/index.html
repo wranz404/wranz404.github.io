@@ -7,7 +7,7 @@
 <meta name="description" content="Имплантация зубов под ключ от 39 900 ₽: КТ, имплант, абатмент, коронка. Консультация и КТ бесплатно. Рассрочка 0% на 12 месяцев. Новосибирск, ул. Лесная.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Jura:wght@500;600;700&display=swap" rel="stylesheet">
 
 <!-- Yandex.Metrika counter (демо: в боевой версии раскомментировать и подставить номер счётчика)
 <script type="text/javascript">
@@ -28,334 +28,375 @@
 
 <style>
 :root{
-  --bg:#f7f5f0; --paper:#ffffff; --ink:#17302f; --muted:#5d6f6d; --line:#e3ded3;
-  --teal:#0e4a4c; --teal-2:#1d6b6c; --teal-soft:#e4efed; --sand:#d8c3a0; --sand-soft:#f1e8d8;
-  --err:#a33a2b; --r:18px;
+  --porcelain:#f4f6f9; --paper:#ffffff; --navy:#14264a; --navy-2:#2b3f68; --muted:#56617a;
+  --gum:#e27d78; --gum-soft:#f8dcd8; --silver:#9aa6b6; --silver-soft:#e3e8ef; --line:#d6dce5;
+  --err:#b3261e;
+  --display:"Jura",ui-monospace,monospace; --body:"Alegreya Sans",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Golos Text",system-ui,sans-serif;overflow-x:hidden}
-h1,h2,h3{font-family:"Unbounded",sans-serif;font-weight:500;line-height:1.2;margin:0 0 .6em;letter-spacing:-.01em}
-h1{font-size:clamp(28px,4.4vw,52px)} h2{font-size:clamp(24px,3vw,36px)} h3{font-size:19px}
-p{margin:0 0 1em} a{color:var(--teal)}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-section{padding:88px 0}
-.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-2);margin-bottom:14px;font-weight:600}
-.lead{font-size:19px;color:var(--muted);max-width:640px}
-.note{font-size:13px;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--teal);color:#fff;font:600 16px "Golos Text",sans-serif;padding:15px 28px;cursor:pointer;text-decoration:none;transition:background .2s}
-.btn:hover{background:var(--teal-2)}
-.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
-.btn.ghost:hover{background:var(--teal-soft)}
+body{margin:0;background:var(--porcelain);color:var(--navy);font:400 18px/1.55 var(--body);overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(30px,4.6vw,56px);font-weight:700}
+h2{font-size:clamp(24px,2.4vw,30px)}
+h3{font-size:19px}
+p{margin:0 0 1em} a{color:var(--navy)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.num{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)} .small{font-size:15px}
+.tag{font:600 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:var(--navy);color:#fff;font:700 17px var(--body);padding:14px 24px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--navy-2)}
+.btn.line{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.btn.line:hover{background:var(--silver-soft)}
+:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 
-/* header */
-header{position:sticky;top:0;z-index:10;background:rgba(247,245,240,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hd{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.logo b{font:500 16px/1.1 "Unbounded",sans-serif;display:block}
-.logo span{font-size:12px;color:var(--muted)}
-.hd-info{display:flex;align-items:center;gap:28px;font-size:15px}
-.hd-info .addr{color:var(--muted);line-height:1.3}
-.tel{font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
-.hd .btn{padding:11px 20px;font-size:15px}
+/* шапка */
+.top{border-bottom:1px solid var(--line);background:var(--paper)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font:700 17px/1.1 var(--display);display:block}
+.logo span{font-size:14px;color:var(--muted)}
+.top .info{display:flex;gap:24px;align-items:center;font-size:16px}
+.tel{font-weight:700;text-decoration:none;white-space:nowrap}
 
-/* hero */
-.hero{padding:64px 0 88px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
-.hero ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
-.hero li{padding-left:28px;position:relative}
-.hero li:before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;border-left:2px solid var(--teal-2);border-bottom:2px solid var(--teal-2);transform:rotate(-45deg)}
-.hero-visual{display:flex;gap:28px;align-items:center;margin-top:36px}
-.hero-visual svg{flex:none}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px}
-.form h3{margin-bottom:6px}
-.form label{display:block;font-size:14px;color:var(--muted);margin:16px 0 6px}
-.form input[type=text],.form input[type=tel]{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;font:inherit;background:var(--bg);color:var(--ink)}
-.form input:focus{outline:2px solid var(--teal-2);outline-offset:1px;border-color:transparent}
-.form .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:16px 0 18px;line-height:1.45}
-.form .consent input{margin-top:3px;accent-color:var(--teal);flex:none;width:17px;height:17px}
+/* первый экран */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0 40px}
+.hero-img{margin:0;border-radius:10px;overflow:hidden;aspect-ratio:4/5;max-height:620px;background:var(--silver-soft)}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover}
+.intro{display:grid;gap:28px;min-width:0}
+.intro ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.intro li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
+.intro li .num{min-width:72px;color:var(--navy-2)}
+
+/* зубная формула */
+.chart{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px 28px 24px;margin-bottom:72px}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.chart-head h2{margin:0}
+.legend{display:flex;gap:18px;font-size:15px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.arch{display:flex}
+.arch.up{border-bottom:2px solid var(--navy)}
+.q{flex:1;display:grid;grid-template-columns:repeat(8,1fr);position:relative}
+.q:first-child{border-right:2px solid var(--navy)}
+.qcap{position:absolute;font-size:13px;color:var(--muted);white-space:nowrap}
+.up .qcap{top:-2px} .low .qcap{bottom:-2px}
+.q:first-child .qcap{left:0} .q:last-child .qcap{right:0}
+.tooth{appearance:none;border:0;background:transparent;padding:22px 2px 6px;margin:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--navy);font:inherit;border-radius:4px}
+.low .tooth{flex-direction:column-reverse;padding:6px 2px 22px}
+.tooth svg{width:100%;max-width:46px;height:auto;display:block;overflow:visible}
+.low .tooth svg{transform:scaleY(-1)}
+.tooth .n{font:600 15px/1 var(--display);padding:4px 5px;border-radius:3px;font-variant-numeric:tabular-nums}
+.tooth .crown{fill:#fff;stroke:var(--navy);stroke-width:1.4}
+.tooth .root{fill:#f1ede6;stroke:var(--navy);stroke-width:1.1}
+.tooth .gumb{fill:var(--gum-soft)} .tooth .gumline{stroke:var(--gum);stroke-width:1.5}
+.tooth .imp{display:none}
+.tooth .imp path,.tooth .imp rect{fill:var(--silver-soft);stroke:var(--navy);stroke-width:1.1}
+.tooth .imp line{stroke:var(--silver);stroke-width:1.4}
+.tooth:hover .crown{fill:var(--silver-soft)}
+.tooth[aria-pressed="true"] .root{display:none}
+.tooth[aria-pressed="true"] .imp{display:inline}
+.tooth[aria-pressed="true"] .n{background:var(--navy);color:#fff}
+.tooth:focus-visible{outline-offset:-2px}
+.chart-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.calc{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;margin-top:22px;padding-top:22px;border-top:1px dashed var(--silver)}
+.sys{border:0;padding:0;margin:0;display:flex;gap:0;border-radius:6px;box-shadow:inset 0 0 0 1.5px var(--navy);overflow:hidden}
+.sys legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.sys label{position:relative;padding:10px 16px;cursor:pointer;font-size:16px;line-height:1.2;text-align:center}
+.sys label+label{border-left:1.5px solid var(--navy)}
+.sys input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.sys label:has(input:checked){background:var(--navy);color:#fff}
+.sys label:has(input:focus-visible){outline:2px solid var(--gum);outline-offset:-4px}
+.sys small{display:block;font-size:13px;opacity:.75}
+.result{font-size:17px}
+.result .eq{font:600 clamp(20px,2.2vw,26px)/1.25 var(--display)}
+.result .eq b{font-weight:700}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* разделы-листовка */
+.sec{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:56px 0;border-top:1px solid var(--line)}
+.sec>header h2{position:sticky;top:24px}
+.sec>header .tag{display:block;margin-bottom:12px}
+.note-box{border-left:3px solid var(--gum);padding:10px 16px;background:var(--paper);font-size:16px;margin-top:20px}
+
+table{width:100%;border-collapse:collapse;font-size:17px;background:var(--paper);border:1px solid var(--line)}
+th{font:600 13px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:1px solid var(--navy)}
+td{padding:14px;border-bottom:1px solid var(--line);vertical-align:top}
+td .num{font-size:20px;white-space:nowrap}
+tr.pick td:first-child{box-shadow:inset 3px 0 0 var(--gum)}
+
+.gantt{background:var(--paper);border:1px solid var(--line);padding:18px 18px 8px}
+.scale,.g-row{display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:center}
+.scale .ticks{display:grid;grid-template-columns:repeat(6,1fr);font:600 13px var(--display);color:var(--muted)}
+.scale .ticks span{border-left:1px solid var(--line);padding-left:4px}
+.g-row{padding:12px 0;border-top:1px solid var(--line)}
+.g-row b{display:block;font-size:17px}
+.g-row .when{font:600 13px var(--display);color:var(--muted)}
+.track{position:relative;height:14px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/6))}
+.bar{position:absolute;top:0;height:14px;border-radius:2px;background:var(--navy)}
+.bar.soft{background:var(--gum-soft);box-shadow:inset 0 0 0 1.5px var(--gum)}
+.g-row p{grid-column:2;font-size:15px;color:var(--muted);margin:6px 0 0}
+.incl{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:17px}
+.incl li:before{content:"+ ";font-family:var(--display);font-weight:700;color:var(--gum)}
+
+.photo,.strip figure{margin:0}
+.photo{margin-bottom:28px}
+.photo img,.strip img{display:block;width:100%;height:auto;object-fit:cover;border-radius:10px;background:var(--silver-soft)}
+.photo img{aspect-ratio:16/7}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:20px;min-width:0}
+.strip img{aspect-ratio:3/2}
+.strip figcaption{font-size:14px;color:var(--muted);padding-top:8px}
+.rows>div{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.rows>div:first-child{padding-top:0}
+.mono{width:56px;height:56px;border-radius:6px;background:var(--silver-soft);display:grid;place-items:center;font:700 18px var(--display)}
+.rows .role{font-size:15px;color:var(--muted);margin-bottom:4px}
+.rows p{margin:0}
+.case-tag{font:600 14px var(--display);color:var(--navy-2)}
+
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.ex dl{margin:0;background:var(--paper);border:1px solid var(--line);padding:6px 20px 18px}
+.ex dl div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.ex dt{color:var(--muted)} .ex dd{margin:0;font-weight:700}
+.ex .big{font:700 34px var(--display);margin-top:12px}
+
+blockquote{margin:0 0 22px;padding:0 0 22px;border-bottom:1px solid var(--line)}
+blockquote p{font-size:18px}
+blockquote footer{font-size:15px;color:var(--muted)}
+.stars{font-family:var(--display);font-weight:600;color:var(--navy-2);font-size:14px;margin-bottom:6px}
+
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:4px;top:10px;font:600 24px var(--display)}
+details[open] summary:after{content:"−"}
+details p{color:var(--muted)}
+
+.book{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.form{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:28px}
+.form label{display:block;font-size:15px;color:var(--muted);margin:14px 0 6px}
+.form input[type=text],.form input[type=tel]{width:100%;padding:13px 14px;border:1px solid var(--silver);border-radius:6px;font:inherit;background:var(--porcelain);color:var(--navy)}
+.form input:focus{outline:2px solid var(--navy);outline-offset:0;border-color:transparent}
+.form .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:16px 0;line-height:1.4}
+.form .consent input{margin-top:3px;accent-color:var(--navy);flex:none;width:17px;height:17px}
 .form .btn{width:100%}
-.err{color:var(--err);font-size:13px;margin-top:6px;min-height:0}
+.plan{background:var(--silver-soft);border-radius:6px;padding:12px 14px;font-size:16px;margin:0 0 6px}
+.plan b{font-family:var(--display)}
+.err{color:var(--err);font-size:14px;margin-top:4px}
 .invalid{border-color:var(--err)!important}
-.thanks{display:none;text-align:center;padding:24px 0}
+.thanks{display:none;padding:12px 0}
 .thanks.show{display:block}
 .form.done form{display:none}
+.contacts{display:grid;gap:14px;margin-top:20px}
+.contacts span{display:block;font-size:14px;color:var(--muted)}
 
-/* prices */
-.prices{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-.price{border:1px solid var(--line);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;background:var(--bg)}
-.price.accent{background:var(--teal);color:#fff;border-color:var(--teal)}
-.price.accent .note,.price.accent li{color:#d6e6e4}
-.country{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-2);font-weight:600}
-.price.accent .country{color:var(--sand)}
-.sum{font:500 30px "Unbounded",sans-serif;margin:14px 0 4px}
-.price ul{padding-left:18px;margin:18px 0 24px;color:var(--muted);font-size:15px}
-.price .btn{margin-top:auto}
-.price.accent .btn{background:var(--sand);color:var(--ink)}
-.disclaimer{margin-top:28px;padding:14px 18px;border-left:3px solid var(--sand);background:var(--sand-soft);font-size:14px;border-radius:0 10px 10px 0}
+.foot{background:var(--navy);color:#c3cbd9;padding:40px 0;font-size:15px}
+.foot .wrap{display:grid;gap:8px}
+.foot b,.foot a{color:#fff}
+.foot .demo{margin-top:10px;padding-top:14px;border-top:1px solid rgba(255,255,255,.15);color:var(--gum-soft)}
 
-/* timeline */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}
-.step{padding:0 22px 0 0;position:relative}
-.step .dot{width:44px;height:44px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font:500 15px "Unbounded",sans-serif;position:relative;z-index:1}
-.step:not(:last-child):after{content:"";position:absolute;top:22px;left:44px;right:0;height:1px;background:var(--sand)}
-.step .when{font-size:13px;color:var(--teal-2);font-weight:600;margin:18px 0 6px;text-transform:uppercase;letter-spacing:.05em}
-.step p{font-size:15px;color:var(--muted)}
-.included{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
-.chip{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px}
-
-/* doctors */
-.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-.doc{display:flex;gap:18px;align-items:flex-start}
-.ava{flex:none;width:64px;height:64px;border-radius:50%;background:var(--sand-soft);color:var(--teal);display:grid;place-items:center;font:500 18px "Unbounded",sans-serif;border:1px solid var(--sand)}
-.doc b{display:block;font-size:17px}
-.doc .role{color:var(--teal-2);font-size:14px;font-weight:600;margin:2px 0 8px}
-.doc p{font-size:14px;color:var(--muted);margin:0}
-
-/* cases */
-.cases{background:var(--teal);color:#fff}
-.cases .lead,.cases .note{color:#c9dcda}
-.cases .eyebrow{color:var(--sand)}
-.case{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px}
-.case .ph{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.case .ph div{aspect-ratio:4/3;border-radius:10px;border:1px dashed rgba(255,255,255,.3);display:grid;place-items:center;font-size:13px;color:#c9dcda;text-align:center;padding:8px}
-.case p{font-size:15px;color:#e1ecea;margin-bottom:6px}
-.case .meta{font-size:13px;color:var(--sand)}
-
-/* installment */
-.inst{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.calc{background:var(--sand-soft);border-radius:var(--r);padding:34px;border:1px solid var(--sand)}
-.calc .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(14,74,76,.12);font-size:16px}
-.calc .row:last-of-type{border:0}
-.calc .big{font:500 34px "Unbounded",sans-serif;color:var(--teal);margin-top:10px}
-
-/* reviews */
-.rev{display:flex;flex-direction:column}
-.rev .stars{color:var(--teal-2);letter-spacing:3px;margin-bottom:10px}
-.rev p{font-size:15px}
-.rev .who{margin-top:auto;font-size:14px;color:var(--muted)}
-
-/* faq */
-.faq{max-width:820px;margin-top:36px}
-details{border-bottom:1px solid var(--line);padding:4px 0}
-summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font-weight:600;position:relative}
-summary::-webkit-details-marker{display:none}
-summary:after{content:"+";position:absolute;right:6px;top:12px;font-size:26px;font-weight:400;color:var(--teal-2);transition:transform .2s}
-details[open] summary:after{transform:rotate(45deg)}
-details p{color:var(--muted);padding-bottom:12px}
-
-/* final */
-.final{background:var(--paper);border-top:1px solid var(--line)}
-.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.contacts{display:grid;gap:18px;margin-top:28px;font-size:16px}
-.contacts span{display:block;font-size:13px;color:var(--muted)}
-
-footer{background:var(--ink);color:#b9c7c5;padding:44px 0;font-size:14px}
-footer .wrap{display:grid;gap:10px}
-footer b{color:#fff}
-footer .demo{margin-top:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);color:var(--sand)}
-
-@media (max-width:1000px){
-  .hd-info .addr{display:none}
-  .hero-grid,.final-grid,.inst{grid-template-columns:1fr;gap:40px}
-  .grid3,.docs{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr;row-gap:36px}
-  .step:nth-child(2):after{display:none}
+@media (max-width:960px){
+  .hero,.book,.ex{grid-template-columns:1fr;gap:28px}
+  .hero{padding:32px 0 28px}
+  .hero-img{order:-1;aspect-ratio:16/10;max-height:none}
+  .sec{grid-template-columns:1fr;gap:20px}
+  .sec>header h2{position:static}
+  .calc{grid-template-columns:1fr;gap:16px}
+  .top .addr{display:none}
 }
-@media (max-width:640px){
-  body{font-size:16px}
-  section{padding:60px 0}
+@media (max-width:720px){
+  body{font-size:17px}
   .wrap{padding:0 16px}
-  .hd{height:64px}
-  .hd .btn,.logo span{display:none}
-  .hd-info{gap:0}
-  .hero{padding:36px 0 60px}
-  .hero-visual{flex-direction:column;align-items:flex-start;gap:16px}
-  .grid3,.docs,.steps{grid-template-columns:1fr}
-  .step{padding:0 0 0 64px}
-  .step .dot{position:absolute;left:0;top:0}
-  .step .when{margin-top:10px}
-  .step:not(:last-child):after{display:block;top:44px;bottom:-36px;left:22px;right:auto;width:1px;height:auto}
-  .card,.price,.calc{padding:22px}
-  .sum{font-size:26px}
+  .hero{padding:20px 0 24px;gap:20px}
+  .hero-img{aspect-ratio:4/3}
+  .strip{grid-template-columns:1fr;gap:16px}
+  .photo img{aspect-ratio:4/3}
+  .chart{padding:18px 10px 18px;margin:0 -6px 48px}
+  .chart-head{padding:0 6px}
+  .arch{flex-direction:column}
+  .q:first-child{border-right:0}
+  .q+.q{border-top:1px dashed var(--silver)}
+  .tooth .n{font-size:13px;padding:3px}
+  .calc{padding:18px 6px 0}
+  .chart-note{padding:0 6px}
+  .sys{width:100%} .sys label{flex:1;padding:10px 4px;font-size:15px}
+  .sec{padding:40px 0}
+  table,tbody,tr,td{display:block} thead{display:none}
+  tr{border-bottom:1px solid var(--line);padding:10px 0}
+  td{border:0;padding:3px 14px}
+  td[data-k]:before{content:attr(data-k) ": ";color:var(--muted)}
+  tr.pick td:first-child{box-shadow:none}
+  .scale,.g-row{grid-template-columns:1fr;gap:6px}
+  .scale>span:first-child{display:none}
+  .g-row p{grid-column:1}
+  .form{padding:20px}
+  .top .btn{display:none}
 }
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap hd">
+<div class="top">
+  <div class="wrap">
     <a class="logo" href="#top" aria-label="Стоматология на Лесной">
-      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#0e4a4c"/><path d="M13 12c2.5-1.5 4.5-.5 7 .5 2.5-1 4.5-2 7-.5 2.5 1.6 2.2 6 1 9-1 2.6-1.4 7-3.2 8.2-1.5 1-2.3-2.8-2.8-4.8-.4-1.4-1-2-2-2s-1.6.6-2 2c-.5 2-1.3 5.8-2.8 4.8C13.4 28 13 23.6 12 21c-1.2-3-1.5-7.4 1-9z" fill="#f7f5f0"/></svg>
+      <svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><rect x="0" y="17" width="34" height="7" fill="#f8dcd8"/><path d="M6 3c3-2 7-1 11 1 4-2 8-3 11-1 4 3 3 10 1 15-1 4-2 13-5 16-2 2-3-4-4-7-.5-2-1.5-3-3-3s-2.5 1-3 3c-1 3-2 9-4 7-3-3-4-12-5-16C3 13 2 6 6 3z" fill="#fff" stroke="#14264a" stroke-width="2"/></svg>
       <div><b>На Лесной</b><span>стоматология · Новосибирск</span></div>
     </a>
-    <div class="hd-info">
-      <div class="addr">ул. Лесная, 00<br>Пн-Сб 9:00-21:00</div>
+    <div class="info">
+      <span class="addr muted">ул. Лесная, 00 · Пн-Сб 9:00-21:00</span>
       <a class="tel" href="tel:+79000000004">+7 (900) 000-00-04</a>
-      <a class="btn" href="#form-final">Записаться</a>
+      <a class="btn line" href="#book">Записаться</a>
     </div>
   </div>
-</header>
+</div>
 
-<main id="top">
-<section class="hero">
-  <div class="wrap hero-grid">
+<main id="top" class="wrap">
+  <div class="hero">
+  <div class="intro">
     <div>
-      <span class="eyebrow">Имплантация зубов в Новосибирске</span>
+      <p class="tag">Имплантация зубов в Новосибирске</p>
       <h1>Имплантация под ключ от 39 900 ₽, консультация и КТ бесплатно</h1>
-      <p class="lead">В стоимость уже входят компьютерная томография, имплант, абатмент и коронка. Сумма фиксируется в договоре до начала лечения.</p>
-      <ul>
-        <li>План лечения и смета на первом приёме, около 60 минут</li>
-        <li>Рассрочка 0% на 12 месяцев без первого взноса</li>
-        <li>Гарантия на имплант от производителя, на коронку 3 года</li>
-      </ul>
-      <div class="hero-visual">
-        <svg width="150" height="190" viewBox="0 0 150 190" aria-label="Схема: коронка, абатмент и имплант в кости">
-          <rect x="0" y="96" width="150" height="94" rx="10" fill="#f1e8d8"/>
-          <path d="M0 96h150" stroke="#d8c3a0" stroke-width="2"/>
-          <path d="M44 30c8-8 20-6 31-2 11-4 23-6 31 2 7 8 5 26 0 38-3 7-6 14-12 16H56c-6-2-9-9-12-16-5-12-7-30 0-38z" fill="#fff" stroke="#0e4a4c" stroke-width="2.5"/>
-          <rect x="63" y="84" width="24" height="16" rx="3" fill="#d8c3a0" stroke="#0e4a4c" stroke-width="2"/>
-          <path d="M62 100h26l-3 70-10 10-10-10z" fill="#e4efed" stroke="#0e4a4c" stroke-width="2.5"/>
-          <path d="M62 112h26M63 124h24M64 136h22M65 148h20M66 160h18" stroke="#1d6b6c" stroke-width="2"/>
-        </svg>
-        <p class="note" style="max-width:300px;margin:0">Имплант из титана устанавливается в кость и через 3-6 месяцев приживления становится опорой для абатмента и коронки.</p>
-      </div>
+      <p class="muted" style="margin:0">В стоимость уже входят компьютерная томография, имплант, абатмент и коронка. Сумма фиксируется в договоре до начала лечения.</p>
     </div>
-    <div class="card form" id="form-hero">
-      <form novalidate data-form="hero">
-        <h3>Бесплатная консультация и КТ</h3>
-        <p class="note">Администратор перезвонит в течение 15 минут в рабочее время и подберёт удобное время.</p>
-        <label for="h-name">Имя</label>
-        <input id="h-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
-        <div class="err" data-err="name"></div>
-        <label for="h-phone">Телефон</label>
-        <input id="h-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__">
-        <div class="err" data-err="phone"></div>
-        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
-        <label class="consent"><input type="checkbox" name="consent"> Согласен(на) на обработку персональных данных в соответствии с политикой конфиденциальности</label>
-        <div class="err" data-err="consent"></div>
-        <button class="btn" type="submit">Записаться на консультацию</button>
-      </form>
-      <div class="thanks"><h3>Спасибо, заявка принята</h3><p class="note">Перезвоним с номера +7 (900) 000-00-04 в течение 15 минут в рабочее время.</p></div>
-    </div>
+    <ul>
+      <li><span class="num">60 мин</span><span>План лечения и смета на первом приёме</span></li>
+      <li><span class="num">0%</span><span>Рассрочка на 12 месяцев без первого взноса</span></li>
+      <li><span class="num">3 года</span><span>Гарантия на коронку, на имплант гарантия производителя</span></li>
+    </ul>
   </div>
-</section>
-
-<section class="prices" id="prices">
-  <div class="wrap">
-    <span class="eyebrow">Цены</span>
-    <h2>Три системы имплантов, одна прозрачная смета</h2>
-    <p class="lead">Цена указана за один зуб под ключ. Систему врач подбирает по данным КТ: объёму кости, нагрузке и вашему бюджету.</p>
-    <div class="grid3">
-      <div class="price">
-        <span class="country">Южная Корея</span>
-        <h3 style="margin:10px 0 0">Osstem</h3>
-        <div class="sum">от 39 900 ₽</div>
-        <span class="note">под ключ, за 1 зуб</span>
-        <ul><li>КТ, имплант, абатмент</li><li>Металлокерамическая коронка</li><li>Гарантия производителя на имплант</li></ul>
-        <a class="btn ghost" href="#form-final">Узнать подробнее</a>
-      </div>
-      <div class="price accent">
-        <span class="country">Израиль</span>
-        <h3 style="margin:10px 0 0">MIS C1</h3>
-        <div class="sum">от 54 900 ₽</div>
-        <span class="note">под ключ, за 1 зуб</span>
-        <ul><li>КТ, имплант, абатмент</li><li>Коронка из диоксида циркония</li><li>Чаще всего выбирают пациенты</li></ul>
-        <a class="btn" href="#form-final">Узнать подробнее</a>
-      </div>
-      <div class="price">
-        <span class="country">Швейцария</span>
-        <h3 style="margin:10px 0 0">Straumann SLActive</h3>
-        <div class="sum">от 84 900 ₽</div>
-        <span class="note">под ключ, за 1 зуб</span>
-        <ul><li>КТ, имплант, оригинальный абатмент</li><li>Коронка из диоксида циркония</li><li>Пожизненная гарантия производителя на имплант</li></ul>
-        <a class="btn ghost" href="#form-final">Узнать подробнее</a>
-      </div>
-    </div>
-    <div class="disclaimer">Имеются противопоказания, необходима консультация специалиста. Костная пластика и синус-лифтинг, если они нужны, оплачиваются отдельно и вносятся в смету до начала лечения.</div>
+  <figure class="hero-img"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1800&q=80" width="900" height="1125" alt="Светлый стоматологический кабинет с креслом и оборудованием" fetchpriority="high"></figure>
   </div>
-</section>
 
-<section id="steps">
-  <div class="wrap">
-    <span class="eyebrow">Что входит и сколько длится</span>
-    <h2>Путь от консультации до коронки</h2>
-    <p class="lead">Обычно лечение занимает от 3 до 6 месяцев. Точный срок зависит от состояния кости и того, где стоит имплант: на нижней челюсти приживление идёт быстрее.</p>
-    <div class="steps">
-      <div class="step"><div class="dot">1</div><div class="when">День 1</div><h3>Консультация и КТ</h3><p>Осмотр, томография, план лечения и смета с фиксированной ценой.</p></div>
-      <div class="step"><div class="dot">2</div><div class="when">1-2 неделя</div><h3>Установка импланта</h3><p>Под местной анестезией, около 40 минут на один имплант. Контрольный осмотр через 7-10 дней.</p></div>
-      <div class="step"><div class="dot">3</div><div class="when">2-5 месяц</div><h3>Приживление</h3><p>Имплант срастается с костью. На этот период по показаниям ставится временная коронка.</p></div>
-      <div class="step"><div class="dot">4</div><div class="when">3-6 месяц</div><h3>Абатмент и коронка</h3><p>Снимаем слепок, изготавливаем и фиксируем постоянную коронку. Дальше осмотр раз в полгода.</p></div>
+  <section class="chart" aria-labelledby="chart-h">
+    <div class="chart-head">
+      <h2 id="chart-h">Отметьте зубы, которых нет</h2>
+      <div class="legend" aria-hidden="true"><span><i style="background:#fff;box-shadow:inset 0 0 0 1.4px #14264a"></i>свой зуб</span><span><i style="background:#e3e8ef;box-shadow:inset 0 0 0 1.4px #14264a"></i>имплант с коронкой</span><span><i style="background:#f8dcd8"></i>десна</span></div>
     </div>
-    <div class="included">
-      <span class="chip">КТ челюсти</span><span class="chip">Имплант</span><span class="chip">Абатмент</span><span class="chip">Постоянная коронка</span><span class="chip">Анестезия</span><span class="chip">Контрольные осмотры</span><span class="chip">Гарантия в договоре</span>
+    <div class="arch up" role="group" aria-label="Верхняя челюсть">
+      <div class="q" data-q="1"><span class="qcap">верх, справа</span></div>
+      <div class="q" data-q="2"><span class="qcap">верх, слева</span></div>
     </div>
-  </div>
-</section>
+    <div class="arch low" role="group" aria-label="Нижняя челюсть">
+      <div class="q" data-q="4"><span class="qcap">низ, справа</span></div>
+      <div class="q" data-q="3"><span class="qcap">низ, слева</span></div>
+    </div>
+    <p class="chart-note">Нумерация как в карте у стоматолога. «Справа» и «слева» указаны со стороны пациента: схема показана так, как видит врач, сидя напротив вас.</p>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Врачи</span>
-    <h2>Кто будет вас лечить</h2>
-    <div class="docs">
-      <div class="card doc"><div class="ava">АВ</div><div><b>Арсений Веткин</b><div class="role">Хирург-имплантолог, стаж 14 лет</div><p>Установка имплантов, костная пластика, синус-лифтинг. Ведёт сложные клинические случаи.</p></div></div>
-      <div class="card doc"><div class="ava">МЛ</div><div><b>Марина Листова</b><div class="role">Стоматолог-ортопед, стаж 11 лет</div><p>Планирует будущую коронку до операции, подбирает цвет и форму, отвечает за прикус.</p></div></div>
-      <div class="card doc"><div class="ava">ДК</div><div><b>Денис Кедров</b><div class="role">Хирург-имплантолог, стаж 9 лет</div><p>Имплантация одиночных зубов, удаление с одномоментной установкой импланта.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cases">
-  <div class="wrap">
-    <span class="eyebrow">Работы клиники</span>
-    <h2>До и после</h2>
-    <p class="lead">Фотографии показываем на консультации с согласия пациентов. Здесь коротко, что было сделано.</p>
-    <div class="grid3">
-      <div class="case"><div class="ph"><div>Фото «до»: отсутствует нижний моляр</div><div>Фото «после»: коронка на импланте</div></div><p>Один имплант MIS на месте удалённого 6-го зуба, коронка из диоксида циркония.</p><span class="meta">Срок лечения 4 месяца</span></div>
-      <div class="case"><div class="ph"><div>Фото «до»: разрушенный передний зуб</div><div>Фото «после»: эстетичная коронка</div></div><p>Удаление и одномоментная установка импланта Straumann, временная коронка в тот же день.</p><span class="meta">Срок лечения 5 месяцев</span></div>
-      <div class="case"><div class="ph"><div>Фото «до»: нет двух зубов подряд</div><div>Фото «после»: две коронки</div></div><p>Два импланта Osstem и синус-лифтинг на верхней челюсти, коронки из металлокерамики.</p><span class="meta">Срок лечения 7 месяцев</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="installment">
-  <div class="wrap inst">
-    <div>
-      <span class="eyebrow">Рассрочка</span>
-      <h2>Рассрочка 0% на 12 месяцев</h2>
-      <p class="lead">Без первого взноса и переплаты: проценты банку оплачивает клиника. Решение по заявке обычно приходит за 10-15 минут прямо на приёме.</p>
-      <p class="note">Понадобится только паспорт. Рассрочку предоставляет банк-партнёр, условия уточняйте у администратора.</p>
-      <a class="btn" href="#form-final">Рассчитать платёж</a>
-    </div>
     <div class="calc">
-      <div class="row"><span>Имплантация под ключ, Osstem</span><b>39 900 ₽</b></div>
-      <div class="row"><span>Первый взнос</span><b>0 ₽</b></div>
-      <div class="row"><span>Срок</span><b>12 месяцев</b></div>
-      <div class="row"><span>Переплата</span><b>0 ₽</b></div>
-      <div class="note" style="margin-top:14px">Ежемесячный платёж</div>
-      <div class="big">3 325 ₽</div>
+      <fieldset class="sys">
+        <legend>Система имплантов</legend>
+        <label><input type="radio" name="sys" value="Osstem" data-price="39900" checked>Osstem<small>Корея</small></label>
+        <label><input type="radio" name="sys" value="MIS C1" data-price="54900">MIS C1<small>Израиль</small></label>
+        <label><input type="radio" name="sys" value="Straumann SLActive" data-price="84900">Straumann<small>Швейцария</small></label>
+      </fieldset>
+      <div class="result" aria-live="polite">
+        <div class="eq" id="eq">Нажмите на зуб на схеме</div>
+        <div class="muted small" id="eq-sub">Посчитаем ориентировочную смету и платёж в рассрочку</div>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="#book">Записаться с расчётом</a>
+        <button class="btn line" type="button" id="reset">Сбросить</button>
+      </div>
     </div>
-  </div>
-</section>
+    <p class="chart-note">Расчёт предварительный. Точный план и смету врач составит после осмотра и КТ: иногда вместо нескольких одиночных имплантов удобнее мост на двух опорах.</p>
+  </section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Отзывы (пример)</span>
-    <h2>Что говорят пациенты</h2>
-    <div class="grid3">
-      <div class="card rev"><div class="stars">★★★★★</div><p>Боялась, что в смете потом появятся доплаты. Ничего такого: сумму записали в договор сразу. Операция заняла меньше часа, на следующий день вышла на работу.</p><div class="who">Ольга, 46 лет · имплант MIS</div></div>
-      <div class="card rev"><div class="stars">★★★★★</div><p>Понравилось, что ортопед участвовал ещё до операции и объяснил, какой будет коронка. Брал рассрочку, оформили за 15 минут.</p><div class="who">Игорь, 52 года · имплант Osstem</div></div>
-      <div class="card rev"><div class="stars">★★★★☆</div><p>Лечение растянулось до семи месяцев из-за наращивания кости, но об этом предупредили на первом приёме. Результатом доволен.</p><div class="who">Сергей, 58 лет · два импланта</div></div>
+  <section class="sec" id="prices">
+    <header><span class="tag">Цены</span><h2>Три системы, одна смета</h2></header>
+    <div>
+      <p>Цена указана за один зуб под ключ. Систему врач подбирает по данным КТ: объёму кости, нагрузке и вашему бюджету.</p>
+      <table>
+        <thead><tr><th>Система</th><th>Коронка</th><th>Гарантия на имплант</th><th>За 1 зуб</th></tr></thead>
+        <tbody>
+          <tr><td><b>Osstem</b><br><span class="muted small">Южная Корея</span></td><td data-k="Коронка">Металлокерамика</td><td data-k="Гарантия">Производителя</td><td><span class="num">от 39 900 ₽</span></td></tr>
+          <tr class="pick"><td><b>MIS C1</b><br><span class="muted small">Израиль · чаще всего выбирают пациенты</span></td><td data-k="Коронка">Диоксид циркония</td><td data-k="Гарантия">Производителя</td><td><span class="num">от 54 900 ₽</span></td></tr>
+          <tr><td><b>Straumann SLActive</b><br><span class="muted small">Швейцария · оригинальный абатмент</span></td><td data-k="Коронка">Диоксид циркония</td><td data-k="Гарантия">Пожизненная</td><td><span class="num">от 84 900 ₽</span></td></tr>
+        </tbody>
+      </table>
+      <p class="muted small" style="margin-top:12px">Во всех вариантах: КТ, имплант, абатмент и коронка.</p>
+      <div class="note-box">Имеются противопоказания, необходима консультация специалиста. Костная пластика и синус-лифтинг, если они нужны, оплачиваются отдельно и вносятся в смету до начала лечения.</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <span class="eyebrow">Вопросы</span>
-    <h2>Частые вопросы</h2>
-    <div class="faq">
+  <section class="sec" id="steps">
+    <header><span class="tag">Сроки</span><h2>От консультации до коронки</h2></header>
+    <div>
+      <p>Обычно лечение занимает от 3 до 6 месяцев. Точный срок зависит от состояния кости и того, где стоит имплант: на нижней челюсти приживление идёт быстрее.</p>
+      <div class="gantt" role="list">
+        <div class="scale" aria-hidden="true"><span></span><div class="ticks"><span>1 мес</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div></div>
+        <div class="g-row" role="listitem"><div><b>Консультация и КТ</b><span class="when">день 1</span></div><div class="track"><span class="bar" style="left:0;width:1.5%"></span></div><p>Осмотр, томография, план лечения и смета с фиксированной ценой.</p></div>
+        <div class="g-row" role="listitem"><div><b>Установка импланта</b><span class="when">1-2 неделя</span></div><div class="track"><span class="bar" style="left:1.5%;width:3.5%"></span></div><p>Под местной анестезией, около 40 минут на один имплант. Контрольный осмотр через 7-10 дней.</p></div>
+        <div class="g-row" role="listitem"><div><b>Приживление</b><span class="when">2-5 месяц</span></div><div class="track"><span class="bar soft" style="left:16.7%;width:66.6%"></span></div><p>Имплант срастается с костью. На этот период по показаниям ставится временная коронка.</p></div>
+        <div class="g-row" role="listitem"><div><b>Абатмент и коронка</b><span class="when">3-6 месяц</span></div><div class="track"><span class="bar" style="left:33.3%;width:66.7%;opacity:.85"></span></div><p>Снимаем слепок, изготавливаем и фиксируем постоянную коронку. Дальше осмотр раз в полгода.</p></div>
+      </div>
+      <ul class="incl"><li>КТ челюсти</li><li>Имплант</li><li>Абатмент</li><li>Постоянная коронка</li><li>Анестезия</li><li>Контрольные осмотры</li><li>Гарантия в договоре</li></ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header><span class="tag">Врачи</span><h2>Кто будет вас лечить</h2></header>
+    <div>
+    <figure class="photo"><img src="https://images.unsplash.com/photo-1657470179447-0f5aa16daa91?auto=format&fit=crop&w=1800&q=80" width="900" height="394" loading="lazy" alt="Стоматолог проводит лечение пациента в кресле"></figure>
+    <div class="rows">
+      <div><span class="mono" aria-hidden="true">АВ</span><div><b>Арсений Веткин</b><div class="role">Хирург-имплантолог, стаж 14 лет</div><p>Установка имплантов, костная пластика, синус-лифтинг. Ведёт сложные клинические случаи.</p></div></div>
+      <div><span class="mono" aria-hidden="true">МЛ</span><div><b>Марина Листова</b><div class="role">Стоматолог-ортопед, стаж 11 лет</div><p>Планирует будущую коронку до операции, подбирает цвет и форму, отвечает за прикус.</p></div></div>
+      <div><span class="mono" aria-hidden="true">ДК</span><div><b>Денис Кедров</b><div class="role">Хирург-имплантолог, стаж 9 лет</div><p>Имплантация одиночных зубов, удаление с одномоментной установкой импланта.</p></div></div>
+    </div>
+    </div>
+  </section>
+
+  <section class="sec" id="clinic">
+    <header><span class="tag">Клиника</span><h2>Как устроена клиника</h2></header>
+    <div class="strip">
+      <figure><img src="https://images.unsplash.com/photo-1643660527098-559f89e45a92?auto=format&fit=crop&w=900&q=80" width="900" height="600" loading="lazy" alt="Стоматологический кабинет с креслом пациента"><figcaption>Кабинет врача</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1643660526741-094639fbe53a?auto=format&fit=crop&w=900&q=80" width="900" height="600" loading="lazy" alt="Оборудование и рабочее место в стоматологическом кабинете"><figcaption>Оборудование</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header><span class="tag">Работы клиники</span><h2>Что было сделано</h2></header>
+    <div>
+      <p class="muted">Фотографии «до» и «после» показываем на консультации с согласия пациентов. Здесь коротко, что было сделано.</p>
+      <div class="rows">
+        <div><span class="mono" aria-hidden="true">1</span><div><span class="case-tag">нижний моляр · 4 месяца</span><p>Один имплант MIS на месте удалённого 6-го зуба, коронка из диоксида циркония.</p></div></div>
+        <div><span class="mono" aria-hidden="true">1</span><div><span class="case-tag">передний зуб · 5 месяцев</span><p>Удаление разрушенного зуба и одномоментная установка импланта Straumann, временная коронка в тот же день.</p></div></div>
+        <div><span class="mono" aria-hidden="true">2</span><div><span class="case-tag">два зуба подряд · 7 месяцев</span><p>Два импланта Osstem и синус-лифтинг на верхней челюсти, коронки из металлокерамики.</p></div></div>
+      </div>
+      <p class="muted small" style="margin:10px 0 0">Цифра слева: сколько имплантов установлено.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="installment">
+    <header><span class="tag">Рассрочка</span><h2>0% на 12 месяцев</h2></header>
+    <div class="ex">
+      <div>
+        <p>Без первого взноса и переплаты: проценты банку оплачивает клиника. Решение по заявке обычно приходит за 10-15 минут прямо на приёме.</p>
+        <p class="muted small">Понадобится только паспорт. Рассрочку предоставляет банк-партнёр, условия уточняйте у администратора.</p>
+        <a class="btn line" href="#chart-h">Посчитать на схеме</a>
+      </div>
+      <dl>
+        <div><dt>Имплантация под ключ, Osstem</dt><dd>39 900 ₽</dd></div>
+        <div><dt>Первый взнос</dt><dd>0 ₽</dd></div>
+        <div><dt>Срок</dt><dd>12 месяцев</dd></div>
+        <div><dt>Переплата</dt><dd>0 ₽</dd></div>
+        <p class="muted small" style="margin:14px 0 0">Ежемесячный платёж</p>
+        <p class="big" style="margin:0">3 325 ₽</p>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header><span class="tag">Отзывы (пример)</span><h2>Что говорят пациенты</h2></header>
+    <div>
+      <blockquote><div class="stars">5 из 5</div><p>Боялась, что в смете потом появятся доплаты. Ничего такого: сумму записали в договор сразу. Операция заняла меньше часа, на следующий день вышла на работу.</p><footer>Ольга, 46 лет · имплант MIS</footer></blockquote>
+      <blockquote><div class="stars">5 из 5</div><p>Понравилось, что ортопед участвовал ещё до операции и объяснил, какой будет коронка. Брал рассрочку, оформили за 15 минут.</p><footer>Игорь, 52 года · имплант Osstem</footer></blockquote>
+      <blockquote><div class="stars">4 из 5</div><p>Лечение растянулось до семи месяцев из-за наращивания кости, но об этом предупредили на первом приёме. Результатом доволен.</p><footer>Сергей, 58 лет · два импланта</footer></blockquote>
+    </div>
+  </section>
+
+  <section class="sec">
+    <header><span class="tag">Вопросы</span><h2>Частые вопросы</h2></header>
+    <div>
       <details><summary>Больно ли ставить имплант?</summary><p>Операция проходит под местной анестезией, во время неё вы чувствуете давление, но не боль. После окончания действия анестезии 2-3 дня возможны отёк и дискомфорт, врач заранее назначит обезболивающее.</p></details>
       <details><summary>Что точно входит в цену «под ключ»?</summary><p>КТ, установка импланта, абатмент, постоянная коронка, анестезия и контрольные осмотры. Отдельно оплачиваются только костная пластика и синус-лифтинг, если они нужны: это видно по КТ и сразу вносится в смету.</p></details>
       <details><summary>Сколько времени займёт лечение?</summary><p>В среднем от 3 до 6 месяцев. Сам имплант ставится за один визит, остальное время уходит на приживление. При наращивании кости срок может увеличиться до 8-10 месяцев.</p></details>
@@ -363,54 +404,121 @@ footer .demo{margin-top:12px;padding-top:16px;border-top:1px solid rgba(255,255,
       <details><summary>Какая гарантия?</summary><p>На имплант действует гарантия производителя (у Straumann пожизненная), на коронку 3 года. Условие гарантии: профилактические осмотры раз в 6 месяцев. Всё прописано в договоре.</p></details>
       <details><summary>Можно ли получить налоговый вычет?</summary><p>Да, у клиники есть медицинская лицензия. Выдадим справку об оплате медицинских услуг для налоговой и копию лицензии.</p></details>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="final" id="final">
-  <div class="wrap final-grid">
-    <div>
-      <span class="eyebrow">Запись</span>
-      <h2>Начните с бесплатной консультации и КТ</h2>
-      <p class="lead">Врач осмотрит, сделает томографию и покажет план лечения со сметой. Решение принимаете после, без обязательств.</p>
-      <div class="contacts">
-        <div><span>Телефон</span><a class="tel" href="tel:+79000000004">+7 (900) 000-00-04</a></div>
-        <div><span>Адрес</span>Новосибирск, ул. Лесная, 00, 1 этаж</div>
-        <div><span>Режим работы</span>Пн-Сб 9:00-21:00, Вс выходной</div>
+  <section class="sec" id="book">
+    <header><span class="tag">Запись</span><h2>Бесплатная консультация и КТ</h2></header>
+    <div class="book">
+      <div>
+        <p>Врач осмотрит, сделает томографию и покажет план лечения со сметой. Решение принимаете после, без обязательств.</p>
+        <div class="contacts">
+          <div><span>Телефон</span><a class="tel" href="tel:+79000000004">+7 (900) 000-00-04</a></div>
+          <div><span>Адрес</span>Новосибирск, ул. Лесная, 00, 1 этаж</div>
+          <div><span>Режим работы</span>Пн-Сб 9:00-21:00, Вс выходной</div>
+        </div>
+        <p class="muted small" style="margin-top:20px">Имеются противопоказания, необходима консультация специалиста.</p>
       </div>
-      <p class="note" style="margin-top:24px">Имеются противопоказания, необходима консультация специалиста.</p>
+      <div class="form" id="form-final">
+        <form novalidate data-form="final">
+          <p class="plan" id="plan-view">Расчёт со схемы не выбран. Можно записаться и без него.</p>
+          <p class="muted small" style="margin:0">Администратор перезвонит в течение 15 минут в рабочее время и подберёт удобное время.</p>
+          <label for="f-name">Имя</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
+          <div class="err" data-err="name"></div>
+          <label for="f-phone">Телефон</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__">
+          <div class="err" data-err="phone"></div>
+          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
+          <input type="hidden" name="plan" id="plan-field">
+          <label class="consent"><input type="checkbox" name="consent"> Согласен(на) на обработку персональных данных в соответствии с политикой конфиденциальности</label>
+          <div class="err" data-err="consent"></div>
+          <button class="btn" type="submit">Записаться на консультацию</button>
+        </form>
+        <div class="thanks"><h3>Спасибо, заявка принята</h3><p class="muted">Перезвоним с номера +7 (900) 000-00-04 в течение 15 минут в рабочее время.</p></div>
+      </div>
     </div>
-    <div class="card form" id="form-final">
-      <form novalidate data-form="final">
-        <h3>Записаться на консультацию</h3>
-        <label for="f-name">Имя</label>
-        <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
-        <div class="err" data-err="name"></div>
-        <label for="f-phone">Телефон</label>
-        <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__">
-        <div class="err" data-err="phone"></div>
-        <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
-        <label class="consent"><input type="checkbox" name="consent"> Согласен(на) на обработку персональных данных в соответствии с политикой конфиденциальности</label>
-        <div class="err" data-err="consent"></div>
-        <button class="btn" type="submit">Отправить заявку</button>
-      </form>
-      <div class="thanks"><h3>Спасибо, заявка принята</h3><p class="note">Администратор перезвонит в течение 15 минут в рабочее время.</p></div>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div><b>Стоматология на Лесной</b> · Новосибирск, ул. Лесная, 00 · <a class="tel" style="color:#fff" href="tel:+79000000004">+7 (900) 000-00-04</a></div>
+    <div><b>Стоматология на Лесной</b> · Новосибирск, ул. Лесная, 00 · <a class="tel" href="tel:+79000000004">+7 (900) 000-00-04</a></div>
     <div>ООО «Лесная Дент» · Лицензия № ЛО-00-00-000000 (пример)</div>
     <div>Имеются противопоказания, необходима консультация специалиста.</div>
     <div class="demo">Пример работы. Клиника вымышленная, цены и отзывы условные.</div>
+    <div>Фото: Unsplash</div>
   </div>
 </footer>
 
 <script>
 (function(){
   function goal(name, params){ try{ ym(YM_ID, 'reachGoal', name, params || {}); }catch(e){} }
+  var fmt = function(n){ return n.toLocaleString('ru-RU') + ' ₽'; };
+
+  // Зубная формула: рисуем 32 кнопки
+  var NAMES = {1:'центральный резец',2:'боковой резец',3:'клык',4:'первый премоляр',5:'второй премоляр',6:'первый моляр',7:'второй моляр',8:'зуб мудрости'};
+  var QN = {1:'верхний правый',2:'верхний левый',3:'нижний левый',4:'нижний правый'};
+  var W = {1:22,2:19,3:23,4:24,5:24,6:32,7:30,8:28};
+  function root(x0, x1, top){
+    var m = (x0 + x1) / 2;
+    return 'M'+x0+' 47C'+(x0+1)+' 30 '+(m-2)+' '+top+' '+m+' '+top+'C'+(m+2)+' '+top+' '+(x1-1)+' 30 '+x1+' 47Z';
+  }
+  function svg(d){
+    var w = W[d], a = 20 - w/2, b = 20 + w/2, c, r;
+    if (d < 3) c = 'M'+a+' 46L'+(a+1)+' 76Q20 86 '+(b-1)+' 76L'+b+' 46Z';
+    else if (d === 3) c = 'M'+a+' 46L'+(a+1)+' 70L20 85L'+(b-1)+' 70L'+b+' 46Z';
+    else if (d < 6) c = 'M'+a+' 46Q'+(a-1)+' 70 '+(a+3)+' 80Q15 85 20 79Q25 85 '+(b-3)+' 80Q'+(b+1)+' 70 '+b+' 46Z';
+    else c = 'M'+a+' 46Q'+(a-1)+' 72 '+(a+3)+' 81Q'+(a+8)+' 85 '+(a+w/3)+' 79Q20 85 '+(b-w/3)+' 79Q'+(b-8)+' 85 '+(b-3)+' 81Q'+(b+1)+' 72 '+b+' 46Z';
+    r = d < 6 ? root(a+3, b-3, d === 3 ? 2 : 8) : root(a+2, 19, 10) + root(21, b-2, 10);
+    var th = ''; for (var y = 16; y <= 36; y += 5) th += '<line x1="14.6" y1="'+y+'" x2="25.4" y2="'+(y-2)+'"/>';
+    return '<svg viewBox="0 0 40 90" aria-hidden="true" focusable="false">' +
+      '<path class="root" d="'+r+'"/>' +
+      '<g class="imp"><path d="M14 40H26L25 13L20 7L15 13Z"/>'+th+'<rect x="15.5" y="39" width="9" height="8" rx="1"/></g>' +
+      '<rect class="gumb" x="0" y="38" width="40" height="12"/><line class="gumline" x1="0" y1="44" x2="40" y2="44"/>' +
+      '<path class="crown" d="'+c+'"/></svg>';
+  }
+  document.querySelectorAll('.q').forEach(function(q){
+    var n = +q.dataset.q, right = (n === 1 || n === 4);
+    for (var i = 0; i < 8; i++){
+      var d = right ? 8 - i : i + 1, id = '' + n + d;
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'tooth'; btn.dataset.id = id;
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', 'Зуб ' + id + ', ' + QN[n] + ' ' + NAMES[d]);
+      btn.innerHTML = '<span class="n">' + id + '</span>' + svg(d);
+      q.appendChild(btn);
+    }
+  });
+
+  var eq = document.getElementById('eq'), sub = document.getElementById('eq-sub');
+  var planField = document.getElementById('plan-field'), planView = document.getElementById('plan-view');
+  function plural(n){ var m = n % 10, h = n % 100; return (m === 1 && h !== 11) ? 'имплант' : (m >= 2 && m <= 4 && (h < 12 || h > 14)) ? 'импланта' : 'имплантов'; }
+  function update(){
+    var teeth = [].map.call(document.querySelectorAll('.tooth[aria-pressed="true"]'), function(b){ return b.dataset.id; }).sort();
+    var s = document.querySelector('input[name="sys"]:checked'), price = +s.dataset.price;
+    if (!teeth.length){
+      eq.textContent = 'Нажмите на зуб на схеме';
+      sub.textContent = 'Посчитаем ориентировочную смету и платёж в рассрочку';
+      planField.value = ''; planView.textContent = 'Расчёт со схемы не выбран. Можно записаться и без него.';
+      return;
+    }
+    var sum = teeth.length * price, month = Math.ceil(sum / 12);
+    var line = teeth.length + ' ' + plural(teeth.length) + ' × ' + s.value + ' = от ' + fmt(sum);
+    eq.innerHTML = '<b>' + teeth.length + '</b> ' + plural(teeth.length) + ' × ' + s.value + ' = <b>от ' + fmt(sum) + '</b>';
+    sub.textContent = 'Рассрочка 0%: от ' + fmt(month) + '/мес на 12 месяцев · зубы ' + teeth.join(', ');
+    planField.value = line + '; рассрочка от ' + fmt(month) + '/мес; зубы ' + teeth.join(', ');
+    planView.innerHTML = 'Ваш расчёт: <b>' + line + '</b>, рассрочка от ' + fmt(month) + '/мес. Зубы: ' + teeth.join(', ') + '.';
+  }
+  document.querySelector('.chart').addEventListener('click', function(e){
+    var b = e.target.closest('.tooth'); if (!b) return;
+    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    update();
+  });
+  document.querySelectorAll('input[name="sys"]').forEach(function(r){ r.addEventListener('change', update); });
+  document.getElementById('reset').addEventListener('click', function(){
+    document.querySelectorAll('.tooth').forEach(function(b){ b.setAttribute('aria-pressed', 'false'); });
+    update();
+  });
 
   // UTM из URL в скрытые поля всех форм
   var q = new URLSearchParams(location.search);
@@ -434,7 +542,7 @@ footer .demo{margin-top:12px;padding-top:16px;border-top:1px solid rgba(255,255,
     io.observe(prices);
   }
 
-  // Формы: валидация, цель lead_submit, спасибо
+  // Форма: валидация, цель lead_submit, спасибо
   document.querySelectorAll('form[data-form]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -450,7 +558,7 @@ footer .demo{margin-top:12px;padding-top:16px;border-top:1px solid rgba(255,255,
       if (!ok) return;
       var data = Object.fromEntries(new FormData(form));
       console.log('lead', data); // здесь отправка в CRM / на почту
-      goal('lead_submit', {form: form.dataset.form, utm_source: data.utm_source});
+      goal('lead_submit', {form: form.dataset.form, utm_source: data.utm_source, plan: data.plan || ''});
       var box = form.parentNode;
       box.classList.add('done');
       box.querySelector('.thanks').classList.add('show');
